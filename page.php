@@ -34,10 +34,12 @@ get_header( 'top' ); ?>
                         'sort_column' => 'menu_order',
                         'sort_order' => 'ASC',
                     ));
+
+                    $has_sidebar = $child_pages && count($child_pages) > 0;
                     ?>
 
-                    <div class="with-sidebar">
-                        <?php if ($child_pages) : ?>
+                    <div class="<?php echo $has_sidebar ? 'with-sidebar' : ''; ?>">
+                        <?php if ($has_sidebar) : ?>
                             <aside class="sidebar">
                                 <nav class="stack" aria-label="Child pages navigation">
                                     <?php
