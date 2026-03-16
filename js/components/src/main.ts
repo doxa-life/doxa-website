@@ -12,8 +12,6 @@ declare global {
             statistics: {
                 total_with_prayer: number;
                 total_with_full_prayer: number;
-                total_with_committed_prayer: number;
-                total_with_fully_committed_prayer: number;
                 total_adopted: number;
             };
         };
@@ -24,9 +22,8 @@ async function getPeopleGroupsStatistics() {
 
     const apiUrl =
         location.href.includes('doxa.test')
-        ? 'http://uupg.doxa.test/wp-json/dt-public/disciple-tools-people-groups-api/v1/data/statistics'
-        : 'https://uupg.doxa.life/wp-json/dt-public/disciple-tools-people-groups-api/v1/data/statistics';
-        //: 'https://pray.doxa.life/api/people-groups/statistics';
+        ? 'http://pray.doxa.test/api/people-groups/statistics'
+        : 'https://pray.doxa.life/api/people-groups/statistics';
 
     const response = await fetch(apiUrl, {
         method: 'GET',
@@ -40,8 +37,6 @@ async function getPeopleGroupsStatistics() {
     window.doxaData.statistics = {
         total_with_prayer: Number(data.total_with_prayer || 0),
         total_with_full_prayer: Number(data.total_with_full_prayer || 0),
-        total_with_committed_prayer: Number(data.total_with_committed_prayer || 0),
-        total_with_fully_committed_prayer: Number(data.total_with_fully_committed_prayer || 0),
         total_adopted: Number(data.total_adopted || 0),
     }
 
