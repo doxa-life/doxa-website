@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
-"POT-Creation-Date: 2026-02-26T14:49:30+00:00\n"
-"PO-Revision-Date: 2026-03-02 10:05+0000\n"
-"Last-Translator: mina ramzi <translator@disciple.tools>\n"
+"POT-Creation-Date: 2026-03-11T09:17:06+00:00\n"
+"PO-Revision-Date: 2026-03-11 11:05+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Arabic <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/ar/>\n"
 "Language: ar\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.16.1\n"
+"X-Generator: Weblate 5.16.2\n"
 "X-Domain: doxa-website\n"
 
 #. Theme Name of the theme
@@ -261,6 +261,50 @@ msgstr ""
 msgid "Click again to interact with map"
 msgstr "إضغط مرة أخرى للتفاعل مع الخريطة"
 
+#: functions.php:115
+msgid "No prayer coverage"
+msgstr "لا تغطية للصلاة"
+
+#: functions.php:116
+msgid "Has prayer coverage"
+msgstr "تغطية الصلاة"
+
+#: functions.php:117
+msgid "Pray for them"
+msgstr "صلوا من أجلهم"
+
+#: functions.php:118
+msgid "Info"
+msgstr "معلومات"
+
+#: functions.php:119
+msgid "Language"
+msgstr "اللغة"
+
+#: functions.php:120 template-uupg-detail.php:174
+msgid "Country"
+msgstr "البلد"
+
+#: functions.php:121 template-uupg-detail.php:179
+msgid "Population"
+msgstr "التعدادالسكاني"
+
+#: functions.php:122
+msgid "Prayer Coverage"
+msgstr "تغطية صلاة منتظمة"
+
+#: functions.php:123
+msgid "Unknown"
+msgstr "غير معروف"
+
+#: functions.php:124
+msgid "Close"
+msgstr "غلق"
+
+#: functions.php:125
+msgid "Search people groups or locations"
+msgstr "البحث عن مجموعات أشخاص أو مواقع"
+
 #: header.php:35
 msgid "World assemblies of God Fellowship"
 msgstr "الاتحاد العالمي للكنائس الرسولية"
@@ -375,9 +419,9 @@ msgid ""
 "known believers. Adoption helps ensure they are finally seen, prayed for, "
 "and intentionally pursued with the gospel."
 msgstr ""
-"المشعوب التي ليس فيها عمل ارسالي ليس لديها مرسلين ولا كنائس، وغالبا ما لا يوجد "
-"بينها مؤمنون معروفون.التبني يساعد التبنّي يفتح الطريق لرؤيتهم وخدمتهم، والصلاة "
-"من أجلهم، والسعي المقصود إلى توصيل الإنجيل إليهم."
+"المشعوب التي ليس فيها عمل ارسالي ليس لديها مرسلين ولا كنائس، وغالبا ما لا "
+"يوجد بينها مؤمنون معروفون.التبني يساعد التبنّي يفتح الطريق لرؤيتهم وخدمتهم، "
+"والصلاة من أجلهم، والسعي المقصود إلى توصيل الإنجيل إليهم."
 
 #: page-adopt.php:111
 msgid "Prayer opens the door for engagement"
@@ -419,35 +463,35 @@ msgstr ""
 "اختار مجموعة بشرية غير موصول لها و معروفة، أو إبحث عن مجموعة أو موقع معينة "
 "بالاسفل."
 
-#: page-adopt.php:138 page-pray.php:140 page-uupgs.php:23
+#: page-adopt.php:138 page-pray.php:148 page-uupgs.php:23
 #: shortcodes/uupg-list-shortcode.php:14
 msgid "Full Profile"
 msgstr "الملف الكامل"
 
-#: page-adopt.php:139 page-pray.php:141 shortcodes/uupg-list-shortcode.php:15
-msgid "Prayer Coverage"
-msgstr "تغطية صلاة منتظمة"
+#: page-adopt.php:139 page-pray.php:149 shortcodes/uupg-list-shortcode.php:15
+msgid "Intercessors"
+msgstr "الشفعاء"
 
-#: page-adopt.php:140 page-pray.php:142 page-uupgs.php:24
+#: page-adopt.php:140 page-pray.php:150 page-uupgs.php:24
 #: shortcodes/uupg-list-shortcode.php:16
 msgid "Loading results..."
 msgstr "جاري تحميل النتائج..."
 
-#: page-adopt.php:141 page-pray.php:143 page-uupgs.php:25
+#: page-adopt.php:141 page-pray.php:151 page-uupgs.php:25
 #: shortcodes/uupg-list-shortcode.php:17
 msgid "Load More"
 msgstr "تحميل المزيد"
 
-#: page-adopt.php:142 page-pray.php:144 page-uupgs.php:26
+#: page-adopt.php:142 page-pray.php:152 page-uupgs.php:26
 #: shortcodes/uupg-list-shortcode.php:18
 msgid "Total"
 msgstr "المجموع"
 
-#: page-adopt.php:143 page-pray.php:145 shortcodes/uupg-list-shortcode.php:19
+#: page-adopt.php:143 page-pray.php:153 shortcodes/uupg-list-shortcode.php:19
 msgid "Search names, country/continent, religions..."
 msgstr "إبحث عن الأسماء, البلدان/القارات, الأديان..."
 
-#: page-adopt.php:144 page-pray.php:146 shortcodes/uupg-list-shortcode.php:20
+#: page-adopt.php:144 page-pray.php:154 shortcodes/uupg-list-shortcode.php:20
 msgid "See All"
 msgstr "عرض الكل"
 
@@ -455,7 +499,7 @@ msgstr "عرض الكل"
 msgid "I was a stranger and you invited me in."
 msgstr "كنت غريبًا و دعوتني للدخول."
 
-#: page-adopt.php:158 page-adopt.php:160 page-pray.php:160 page-pray.php:162
+#: page-adopt.php:158 page-adopt.php:160 page-pray.php:174 page-pray.php:176
 msgid "Jesus"
 msgstr "يسوع"
 
@@ -517,7 +561,7 @@ msgstr "ساعد في اعداد الطريق للإنخراط في الإنجي
 msgid "Prayer Goal"
 msgstr "هدف الصلاة"
 
-#: page-pray.php:26 template-uupg-detail.php:129
+#: page-pray.php:26 template-uupg-detail.php:130
 msgid "24-Hour Prayer Coverage"
 msgstr "تغطية صلاة مستمرة على مدار 24 ساعة"
 
@@ -525,8 +569,8 @@ msgstr "تغطية صلاة مستمرة على مدار 24 ساعة"
 msgid ""
 "Mobilize 144+ people praying 10 minutes a day for all 2,085 people groups"
 msgstr ""
-"حشد أكثر من 144 شخصًا للصلاة لمدة 10 دقائق يوميًا من أجل جميع المجموعات العرقية "
-"البالغ عددها 2085 مجموعة"
+"حشد أكثر من 144 شخصًا للصلاة لمدة 10 دقائق يوميًا من أجل جميع المجموعات "
+"العرقية البالغ عددها 2085 مجموعة"
 
 #: page-pray.php:33
 msgid "People groups with committed 24-hour prayer coverage"
@@ -617,11 +661,15 @@ msgstr ""
 "عندما نصلي، فإننا ننضم إلى المؤمنين في جميع أنحاء العالم في رسالة الله، ونقف "
 "معا من أجل الشعوب التي لا تزال تنتظر سماع إسم يسوع."
 
-#: page-pray.php:139 shortcodes/uupg-list-shortcode.php:6
+#: page-pray.php:147 shortcodes/uupg-list-shortcode.php:6
 msgid "Select"
 msgstr "اختار"
 
-#: page-pray.php:159
+#: page-pray.php:166
+msgid "Prayer Progress"
+msgstr "تقدم الصلاة"
+
+#: page-pray.php:173
 msgid ""
 "Pray earnestly to the Lord of the harvest ...that He would send laborers to "
 "the [Unengaged]."
@@ -668,19 +716,19 @@ msgstr "لكل صفحة"
 msgid "Doxa Page"
 msgstr "صفحة دوكسا Doxa"
 
-#: template-adoption-form.php:17 template-uupg-detail.php:29
+#: template-adoption-form.php:17 template-uupg-detail.php:30
 #: template-uupg-resources.php:29
 msgid "People Group Not Found"
 msgstr "مجموعة بشرية لم يتم العثور عليها"
 
-#: template-adoption-form.php:18 template-uupg-detail.php:30
+#: template-adoption-form.php:18 template-uupg-detail.php:31
 #: template-uupg-resources.php:30
 msgid ""
 "The people group you are looking for could not be found. Please try again."
 msgstr "لم يتم العثور على المجموعة التي تبحث عنها. يرجى المحاولة مرة أخرى."
 
 #: template-adoption-form.php:20 template-adoption-form.php:24
-#: template-uupg-detail.php:32 template-uupg-detail.php:36
+#: template-uupg-detail.php:33 template-uupg-detail.php:37
 #: template-uupg-resources.php:32 template-uupg-resources.php:36
 msgid "Back"
 msgstr "عودة للخلف"
@@ -741,9 +789,9 @@ msgid ""
 "around 1000, etc."
 msgstr ""
 "نوصي بأن تلتزم الكنائس بدعم شهري يتناسب مع حجم الحضور، على سبيل المثال:  ١٠٠ "
-"دولار شهريًا لكنيسة يبلغ عدد أفرادها نحو ١٠٠ شخص ، ٥٠٠ دولار شهريًا لكنيسة يبلغ "
-"عدد أفرادها نحو ٥٠٠ شخص، ١٠٠٠ دولار شهريًا لكنيسة يبلغ عدد أفرادها نحو ١٠٠٠ شخص"
-"، وما إلى ذلك، وفقًا لحجم الكنيسة وإمكاناتها."
+"دولار شهريًا لكنيسة يبلغ عدد أفرادها نحو ١٠٠ شخص ، ٥٠٠ دولار شهريًا لكنيسة "
+"يبلغ عدد أفرادها نحو ٥٠٠ شخص، ١٠٠٠ دولار شهريًا لكنيسة يبلغ عدد أفرادها نحو "
+"١٠٠٠ شخص، وما إلى ذلك، وفقًا لحجم الكنيسة وإمكاناتها."
 
 #: template-adoption-form.php:81
 msgid "Send"
@@ -754,8 +802,8 @@ msgid ""
 "Actively help surface and support potential goers, encouraging those God may "
 "be calling to cross cultures and serve this people group directly."
 msgstr ""
-"ساعد بنشاط في إكتشاف ودعم الأشخاص المحتمل ارسالهم، وشجع أولئك الذين قد يدعوهم "
-"الله لعبور الثقافات وخدمة هذه المجموعة من الناس بشكل مباشر."
+"ساعد بنشاط في إكتشاف ودعم الأشخاص المحتمل ارسالهم، وشجع أولئك الذين قد "
+"يدعوهم الله لعبور الثقافات وخدمة هذه المجموعة من الناس بشكل مباشر."
 
 #: template-adoption-form.php:87
 msgid "Champion Details"
@@ -859,125 +907,117 @@ msgstr "حدث خطأ أثناء إرسال طلب التبنّي. يرجي ال
 msgid "UUPG Detail"
 msgstr "تفاصيل UUPG"
 
-#: template-uupg-detail.php:61
+#: template-uupg-detail.php:62
 msgid "Engaged"
 msgstr "منخرط"
 
-#: template-uupg-detail.php:63
+#: template-uupg-detail.php:64
 msgid "Not Engaged"
 msgstr "غير منخرط"
 
-#: template-uupg-detail.php:74
+#: template-uupg-detail.php:75
 msgid "Engagement Status"
 msgstr "حالة الإنخراط"
 
-#: template-uupg-detail.php:79 template-uupg-detail.php:87
-#: template-uupg-detail.php:95 template-uupg-detail.php:103
-#: template-uupg-detail.php:111 template-uupg-detail.php:188
-#: template-uupg-detail.php:196 template-uupg-detail.php:204
-#: template-uupg-detail.php:212 template-uupg-detail.php:220
-#: template-uupg-detail.php:228
+#: template-uupg-detail.php:80 template-uupg-detail.php:88
+#: template-uupg-detail.php:96 template-uupg-detail.php:104
+#: template-uupg-detail.php:112 template-uupg-detail.php:189
+#: template-uupg-detail.php:197 template-uupg-detail.php:205
+#: template-uupg-detail.php:213 template-uupg-detail.php:221
+#: template-uupg-detail.php:229
 msgid "Done"
 msgstr "مكتمل"
 
-#: template-uupg-detail.php:81 template-uupg-detail.php:89
-#: template-uupg-detail.php:97 template-uupg-detail.php:105
-#: template-uupg-detail.php:113 template-uupg-detail.php:190
-#: template-uupg-detail.php:198 template-uupg-detail.php:206
-#: template-uupg-detail.php:214 template-uupg-detail.php:222
-#: template-uupg-detail.php:230
+#: template-uupg-detail.php:82 template-uupg-detail.php:90
+#: template-uupg-detail.php:98 template-uupg-detail.php:106
+#: template-uupg-detail.php:114 template-uupg-detail.php:191
+#: template-uupg-detail.php:199 template-uupg-detail.php:207
+#: template-uupg-detail.php:215 template-uupg-detail.php:223
+#: template-uupg-detail.php:231
 msgid "Not Done"
 msgstr "غير مكتمل"
 
-#: template-uupg-detail.php:83 template-uupg-detail.php:122
+#: template-uupg-detail.php:84 template-uupg-detail.php:123
 msgid "Prayer Status"
 msgstr "حالة الصلاة"
 
-#: template-uupg-detail.php:91 template-uupg-detail.php:134
+#: template-uupg-detail.php:92 template-uupg-detail.php:135
 msgid "Adoption Status"
 msgstr "حالة التبني"
 
-#: template-uupg-detail.php:99
+#: template-uupg-detail.php:100
 msgid "Cross-cultural workers present"
 msgstr "وجود مرسلين عابرين للثقافات ( يعلمون في ثقافات اخري )"
 
-#: template-uupg-detail.php:107
+#: template-uupg-detail.php:108
 msgid "Work in local language &amp; culture"
 msgstr "العمل باللغة المحلية والاندماج في الثقافة المحلية"
 
-#: template-uupg-detail.php:115
+#: template-uupg-detail.php:116
 msgid "Disciple &amp; church multiplication"
 msgstr "تضاعف التلاميذ والكنيسة"
 
-#: template-uupg-detail.php:124
+#: template-uupg-detail.php:125
 msgid "People committed to praying"
 msgstr "الأشخاص الملتزمون بالصلاة"
 
-#: template-uupg-detail.php:131
+#: template-uupg-detail.php:132
 msgid "Sign up to pray"
 msgstr "سجّل للمشاركة في الصلاة"
 
-#: template-uupg-detail.php:136
+#: template-uupg-detail.php:137
 msgid "churches / individuals have adopted this people group"
 msgstr "كنائس / أفراد تبنّوا هذه المجموعة البشرية"
 
-#: template-uupg-detail.php:152
+#: template-uupg-detail.php:153
 msgid "Adopt people group"
 msgstr "اتبنّي مجموعة بشرية"
 
-#: template-uupg-detail.php:172
+#: template-uupg-detail.php:173
 msgid "Overview"
 msgstr "نظرة عامة"
 
-#: template-uupg-detail.php:173
-msgid "Country"
-msgstr "البلد"
-
-#: template-uupg-detail.php:176
+#: template-uupg-detail.php:177
 msgid "Alternate Names"
 msgstr "الاسماء البديلة / أسماء أخرى"
 
-#: template-uupg-detail.php:178
-msgid "Population"
-msgstr "التعدادالسكاني"
-
-#: template-uupg-detail.php:179
+#: template-uupg-detail.php:180
 msgid "Primary Language"
 msgstr "اللغة الرئيسية"
 
-#: template-uupg-detail.php:180
+#: template-uupg-detail.php:181
 msgid "Primary Religion"
 msgstr "الديانة الرئيسية"
 
-#: template-uupg-detail.php:181
+#: template-uupg-detail.php:182
 msgid "Religious Practices"
 msgstr "الممارسات الدينية"
 
-#: template-uupg-detail.php:185
+#: template-uupg-detail.php:186
 msgid "Progress"
 msgstr "مستوي التقدم"
 
-#: template-uupg-detail.php:192
+#: template-uupg-detail.php:193
 msgid "Bible Translation"
 msgstr "ترجمة الكتاب المقدس"
 
-#: template-uupg-detail.php:200
+#: template-uupg-detail.php:201
 msgid "Bible Stories"
 msgstr "قصص الكتاب المقدس"
 
-#: template-uupg-detail.php:208
+#: template-uupg-detail.php:209
 msgid "Jesus Film"
 msgstr "فيلم يسوع"
 
-#: template-uupg-detail.php:216
+#: template-uupg-detail.php:217
 msgid "Radio Broadcasts"
 msgstr "البث الإذاعي / برامج إذاعية"
 
-#: template-uupg-detail.php:224
+#: template-uupg-detail.php:225
 msgid "Gospel Recordings"
 msgstr "تسجيلات الإنجيل"
 
-#: template-uupg-detail.php:232
+#: template-uupg-detail.php:233
 msgid "Audio Scripture"
 msgstr "الكتاب المقدس الصوتي"
 
