@@ -5,6 +5,7 @@
 html {
   font-size: var(--font-size-base);
   scrollbar-gutter: stable;
+  overflow-wrap: anywhere;
 }
 
 body {
