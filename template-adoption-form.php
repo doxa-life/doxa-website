@@ -195,14 +195,14 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
             // Check confirmation checkbox
             if (!form.querySelector('#confirm-adoption').checked) {
                 messageDiv.className = 'contact-message error';
-                messageDiv.textContent = '<?php echo esc_js(__('Please confirm your adoption commitment.', 'doxa-website')); ?>';
+                messageDiv.textContent = '<?php echo esc_html__('Please confirm your adoption commitment.', 'doxa-website'); ?>';
                 messageDiv.style.display = 'block';
                 return;
             }
 
             // Disable button and show loading
             submitBtn.disabled = true;
-            submitBtn.textContent = '<?php echo esc_js(__('Submitting...', 'doxa-website')); ?>';
+            submitBtn.textContent = '<?php echo esc_html__('Submitting...', 'doxa-website'); ?>';
 
             const formData = {
                 first_name: form.querySelector('#first-name').value,
@@ -265,20 +265,20 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                     submitBtn.disabled = true;
                 } else {
                     messageDiv.className = 'contact-message error';
-                    messageDiv.textContent = data.message || '<?php echo esc_js(__('There was an error submitting your adoption. Please try again.', 'doxa-website')); ?>';
+                    messageDiv.textContent = data.message || <?php echo esc_html__('There was an error submitting your adoption. Please try again.', 'doxa-website'); ?>;
                     messageDiv.style.display = 'block';
                     turnstile.reset();
                     turnstileToken = '';
                 }
-                submitBtn.textContent = '<?php echo esc_js(__('Submit', 'doxa-website')); ?>';
+                submitBtn.textContent = '<?php echo esc_html__('Submit', 'doxa-website'); ?>';
             })
             .catch(error => {
                 messageDiv.className = 'contact-message error';
-                messageDiv.textContent = '<?php echo esc_js(__('There was an error submitting your adoption. Please try again.', 'doxa-website')); ?>';
+                messageDiv.textContent = '<?php echo esc_html__('There was an error submitting your adoption. Please try again.', 'doxa-website'); ?>';
                 messageDiv.style.display = 'block';
                 turnstile.reset();
                 turnstileToken = '';
-                submitBtn.textContent = '<?php echo esc_js(__('Submit', 'doxa-website')); ?>';
+                submitBtn.textContent = '<?php echo esc_html__('Submit', 'doxa-website'); ?>';
             });
         });
     </script>
