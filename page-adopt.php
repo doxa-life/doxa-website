@@ -154,7 +154,7 @@ get_header( 'top' ); ?>
             <section>
                 <div class="container stack stack--5xl">
                     <figure class="text-center font-size-5xl font-heading">
-                        <blockquote><?php echo __('I was a stranger and you invited me in.', 'doxa-website'); ?></blockquote>
+                        <blockquote class="overflow-wrap-anywhere"><?php echo __('I was a stranger and you invited me in.', 'doxa-website'); ?></blockquote>
                         <figcaption>- <?php echo __('Jesus', 'doxa-website'); ?></figcaption>
                     </figure>
                     <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/adopt-bottom-banner.jpg" alt="<?php echo __('Jesus', 'doxa-website'); ?>"></div>
