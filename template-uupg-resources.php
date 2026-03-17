@@ -191,7 +191,8 @@ document.querySelectorAll('a[download]').forEach(function(link) {
                 document.body.appendChild(a);
                 a.click();
             })
-            .catch(function() {
+            .catch(function(error) {
+                console.error('Download failed', error);
                 window.open(url, '_blank');
             })
             .finally(function() {
