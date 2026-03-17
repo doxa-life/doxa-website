@@ -16,3 +16,7 @@
 .grid[data-width-md] {
     --grid-min-width: 300px;
 }
+
+.grid[data-width-sm] {
+    --grid-min-width: 200px;
+}

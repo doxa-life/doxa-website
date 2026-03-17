@@ -9,6 +9,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once get_template_directory() . '/shortcodes/uupg-list-shortcode.php';
+require_once get_template_directory() . '/shortcodes/general-resources-shortcode.php';
 
 add_filter( 'oembed_response_data', function ( $data ) {
     unset( $data['author_name'] );
