@@ -254,7 +254,10 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                     `;
                 } else if (ok && data.status === 'success') {
                     messageDiv.className = 'contact-message success';
-                    messageDiv.textContent = '<?php echo esc_js(__('Thank you for your adoption commitment! We will be in touch soon.', 'doxa-website')); ?>';
+                    messageDiv.innerHTML = `
+                        <p><?php echo esc_html__('Thank you for your adoption commitment! We will be in touch soon.', 'doxa-website'); ?></p>
+                        <a href="<?php echo esc_url( doxa_translation_url( 'research/' ) . $slug . '/resources' ); ?>" class="button compact"><?php echo esc_html__('View Promotional Resources', 'doxa-website'); ?></a>
+                    `;
                     messageDiv.style.display = 'block';
                     form.reset();
                     turnstile.reset();

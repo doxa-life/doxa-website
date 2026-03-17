@@ -69,6 +69,7 @@ $pray_url .= '?source=doxalife';
                             <h4 class="font-base font-weight-medium"><?php echo esc_html( $uupg['display_name'] ); ?></h4>
                             <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['imb_isoalpha3']['label'] ); ?> (<?php echo esc_html( $uupg['imb_reg_of_people_1']['label'] ); ?>)</p>
                             <p><?php echo esc_html( $uupg['imb_people_description'] ); ?></p>
+                            <a href="./resources" class="button compact"><?php echo esc_html__('View Promotional Resources', 'doxa-website'); ?></a>
                         </div>
                     </div>
                     <div class="card stack stack--2xs" id="engagement-status" padding-small>
