@@ -18,21 +18,21 @@ function general_resources_shortcode( $atts ) {
 
     $general_resources = [
         'doxa_playbook' => [
-            'title' => __('DOXA Playbook', 'doxa-website'),
+            'title' => esc_html__('DOXA Playbook', 'doxa-website'),
             'image_url' => $image_url . 'playbook.png',
             'style' => 'width: 55%;',
             'download_type' => 'file',
             'download_link' => $s3_url . "documents/doxa-playbook-$lang_code.pdf",
         ],
         'doxa_playbook_slides' => [
-            'title' => __('DOXA Playbook Slides', 'doxa-website'),
+            'title' => esc_html__('DOXA Playbook Slides', 'doxa-website'),
             'image_url' => $image_url . 'doxa-slides.png',
             'style' => 'width: 80%; padding-top: 10%; padding-bottom: 10%;',
             'download_type' => 'file',
             'download_link' => $s3_url . "documents/doxa-playbook-slides-$lang_code.pdf",
         ],
         'doxa_promo_video' => [
-            'title' => __('DOXA Promo Video', 'doxa-website'),
+            'title' => esc_html__('DOXA Promo Video', 'doxa-website'),
             'image_url' => $image_url . 'video.png',
             'style' => 'width: 80%; padding-top: 10%; padding-bottom: 10%;',
             'download_type' => 'link',
@@ -42,22 +42,22 @@ function general_resources_shortcode( $atts ) {
 
     $general_resources_no_image = [
         'champion_tips' => [
-            'title' => __('Champion Tips', 'doxa-website'),
+            'title' => esc_html__('Champion Tips', 'doxa-website'),
             'download_type' => 'link',
             'download_link' => doxa_translation_url( 'resources/tips-for-prayer-champions/' ),
         ],
         'discussion_guide' => [
-            'title' => __('Discussion Guide', 'doxa-website'),
+            'title' => esc_html__('Discussion Guide', 'doxa-website'),
             'download_type' => 'link',
             'download_link' => doxa_translation_url( 'resources/small-group-discussion-guide/' ),
         ],
         'talking_points' => [
-            'title' => __('DOXA Campaign Talking Points', 'doxa-website'),
+            'title' => esc_html__('DOXA Campaign Talking Points', 'doxa-website'),
             'download_type' => 'link',
             'download_link' => doxa_translation_url( 'resources/talking-points/' ),
         ],
         'email_templates' => [
-            'title' => __('Email Templates', 'doxa-website'),
+            'title' => esc_html__('Email Templates', 'doxa-website'),
             'download_type' => 'link',
             'download_link' => doxa_translation_url( 'resources/email-templates/' ),
         ],
@@ -75,13 +75,13 @@ function general_resources_shortcode( $atts ) {
                             <h3 class="h4 text-center font-heading mb-auto"><?php echo esc_html( $resource['title'] ); ?></h3>
                             <div class="switcher | text-center gap-md" data-width="xs">
                                 <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
-                                    <?php echo __('View', 'doxa-website'); ?>
+                                    <?php echo esc_html__('View', 'doxa-website'); ?>
                                 </a>
 
                                 <?php if ( $resource['download_type'] === 'file' ) : ?>
 
                                     <a download target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact">
-                                        <?php echo __('Download', 'doxa-website'); ?>
+                                        <?php echo esc_html__('Download', 'doxa-website'); ?>
                                     </a>
 
                                 <?php endif; ?>
@@ -96,13 +96,13 @@ function general_resources_shortcode( $atts ) {
                             <h3 class="h5 font-weight-medium"><?php echo esc_html( $resource['title'] ); ?></h3>
                             <div class="switcher gap-md | text-center" data-width="xs">
                                 <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
-                                    <?php echo __('View', 'doxa-website'); ?>
+                                    <?php echo esc_html__('View', 'doxa-website'); ?>
                                 </a>
 
                                 <?php if ( $resource['download_type'] === 'file' ) : ?>
 
                                     <a download target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact">
-                                        <?php echo __('Download', 'doxa-website'); ?>
+                                        <?php echo esc_html__('Download', 'doxa-website'); ?>
                                     </a>
 
                                 <?php endif; ?>
