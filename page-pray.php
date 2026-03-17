@@ -49,21 +49,21 @@ get_header( 'top' ); ?>
                         <div class="step-card">
                             <div class="step-card__number">1</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Choose', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Choose', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Choose an unengaged people group you will commit to pray for daily.', 'doxa-website'); ?></p>
                             </div>
                         </div>
                         <div class="step-card">
                             <div class="step-card__number">2</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Sign up', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Sign up', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Sign up to receive daily prayer points and updates for this people group.', 'doxa-website'); ?></p>
                             </div>
                         </div>
                         <div class="step-card">
                             <div class="step-card__number">3</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Pray', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Pray', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Pray for 10 minutes a day and help provide 24-hour prayer coverage.', 'doxa-website'); ?></p>
                             </div>
                         </div>
