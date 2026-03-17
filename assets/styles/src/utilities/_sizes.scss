@@ -4,6 +4,10 @@
     width: fit-content;
 }
 
+.max-width-xs {
+    max-width: 25ch;
+    word-wrap: break-word;
+}
 .max-width-md {
     max-width: 50ch;
 }

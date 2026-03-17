@@ -53,12 +53,12 @@ get_header( 'top' ); ?>
 
 
                                     <div>
-                                        <ul class="stack" role="list">
-                                        <li>
-                                            <a class="font-size-lg <?php echo $current_link === $parent_slug ? 'current-link' : ''; ?>" href="<?php echo esc_url(get_permalink($menu_parent_id)); ?>">
-                                                <?php echo esc_html($parent_page->post_title); ?>
-                                            </a>
-                                        </li>
+                                        <ul class="stack | max-width-xs" role="list">
+                                            <li>
+                                                <a class="font-size-lg <?php echo $current_link === $parent_slug ? 'current-link' : ''; ?>" href="<?php echo esc_url(get_permalink($menu_parent_id)); ?>">
+                                                    <?php echo esc_html($parent_page->post_title); ?>
+                                                </a>
+                                            </li>
 
                                             <?php foreach ($child_pages as $child) : ?>
                                                 <li>
