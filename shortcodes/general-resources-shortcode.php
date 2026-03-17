@@ -115,6 +115,39 @@ function general_resources_shortcode( $atts ) {
 
         </div>
 
+        <script>
+            document.querySelectorAll('a[download]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var url = this.href;
+                    var filename = url.split('/').pop().split('?')[0];
+                    var a;
+                    fetch(url)
+                        .then(function(response) {
+                            if (!response.ok) throw new Error('Download failed');
+                            return response.blob();
+                        })
+                        .then(function(blob) {
+                            a = document.createElement('a');
+                            a.href = URL.createObjectURL(blob);
+                            a.download = filename;
+                            document.body.appendChild(a);
+                            a.click();
+                        })
+                        .catch(function(error) {
+                            console.error('Download failed', error);
+                            window.open(url, '_blank');
+                        })
+                        .finally(function() {
+                            if (a) {
+                                document.body.removeChild(a);
+                                URL.revokeObjectURL(a.href);
+                            }
+                        });
+                });
+            });
+        </script>
+
     <?php
     return ob_get_clean();
 }
