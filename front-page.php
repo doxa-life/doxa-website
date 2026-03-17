@@ -74,7 +74,7 @@ get_header( 'top' ); ?>
             <section class="overflow-hidden progress-section">
                 <div class="container stack stack--xl">
                     <h2 class="color-white text-center progress-section__title"><?php echo __('Who are the unengaged?', 'doxa-website'); ?></h2>
-                    <div class="switcher | concentric-circles | gap-md" data-width="lg">
+                    <div class="concentric-circles | gap-md">
                         <div class="switcher-item">
                             <div class="info-card color-brand-dark justify-center">
                                 <div class="stack stack--lg | info-card__content">

@@ -1,3 +1,7 @@
+.concentric-circles {
+  display: flex;
+  gap: var(--spacing-md);
+}
 .concentric-circles > * {
   &:nth-child(1) {
     position: relative;
@@ -88,6 +92,9 @@
     }
   }
 
+  .concentric-circles {
+    flex-direction: column;
+  }
   .concentric-circles > * {
     flex-basis: 100%;
 
