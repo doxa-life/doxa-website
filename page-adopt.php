@@ -108,7 +108,7 @@ get_header( 'top' ); ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adopt-04-Maha-Brahmin-in-India.jpg" alt="<?php echo __('Adopt an unengaged people group', 'doxa-website'); ?>">
                             </div>
                             <div class="stack stack--lg | text-card | surface-brand-lightest justify-center">
-                                <h4 class="font-heading font-size-2xl"><?php echo __('Prayer opens the door for engagement', 'doxa-website'); ?></h4>
+                                <h4 class="font-heading font-size-2xl overflow-wrap-anywhere"><?php echo __('Prayer opens the door for engagement', 'doxa-website'); ?></h4>
                                 <p><?php echo __('Adoption mobilizes 144+ daily intercessors, creating 24 hours of prayer that prepares the soil, breaks spiritual barriers, and supports workers who go. Every gospel movement begins with prayer.', 'doxa-website'); ?></p>
                             </div>
                         </div><div class="switcher | gap-md" data-width="xl">

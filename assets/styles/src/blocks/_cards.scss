@@ -326,6 +326,13 @@
         left: 0;
         transform: rotate(-8deg) translate(-10%, -10%);
     }
+
+    [lang="ru-RU"] & {
+        font-family: var(--font-family-cyrillic);
+        text-transform: lowercase;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
 }
 
 .engaged-stamp[data-engaged="false"] {
