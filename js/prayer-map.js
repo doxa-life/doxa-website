@@ -194,12 +194,12 @@
     '<div class="prayer-map-modal" role="dialog">' +
       '<button class="prayer-map-modal__close" aria-label="' + (t.close || 'Close') + '">&times;</button>' +
       '<img class="prayer-map-modal__image" src="" alt="">' +
-      '<div class="prayer-map-modal__body">' +
+      '<div class="prayer-map-modal__body stack stack--md">' +
         '<h3 class="prayer-map-modal__name"></h3>' +
         '<div class="prayer-map-modal__details"></div>' +
         '<div class="prayer-map-modal__actions">' +
-          '<a class="prayer-map-modal__btn-pray" href="#" target="_blank">' + (t.pray_for_them || 'Pray for them') + '</a>' +
-          '<a class="prayer-map-modal__btn-info" href="#" target="_blank">' + (t.info || 'Info') + '</a>' +
+          '<a class="button" href="#" target="_blank">' + (t.pray_for_them || 'Pray for them') + '</a>' +
+          '<a class="button outline" href="#" target="_blank">' + (t.info || 'Info') + '</a>' +
         '</div>' +
       '</div>' +
     '</div>';

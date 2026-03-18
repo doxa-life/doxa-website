@@ -160,7 +160,7 @@
 }
 
 .prayer-map-modal__body {
-  padding: 1.25rem;
+  padding: var(--spacing-xl) var(--spacing-md);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -178,8 +178,7 @@
 
 .prayer-map-modal__actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 0.25rem;
+  gap: var(--spacing-md);
 }
 
 .prayer-map-modal__actions a {
