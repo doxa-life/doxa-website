@@ -273,7 +273,7 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                     submitBtn.disabled = true;
                 } else {
                     messageDiv.className = 'contact-message error';
-                    messageDiv.textContent = data.message || <?php echo esc_html__('There was an error submitting your adoption. Please try again.', 'doxa-website'); ?>;
+                    messageDiv.textContent = data.message || '<?php echo esc_html__('There was an error submitting your adoption. Please try again.', 'doxa-website'); ?>';
                     messageDiv.style.display = 'block';
                     turnstile.reset();
                     turnstileToken = '';
