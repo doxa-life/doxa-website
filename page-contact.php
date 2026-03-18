@@ -100,7 +100,7 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                 return response.json().then(data => ({ ok: response.ok, data }));
             })
             .then(({ ok, data }) => {
-                if (ok && data === 'success') {
+                if (ok && data.status === 'success') {
                     messageDiv.className = 'contact-message success';
                     messageDiv.textContent = '<?php echo esc_js(__('Thank you for your message. We will get back to you soon!', 'doxa-website')); ?>';
                     messageDiv.style.display = 'block';
