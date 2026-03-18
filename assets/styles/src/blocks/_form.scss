@@ -6,9 +6,10 @@ input {
     background-color: var(--color-surface-white);
     width: 100%;
 }
-input[type="search"] {
+input[type="search"]:not(.iti__search-input) {
     padding: var(--spacing-xs) var(--spacing-lg);
     border-radius: 100px;
+    text-indent: 1.5em;
 }
 input::placeholder {
     color: var(--color-brand-secondary);
@@ -123,9 +124,6 @@ input[type=radio] {
     width: 1em;
     height: 1em;
     fill: var(--color-brand-secondary-light);
-}
-input[type=search] {
-    text-indent: 1.5em;
 }
 
 .contact-message {
