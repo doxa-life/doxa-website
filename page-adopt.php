@@ -48,21 +48,21 @@ get_header( 'top' ); ?>
                         <div class="step-card">
                             <div class="step-card__number">1</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Choose', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Choose', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Prayerfully select an unengaged people group to adopt.', 'doxa-website'); ?></p>
                             </div>
                         </div>
                         <div class="step-card">
                             <div class="step-card__number">2</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Mobilize', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Mobilize', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Raise up 144+ daily intercessors to pray 10 minutes a day.', 'doxa-website'); ?></p>
                             </div>
                         </div>
                         <div class="step-card">
                             <div class="step-card__number">3</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Partner', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Partner', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Partner through prayer, giving, and sending so that gospel access begins.', 'doxa-website'); ?></p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ get_header( 'top' ); ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adopt-04-Maha-Brahmin-in-India.jpg" alt="<?php echo __('Adopt an unengaged people group', 'doxa-website'); ?>">
                             </div>
                             <div class="stack stack--lg | text-card | surface-brand-lightest justify-center">
-                                <h4 class="font-heading font-size-2xl"><?php echo __('Prayer opens the door for engagement', 'doxa-website'); ?></h4>
+                                <h4 class="font-heading font-size-2xl overflow-wrap-anywhere"><?php echo __('Prayer opens the door for engagement', 'doxa-website'); ?></h4>
                                 <p><?php echo __('Adoption mobilizes 144+ daily intercessors, creating 24 hours of prayer that prepares the soil, breaks spiritual barriers, and supports workers who go. Every gospel movement begins with prayer.', 'doxa-website'); ?></p>
                             </div>
                         </div><div class="switcher | gap-md" data-width="xl">
@@ -154,7 +154,7 @@ get_header( 'top' ); ?>
             <section>
                 <div class="container stack stack--5xl">
                     <figure class="text-center font-size-5xl font-heading">
-                        <blockquote><?php echo __('I was a stranger and you invited me in.', 'doxa-website'); ?></blockquote>
+                        <blockquote class="overflow-wrap-anywhere"><?php echo __('I was a stranger and you invited me in.', 'doxa-website'); ?></blockquote>
                         <figcaption>- <?php echo __('Jesus', 'doxa-website'); ?></figcaption>
                     </figure>
                     <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/adopt-bottom-banner.jpg" alt="<?php echo __('Jesus', 'doxa-website'); ?>"></div>

@@ -94,7 +94,7 @@ export class UupgsList extends LitElement {
                                     <div class="stack stack--sm | card | highlighted-uupg__card">
                                         <div class="repel align-start">
                                             <img class="" src="${uupg.picture_url}" alt="${uupg.display_name}">
-                                            <p class="color-brand-lighter uppercase text-end">${uupg.wagf_region.label}</p>
+                                            <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region.label}</p>
                                         </div>
                                         <p class="">${uupg.display_name}</p>
                                         <div class="repel">

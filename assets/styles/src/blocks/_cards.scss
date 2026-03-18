@@ -273,10 +273,18 @@
     & > *:nth-child(2) {
         font-size: var(--font-size-3xl);
         --stack-spacing: var(--spacing-xs);
+
+        [lang="ru-RU"] & {
+            font-family: var(--font-family-cyrillic);
+        }
     }
 
     & > *:nth-child(3) {
         font-size: var(--font-size-lg);
+
+        [lang="ru-RU"] & {
+            font-family: var(--font-family-cyrillic);
+        }
     }
 
     p {
@@ -317,6 +325,13 @@
         right: auto;
         left: 0;
         transform: rotate(-8deg) translate(-10%, -10%);
+    }
+
+    [lang="ru-RU"] & {
+        font-family: var(--font-family-cyrillic);
+        text-transform: lowercase;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 }
 

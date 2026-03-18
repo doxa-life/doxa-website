@@ -49,21 +49,21 @@ get_header( 'top' ); ?>
                         <div class="step-card">
                             <div class="step-card__number">1</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Choose', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Choose', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Choose an unengaged people group you will commit to pray for daily.', 'doxa-website'); ?></p>
                             </div>
                         </div>
                         <div class="step-card">
                             <div class="step-card__number">2</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Sign up', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Sign up', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Sign up to receive daily prayer points and updates for this people group.', 'doxa-website'); ?></p>
                             </div>
                         </div>
                         <div class="step-card">
                             <div class="step-card__number">3</div>
                             <div class="step-card__content" data-no-action>
-                                <h2 class="step-card__title"><?php echo __('Pray', 'doxa-website'); ?></h2>
+                                <h2 class="step-card__title overflow-wrap-anywhere"><?php echo __('Pray', 'doxa-website'); ?></h2>
                                 <p><?php echo __('Pray for 10 minutes a day and help provide 24-hour prayer coverage.', 'doxa-website'); ?></p>
                             </div>
                         </div>
@@ -170,7 +170,7 @@ get_header( 'top' ); ?>
             <section>
                 <div class="container stack stack--5xl">
                     <figure class="text-center font-size-5xl font-heading">
-                        <blockquote><?php echo __('Pray earnestly to the Lord of the harvest ...that He would send laborers to the [Unengaged].', 'doxa-website'); ?></blockquote>
+                        <blockquote class="overflow-wrap-anywhere"><?php echo __('Pray earnestly to the Lord of the harvest ...that He would send laborers to the [Unengaged].', 'doxa-website'); ?></blockquote>
                         <figcaption>- <?php echo __('Jesus', 'doxa-website'); ?></figcaption>
                     </figure>
                     <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pray-03-bottom-unsplash.jpg" alt="<?php echo __('Jesus', 'doxa-website'); ?>"></div>

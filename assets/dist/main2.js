@@ -60,7 +60,7 @@ const mt=globalThis,Pt=mt.ShadowRoot&&(mt.ShadyCSS===void 0||mt.ShadyCSS.nativeS
                                     <div class="stack stack--sm | card | highlighted-uupg__card">
                                         <div class="repel align-start">
                                             <img class="" src="${r.picture_url}" alt="${r.display_name}">
-                                            <p class="color-brand-lighter uppercase text-end">${r.wagf_region.label}</p>
+                                            <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${r.wagf_region.label}</p>
                                         </div>
                                         <p class="">${r.display_name}</p>
                                         <div class="repel">

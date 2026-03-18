@@ -5,6 +5,7 @@
 $font-family-title: 'Bebas Neue', sans-serif;
 $font-family-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 $font-family-display: 'Brandon Grotesque', sans-serif;
+$font-family-cyrillic: 'Oswald', sans-serif;
 
 // Font Weights
 $font-weight-300: 300;
@@ -42,6 +43,7 @@ $line-height-loose: 2;
 :root {
   --font-family-base: #{$font-family-sans};
   --font-family-heading: #{$font-family-title};
+  --font-family-cyrillic: #{$font-family-cyrillic};
   --font-family-buttons: #{$font-family-display};
 
   --font-size-base: #{$font-size-base};

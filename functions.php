@@ -70,6 +70,7 @@ function gospel_ambition_scripts() {
     wp_enqueue_style('bebas-neue-font', get_template_directory_uri() . '/assets/fonts/BebasNeue/stylesheet.css', array(), filemtime(get_template_directory() . '/assets/fonts/BebasNeue/stylesheet.css'));
     wp_enqueue_style('brandon-grotesque-font', get_template_directory_uri() . '/assets/fonts/Brandon_Grotesque/stylesheet.css', array(), filemtime(get_template_directory() . '/assets/fonts/Brandon_Grotesque/stylesheet.css'));
     wp_enqueue_style('poppins-font', get_template_directory_uri() . '/assets/fonts/Poppins/stylesheet.css', array(), filemtime(get_template_directory() . '/assets/fonts/Poppins/stylesheet.css'));
+    wp_enqueue_style('oswald-font', 'https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap', array(), null);
     wp_enqueue_style('gospel-ambition-style', get_template_directory_uri() . '/assets/dist/style.css', array(), filemtime(get_template_directory() . '/assets/dist/style.css'));
 
     // Enqueue Google Fonts

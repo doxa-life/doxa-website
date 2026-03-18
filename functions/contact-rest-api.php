@@ -57,7 +57,6 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
     // Sanitize inputs
     $name    = sanitize_text_field( $params['name'] ?? '' );
     $email   = sanitize_email( $params['email'] ?? '' );
-    $subject = sanitize_text_field( $params['subject'] ?? 'Contact Form Submission' );
     $message = sanitize_textarea_field( $params['message'] ?? '' );
 
     // Validate required fields
@@ -65,58 +64,35 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
         return new WP_Error( 'missing_fields', 'Email and message are required', [ 'status' => 400 ] );
     }
 
-    // Load Site_Link_System if not already loaded
-    if ( ! class_exists( 'Site_Link_System' ) ) {
-        $site_link_path = WP_PLUGIN_DIR . '/disciple-tools-webform/includes/site-link-post-type.php';
-        if ( file_exists( $site_link_path ) ) {
-            require_once $site_link_path;
-            Site_Link_System::instance();
-        } else {
-            return new WP_Error( 'no_site_link', 'Site Link System not available', [ 'status' => 500 ] );
-        }
+    // Send to Prayer Tools app
+    $api_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : '';
+    $api_key = defined( 'DOXA_FORM_API_KEY' ) ? DOXA_FORM_API_KEY : '';
+
+    if ( empty( $api_url ) || empty( $api_key ) ) {
+        return new WP_Error( 'config_error', 'Prayer Tools integration not configured', [ 'status' => 500 ] );
     }
 
-    $keys = Site_Link_System::get_site_keys();
-    $crm_link = '';
-    foreach ( $keys ?? [] as $key ) {
-        if ( $key['dev_key'] === 'crm_link' ) {
-            $crm_link = $key;
-        }
-    }
-
-    if ( empty( $crm_link ) ) {
-        return new WP_Error( 'no_crm_link', 'CRM not configured', [ 'status' => 400 ] );
-    }
-
-    $var = Site_Link_System::get_site_connection_vars( $crm_link['post_id'] );
-
-    // Build note with contact form details
-    $note = "Contact Form Submission\n";
-    $note .= "Subject: " . $subject . "\n";
-    $note .= "Message: " . $message;
-
-    // Send to CRM
-    $crm_response = wp_remote_post( 'https://' . $var['url'] . '/wp-json/dt-posts/v2/contacts?check_for_duplicates=contact_email', [
+    $response = wp_remote_post( rtrim( $api_url, '/' ) . '/api/contact', [
         'body'    => wp_json_encode( [
-            'title'            => $name ?: $email,
-            'contact_email'    => [ [ 'value' => $email ] ],
-            'sources'          => [ 'values' => [ [ 'value' => 'doxa_contact_form' ] ] ],
-            'notes'            => [ $note ],
-            'tags'             => [ 'values' => [ [ 'value' => 'contact_form' ] ] ],
+            'name'    => $name,
+            'email'   => $email,
+            'message' => $message,
         ] ),
         'headers' => [
-            'Authorization' => 'Bearer ' . $var['transfer_token'],
-            'Content-Type'  => 'application/json',
+            'X-API-Key'    => $api_key,
+            'Content-Type' => 'application/json',
         ],
+        'timeout' => 15,
     ] );
 
-    if ( is_wp_error( $crm_response ) ) {
-        return new WP_Error( 'crm_error', 'Failed to send message. Please try again.', [ 'status' => 500 ] );
+    if ( is_wp_error( $response ) ) {
+        return new WP_Error( 'api_error', 'Failed to send message. Please try again.', [ 'status' => 500 ] );
     }
 
-    $response_code = wp_remote_retrieve_response_code( $crm_response );
-    if ( $response_code !== 200 ) {
-        return new WP_Error( 'crm_error', 'Failed to send message. Please try again.', [ 'status' => 500 ] );
+    $response_code = wp_remote_retrieve_response_code( $response );
+    if ( $response_code < 200 || $response_code >= 300 ) {
+        return new WP_Error( 'api_error', 'Failed to send message. Please try again.', [ 'status' => 500 ] );
     }
-    return new WP_REST_Response( 'success', 200 );
+
+    return new WP_REST_Response( [ 'status' => 'success' ], 200 );
 }
