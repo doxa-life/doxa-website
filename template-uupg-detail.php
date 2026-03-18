@@ -56,7 +56,34 @@ $pray_url .= '?source=doxalife';
                 <div class="stack stack--2xl">
                     <div class="card switcher" padding-small>
                         <div class="center | grow-none">
-                            <img class="uupg__image" data-size="medium" src="<?php echo esc_attr( $uupg['image_url'] ); ?>" alt="<?php echo isset( $uupg['name'] ) ? esc_attr( $uupg['name'] ) : 'People Group Photo'; ?>">
+                            <div class="position-relative">
+                                <img class="uupg__image" data-size="medium" src="<?php echo esc_attr( $uupg['image_url'] ); ?>" alt="<?php echo isset( $uupg['name'] ) ? esc_attr( $uupg['name'] ) : 'People Group Photo'; ?>">
+
+                                <?php if ( isset( $uupg['picture_credit'] ) && is_array( $uupg['picture_credit'] ) ) : ?>
+
+                                    <button class="info__button" id="info-button" type="button" aria-haspopup="dialog" aria-expanded="false" data-state="closed" aria-label="Photo credit">
+                                        <span class="info__icon" aria-hidden="true"></span>
+                                        <div class="info__content">
+                                            <?php foreach ( $uupg['picture_credit'] as $credit ) : ?>
+                                                <?php if ( !is_null( $credit['link'] ) ) : ?>
+                                                    <a class="light-link" href="<?php echo $credit['link']; ?>" target="_blank"><?php echo $credit['text']; ?></a>
+                                                <?php else : ?>
+                                                    <span><?php echo $credit['text']; ?></span>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </button>
+
+                                    <script>
+                                        document.getElementById('info-button').addEventListener('click', function() {
+                                            this.setAttribute('data-state', this.getAttribute('data-state') === 'open' ? 'closed' : 'open');
+                                            this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                                        });
+                                    </script>
+
+                                <?php endif; ?>
+
+                            </div>
                             <div class="engaged-stamp" data-engaged="<?php echo $uupg['imb_engagement_status']['value'] === 'engaged' ? 'true' : 'false'; ?>">
                                 <?php if ( $uupg['imb_engagement_status']['value'] === 'engaged' ) : ?>
                                     <span><?php echo __('Engaged', 'doxa-website'); ?></span>
