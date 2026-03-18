@@ -198,8 +198,8 @@
         '<h3 class="prayer-map-modal__name"></h3>' +
         '<div class="prayer-map-modal__details"></div>' +
         '<div class="prayer-map-modal__actions">' +
-          '<a class="button" href="#" target="_blank">' + (t.pray_for_them || 'Pray for them') + '</a>' +
-          '<a class="button outline" href="#" target="_blank">' + (t.info || 'Info') + '</a>' +
+          '<a id="prayer-map-modal__btn-pray" class="button" href="#" target="_blank">' + (t.pray_for_them || 'Pray for them') + '</a>' +
+          '<a id="prayer-map-modal__btn-info" class="button outline" href="#" target="_blank">' + (t.info || 'Info') + '</a>' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -208,8 +208,8 @@
   var modalImage = overlay.querySelector('.prayer-map-modal__image');
   var modalName = overlay.querySelector('.prayer-map-modal__name');
   var modalDetails = overlay.querySelector('.prayer-map-modal__details');
-  var btnPray = overlay.querySelector('.prayer-map-modal__btn-pray');
-  var btnInfo = overlay.querySelector('.prayer-map-modal__btn-info');
+  var btnPray = overlay.querySelector('#prayer-map-modal__btn-pray');
+  var btnInfo = overlay.querySelector('#prayer-map-modal__btn-info');
 
   function closeModal() {
     overlay.classList.remove('is-visible');
