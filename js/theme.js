@@ -159,10 +159,10 @@
 
             const numberOfPeopleGroups = 20;
             const language = getLanguage();
-            const response = await fetch('https://uupg.doxa.life/wp-json/dt-public/disciple-tools-people-groups-api/v1/list?lang=' + language);
+            const response = await fetch('https://pray.doxa.life/api/people-groups/list?lang=' + language);
             const data = await response.json();
 
-            const peopleGroups = data.posts.filter(group => group.has_photo === '1')
+            const peopleGroups = data.posts.filter(group => group.has_photo)
             peopleGroups.sort(() => Math.random() - 0.5)
 
             let hasDeafPeopleGroup = false;
