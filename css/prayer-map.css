@@ -5,6 +5,7 @@
   min-height: 400px;
   border-radius: 0.5rem;
   overflow: hidden;
+  font: var(--font-size-sm) var(--font-family-base);
 }
 
 #prayer-map .mapboxgl-canvas {
@@ -99,7 +100,6 @@
   cursor: pointer;
   gap: 0.125rem;
   font-family: var(--font-family-base, 'Poppins', sans-serif);
-  font-size: 1rem;
   color: var(--color-text-on-white, #2a332a);
 }
 
@@ -108,7 +108,7 @@
 }
 
 .prayer-map-search__item-sub {
-  font-size: 0.8125rem;
+  font-size: 0.8125em;
   color: var(--color-brand-lighter, #798279);
 }
 
@@ -229,6 +229,10 @@
 
 .prayer-map-modal__close:hover {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.mapboxgl-ctrl-attrib-inner {
+  font-size: 0.8125em;
 }
 
 /* Mobile: bottom sheet style */

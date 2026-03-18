@@ -56,7 +56,7 @@
   var searchWrap = document.createElement('div');
   searchWrap.className = 'prayer-map-search';
   searchWrap.innerHTML =
-    '<input class="prayer-map-search__input" type="text" placeholder="' + (t.search_placeholder || 'Search people groups or locations') + '" autocomplete="off">' +
+    '<input class="prayer-map-search__input" type="search" placeholder="' + (t.search_placeholder || 'Search people groups or locations') + '" autocomplete="off">' +
     '<div class="prayer-map-search__results"></div>';
   container.appendChild(searchWrap);
 
