@@ -94,13 +94,13 @@ if ( $lang_code !== 'en' ) {
                 </div>
             </section>
             <section class="container stack stack--3xl">
-                <h2 class="text-center"><?php echo esc_html__('Your Promotional Resources', 'doxa-website'); ?></h2>
+                <h2 class="text-center"><?php echo esc_html__('Your Adoption Resources', 'doxa-website'); ?></h2>
 
                 <?php
 
                     $s3_url = 'https://s3.doxa.life/';
                     $image_url = get_template_directory_uri() . '/assets/images/';
-                    $promotional_resources = [
+                    $adoption_resources = [
                         'adoption_certificate' => [
                             'title' => esc_html__('Adoption Certificate', 'doxa-website'),
                             'image_url' => $image_url . 'certificate.png',
@@ -141,7 +141,7 @@ if ( $lang_code !== 'en' ) {
 
                     <div class="grid" data-width-md>
 
-                        <?php foreach ( $promotional_resources as $resource ) : ?>
+                        <?php foreach ( $adoption_resources as $resource ) : ?>
 
                             <div class="card | resource-card | stack stack--xs | align-center rounded-md" padding-small>
                                 <div class="resource-card__image" style="<?php echo isset( $resource['style'] ) ? esc_attr( $resource['style'] ) : ''; ?>"><img src="<?php echo esc_attr( $resource['image_url'] ); ?>" alt="<?php echo esc_attr( $resource['title'] ); ?>"></div>

@@ -264,7 +264,7 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                                 display: block;
                             }
                         </style>
-                        <a href="<?php echo esc_url( doxa_translation_url( 'research/' ) . $slug . '/resources' ); ?>" class="button compact | resources-button"><?php echo esc_html__('View Promotional Resources', 'doxa-website'); ?></a>
+                        <a href="<?php echo esc_url( doxa_translation_url( 'research/' ) . $slug . '/resources' ); ?>" class="button compact | resources-button"><?php echo esc_html__('View Adoption Resources', 'doxa-website'); ?></a>
                     `;
                     messageDiv.style.display = 'block';
                     form.reset();
