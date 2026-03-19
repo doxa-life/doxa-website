@@ -1,0 +1,12 @@
+@media print {
+    header,
+    footer,
+    nav {
+        display: none !important;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+}
