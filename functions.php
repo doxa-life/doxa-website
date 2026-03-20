@@ -1743,3 +1743,17 @@ function doxa_remove_langs_link( $url, $slug, $locale ) {
     }
     return $url;
 }
+
+function get_doxa_video_url( $lang_code = null ) {
+    if ( empty( $lang_code ) ) {
+        $lang_code = doxa_get_language_code();
+    }
+
+    if ($lang_code === 'none') {
+        $video_url = 'https://player.vimeo.com/video/1174779547?h=8c00c1c764&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
+    } else {
+        $video_url = 'https://player.vimeo.com/video/1143355099?h=39f8c1f131&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479';
+    }
+
+    return $video_url;
+}

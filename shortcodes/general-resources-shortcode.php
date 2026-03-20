@@ -37,7 +37,7 @@ function general_resources_shortcode( $atts ) {
             'image_url' => $image_url . 'video.png',
             'style' => 'width: 80%; padding-top: 10%; padding-bottom: 10%;',
             'download_type' => 'link',
-            'download_link' => 'https://vimeo.com/1143355099/39f8c1f131?fl=pl&fe=vl',
+            'download_link' => get_doxa_video_url(),
         ],
     ];
 
@@ -101,53 +101,50 @@ function general_resources_shortcode( $atts ) {
     ob_start();
     ?>
 
-        <div class="container stack stack--3xl">
-            <div class="stack stack--2xl">
-                <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'sm' : 'md'; ?>>
-                    <?php foreach ( $general_resources as $resource ) : ?>
-                        <div class="card | resource-card | stack stack--xs | align-center rounded-md" padding-small>
-                            <div class="resource-card__image" style="<?php echo isset( $resource['style'] ) ? esc_attr( $resource['style'] ) : ''; ?>"><img src="<?php echo esc_attr( $resource['image_url'] ); ?>" alt="<?php echo esc_attr( $resource['title'] ); ?>"></div>
-                            <h3 class="h4 text-center font-heading mb-auto"><?php echo esc_html( $resource['title'] ); ?></h3>
-                            <div class="switcher | text-center gap-md" data-width="xs">
-                                <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
-                                    <?php echo esc_html__('View', 'doxa-website'); ?>
+        <div class="stack stack--2xl">
+            <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'sm' : 'md'; ?>>
+                <?php foreach ( $general_resources as $resource ) : ?>
+                    <div class="card | resource-card | stack stack--xs | align-center rounded-md" padding-small>
+                        <div class="resource-card__image" style="<?php echo isset( $resource['style'] ) ? esc_attr( $resource['style'] ) : ''; ?>"><img src="<?php echo esc_attr( $resource['image_url'] ); ?>" alt="<?php echo esc_attr( $resource['title'] ); ?>"></div>
+                        <h3 class="h4 text-center font-heading mb-auto"><?php echo esc_html( $resource['title'] ); ?></h3>
+                        <div class="switcher | text-center gap-md" data-width="xs">
+                            <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
+                                <?php echo esc_html__('View', 'doxa-website'); ?>
+                            </a>
+
+                            <?php if ( $resource['download_type'] === 'file' ) : ?>
+
+                                <a download target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact">
+                                    <?php echo esc_html__('Download', 'doxa-website'); ?>
                                 </a>
 
-                                <?php if ( $resource['download_type'] === 'file' ) : ?>
+                            <?php endif; ?>
 
-                                    <a download target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact">
-                                        <?php echo esc_html__('Download', 'doxa-website'); ?>
-                                    </a>
-
-                                <?php endif; ?>
-
-                            </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'md' : 'lg'; ?>>
-                    <?php foreach ( $no_image_resources as $resource ) : ?>
-                        <div class="card | resource-card | repel | align-center rounded-md" padding-small>
-                            <h3 class="h5 font-weight-medium"><?php echo esc_html( $resource['title'] ); ?></h3>
-                            <div class="switcher gap-md | text-center" data-width="xs">
-                                <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
-                                    <?php echo esc_html__('View', 'doxa-website'); ?>
-                                </a>
-
-                                <?php if ( $resource['download_type'] === 'file' ) : ?>
-
-                                    <a download target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact">
-                                        <?php echo esc_html__('Download', 'doxa-website'); ?>
-                                    </a>
-
-                                <?php endif; ?>
-
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
+            <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'md' : 'lg'; ?>>
+                <?php foreach ( $no_image_resources as $resource ) : ?>
+                    <div class="card | resource-card | repel | align-center rounded-md" padding-small>
+                        <h3 class="h5 font-weight-medium"><?php echo esc_html( $resource['title'] ); ?></h3>
+                        <div class="switcher gap-md | text-center" data-width="xs">
+                            <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
+                                <?php echo esc_html__('View', 'doxa-website'); ?>
+                            </a>
 
+                            <?php if ( $resource['download_type'] === 'file' ) : ?>
+
+                                <a download target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact">
+                                    <?php echo esc_html__('Download', 'doxa-website'); ?>
+                                </a>
+
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
 
         <script>

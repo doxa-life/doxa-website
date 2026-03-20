@@ -189,7 +189,7 @@ get_header( 'top' ); ?>
         <div class="video-modal-overlay" data-state="closed"></div>
         <div class="video-modal" data-state="closed">
             <div style="padding:41.89% 0 0 0;position:relative;">
-                <iframe id="vimeo-player" src="https://player.vimeo.com/video/1143355099?h=39f8c1f131&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Doxa Video"></iframe>
+                <iframe id="vimeo-player" src="<?php echo esc_url( get_doxa_video_url() ); ?>" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Doxa Video"></iframe>
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
