@@ -173,6 +173,7 @@ if ( $lang_code !== 'en' ) {
 </div>
 
 <script>
+/* Also in general-resources-shortcode.php */
 document.querySelectorAll('a[download]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         e.preventDefault();

@@ -4,6 +4,7 @@ function general_resources_shortcode( $atts ) {
 
     $atts = shortcode_atts( array(
         'layout' => 'on-sidebar-page',
+        'use_documents' => false,
     ), $atts );
 
     if ( $atts['layout'] === 'on-sidebar-page' ) {
@@ -63,6 +64,40 @@ function general_resources_shortcode( $atts ) {
         ],
     ];
 
+    $document_resources_no_image = [
+        'introduction_2025' => [
+            'title' => esc_html__('Introduction 2025', 'doxa-website'),
+            'download_type' => 'file',
+            'download_link' => $s3_url . "documents/introduction-2025-$lang_code.pptx",
+        ],
+        'vision_and_values' => [
+            'title' => esc_html__('Vision and Values', 'doxa-website'),
+            'download_type' => 'file',
+            'download_link' => $s3_url . "documents/vision-and-values-$lang_code.docx",
+        ],
+        'definitions' => [
+            'title' => esc_html__('Definitions', 'doxa-website'),
+            'download_type' => 'file',
+            'download_link' => $s3_url . "documents/definitions-$lang_code.docx",
+        ],
+        'investment_policy_statement' => [
+            'title' => esc_html__('Doxa Endowment Investment Policy Statement', 'doxa-website'),
+            'download_type' => 'file',
+            'download_link' => $s3_url . "documents/doxa-endowment-policy-$lang_code.docx",
+        ],
+        'initial_proposal' => [
+            'title' => esc_html__('Initial Proposal', 'doxa-website'),
+            'download_type' => 'file',
+            'download_link' => $s3_url . "documents/initial-proposal-$lang_code.pdf",
+        ],
+    ];
+
+    if ( $atts['use_documents'] ) {
+        $no_image_resources = $document_resources_no_image;
+    } else {
+        $no_image_resources = $general_resources_no_image;
+    }
+
     ob_start();
     ?>
 
@@ -91,7 +126,7 @@ function general_resources_shortcode( $atts ) {
                     <?php endforeach; ?>
                 </div>
                 <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'md' : 'lg'; ?>>
-                    <?php foreach ( $general_resources_no_image as $resource ) : ?>
+                    <?php foreach ( $no_image_resources as $resource ) : ?>
                         <div class="card | resource-card | repel | align-center rounded-md" padding-small>
                             <h3 class="h5 font-weight-medium"><?php echo esc_html( $resource['title'] ); ?></h3>
                             <div class="switcher gap-md | text-center" data-width="xs">
@@ -116,6 +151,7 @@ function general_resources_shortcode( $atts ) {
         </div>
 
         <script>
+            /* Also in template-uupg-resources.php */
             document.querySelectorAll('a[download]').forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
