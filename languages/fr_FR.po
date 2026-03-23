@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
 "POT-Creation-Date: 2026-03-11T09:17:06+00:00\n"
-"PO-Revision-Date: 2026-03-11 11:05+0000\n"
-"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
+"PO-Revision-Date: 2026-03-23 15:19+0000\n"
+"Last-Translator: Weblate Admin <translator@disciple.tools>\n"
 "Language-Team: French <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -329,8 +329,8 @@ msgstr "Adoptez un groupe ethnique non ciblés"
 msgid ""
 "A church-led commitment to pray, give, and send so that gospel access begins"
 msgstr ""
-"Un engagement pris par l'Église à prier, donner et envoyer afin que "
-"l'Évangile soit accessible à tous"
+"Un engagement pris par une assemblée locale à prier, donner et envoyer afin "
+"que l'Évangile soit accessible à tous"
 
 #: page-adopt.php:25
 msgid "Adoption Goal"
@@ -341,8 +341,8 @@ msgid ""
 "Every unengaged people group adopted by a church committed to prayer, "
 "giving, and sending"
 msgstr ""
-"Chaque groupe ethnique non ciblés adopté par une église engagée dans la "
-"prière, le don et l'envoi"
+"Chaque groupe ethnique non ciblé adopté par une église locale engagée dans "
+"la prière, la libéralité et l’envoi des ouvriers"
 
 #: page-adopt.php:29 page-pray.php:30
 msgid "Current Status"
@@ -371,18 +371,18 @@ msgstr "Mobiliser"
 #: page-adopt.php:59
 msgid "Raise up 144+ daily intercessors to pray 10 minutes a day."
 msgstr ""
-"Recrutez plus de 144 intercesseurs quotidiens pour prier 10 minutes par jour."
+"Recruter plus de 144 intercesseurs quotidiens pour prier 10 minutes par jour."
 
 #: page-adopt.php:65
 msgid "Partner"
-msgstr "Partenaire"
+msgstr "Partenariat"
 
 #: page-adopt.php:66
 msgid ""
 "Partner through prayer, giving, and sending so that gospel access begins."
 msgstr ""
-"Collaborez par la prière, le don et l'envoi afin que l'accès à l'Évangile "
-"commence."
+"Collaborez par la prière, la libéralité et l'envoi afin que l'accès à "
+"l'Évangile commence."
 
 #: page-adopt.php:70 page-pray.php:71
 msgid "Get Started"
@@ -394,7 +394,9 @@ msgstr "Guide et ressources sur l'adoption"
 
 #: page-adopt.php:80
 msgid "Step-by-step guidance for churches adopting a people group"
-msgstr "Guide étape par étape pour les églises qui adoptent un groupe ethnique"
+msgstr ""
+"Guide étape par étape pour les assemblée locale qui adoptent un groupe "
+"ethnique"
 
 #: page-adopt.php:81
 msgid "Tools to mobilize prayer and participation across your congregation"
@@ -418,7 +420,7 @@ msgstr "Votre guide de prière quotidien"
 
 #: page-adopt.php:96
 msgid "Why adoption matters"
-msgstr "Pourquoi l'adoption est importante"
+msgstr "Pourquoi l’adoption est-elle importante"
 
 #: page-adopt.php:102
 msgid "They have no gospel access"
@@ -430,10 +432,10 @@ msgid ""
 "known believers. Adoption helps ensure they are finally seen, prayed for, "
 "and intentionally pursued with the gospel."
 msgstr ""
-"Les groupes ethniques non ciblés n'ont pas de missionnaires, pas d'églises "
-"et souvent pas de croyants connus. L'adoption permet de s'assurer qu'ils "
-"soient enfin pris en compte, qu'on prie pour eux et qu'on leur présente "
-"délibérément l'Évangile."
+"Les groupes ethniques non évangélisés n’ont ni missionnaires, ni églises "
+"locales et souvent pas de croyants connus. L'adoption permet de s'assurer "
+"qu'ils soient enfin pris en compte, qu'on prie pour eux et qu'on leur "
+"présente délibérément l'Évangile."
 
 #: page-adopt.php:111
 msgid "Prayer opens the door for engagement"
@@ -460,10 +462,10 @@ msgid ""
 "giving, and sending – so that a people group moves from unengaged to "
 "engaged, and ultimately becomes a worshipping community for Jesus."
 msgstr ""
-"L'adoption invite l'église locale à participer de manière significative - en "
-"priant, en donnant et en envoyant - afin qu'un groupe ethnique passe de "
-"l'état de non ciblé à celui de groupe ciblé, et devienne finalement une "
-"communauté qui adore Jésus."
+"L’adoption invite l’église locale à participer de manière significative - en "
+"priant, en contribuant et en envoyant - afin qu’un groupe ethnique passe de "
+"l’état ‘non ciblé’ à celui de ‘ciblé, et devienne finalement une communauté "
+"qui adore Jésus."
 
 #: page-adopt.php:129 page-pray.php:131
 msgid "Choose a people group"
@@ -475,7 +477,7 @@ msgid ""
 "or location below."
 msgstr ""
 "Sélectionnez, parmi les groupes proposés ci-dessous, un groupe ethnique non "
-"ciblés, mis en évidence, ou recherchez un groupe ou un lieu spécifique ci-"
+"ciblé proposé ci-dessous, ou recherchez un groupe ou un lieu spécifique ci-"
 "dessous."
 
 #: page-adopt.php:138 page-pray.php:148 page-uupgs.php:23
@@ -528,7 +530,7 @@ msgstr "Nom"
 
 #: page-contact.php:27
 msgid "Enter your name"
-msgstr "Entrez votre nom"
+msgstr "Saisir votre nom"
 
 #: page-contact.php:30 template-adoption-form.php:98
 msgid "Email"
@@ -536,7 +538,7 @@ msgstr "Email"
 
 #: page-contact.php:31
 msgid "Enter your email"
-msgstr "Entrez votre adresse e-mail"
+msgstr "Saisir votre adresse Courriel/email"
 
 #: page-contact.php:34
 msgid "Message"
@@ -544,7 +546,7 @@ msgstr "Message"
 
 #: page-contact.php:35
 msgid "Enter your message"
-msgstr "Entrez votre message"
+msgstr "Saisir votre message"
 
 #: page-contact.php:45 page-contact.php:118 page-contact.php:126
 #: template-adoption-form.php:147 template-adoption-form.php:248
@@ -712,7 +714,7 @@ msgstr "UUPGS"
 
 #: page-uupgs.php:18
 msgid "Find a UUPG"
-msgstr "Trouver un UUPG"
+msgstr "Trouver un peuple non ciblé"
 
 #: page-uupgs.php:27
 msgid "Search names, locations, religions..."
@@ -861,7 +863,7 @@ msgstr "Nom"
 
 #: template-adoption-form.php:99
 msgid "Enter your Email"
-msgstr "Entrez votre adresse e-mail"
+msgstr "Saisir votre adresse Courriel/email"
 
 #: template-adoption-form.php:102
 msgid "Phone"
@@ -895,7 +897,7 @@ msgstr "Église partenaire"
 
 #: template-adoption-form.php:120
 msgid "Enter Church/Group Name"
-msgstr "Entrez le nom de l'église/du groupe"
+msgstr "Saisir le nom de l'église/du groupe"
 
 #: template-adoption-form.php:121
 msgid "Church/Group Name"
@@ -1002,7 +1004,7 @@ msgstr "Disciple et multiplication d'églises"
 
 #: template-uupg-detail.php:125
 msgid "People committed to praying"
-msgstr "Les personnes engagées dans la prière"
+msgstr "Personnes engagées dans la prière"
 
 #: template-uupg-detail.php:132
 msgid "Sign up to pray"
@@ -1010,7 +1012,7 @@ msgstr "Inscrivez-vous pour prier"
 
 #: template-uupg-detail.php:137
 msgid "churches / individuals have adopted this people group"
-msgstr "des églises / des particuliers ont adopté ce groupe ethnique"
+msgstr "églises / particuliers ont adopté ce groupe ethnique"
 
 #: template-uupg-detail.php:153
 msgid "Adopt people group"
