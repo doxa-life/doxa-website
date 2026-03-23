@@ -96,7 +96,7 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                             </div>
                             <div class="">
                                 <label for="contact-email"><?php echo __('Email', 'doxa-website'); ?></label>
-                                <input type="email" id="contact-email" name="contact_email" required placeholder="<?php echo __('Enter your Email', 'doxa-website'); ?>">
+                                <input type="email" id="contact-email" name="contact_email" required placeholder="<?php echo __('Enter your email', 'doxa-website'); ?>">
                             </div>
                             <div class="">
                                 <label for="phone"><?php echo __('Phone', 'doxa-website'); ?></label>
