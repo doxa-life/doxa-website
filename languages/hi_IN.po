@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
-"POT-Creation-Date: 2026-03-11T09:17:06+00:00\n"
-"PO-Revision-Date: 2026-03-11 11:05+0000\n"
+"POT-Creation-Date: 2026-03-23T17:00:31+00:00\n"
+"PO-Revision-Date: 2026-03-23 17:20+0000\n"
 "Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
 "Language-Team: Hindi <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/hi_IN/>\n"
@@ -254,51 +254,51 @@ msgstr ""
 "पहुँचाने के लिए संपूर्ण चर्च के साथ साझेदार हैं – जब तक हर राष्ट्र के लोग यीशु की आराधना नहीं "
 "करते और केवल वही सारी महिमा प्राप्त नहीं करता।"
 
-#: functions.php:87
+#: functions.php:89
 msgid "Click again to interact with map"
 msgstr "नक्शे के साथ इंटरैक्ट करने के लिए फिर से क्लिक करें।"
 
-#: functions.php:115
+#: functions.php:117
 msgid "No prayer coverage"
 msgstr "प्रार्थना का प्रसारण नहीं"
 
-#: functions.php:116
+#: functions.php:118
 msgid "Has prayer coverage"
 msgstr "क्या इसमें प्रार्थना कवरेज है"
 
-#: functions.php:117
+#: functions.php:119
 msgid "Pray for them"
 msgstr "उनके लिए प्रार्थना करें"
 
-#: functions.php:118
+#: functions.php:120
 msgid "Info"
 msgstr "जानकारी"
 
-#: functions.php:119
+#: functions.php:121
 msgid "Language"
 msgstr "भाषा"
 
-#: functions.php:120 template-uupg-detail.php:174
+#: functions.php:122 template-uupg-detail.php:211
 msgid "Country"
 msgstr "देश"
 
-#: functions.php:121 template-uupg-detail.php:179
+#: functions.php:123 template-uupg-detail.php:216
 msgid "Population"
 msgstr "जनसँख्या"
 
-#: functions.php:122
+#: functions.php:124
 msgid "Prayer Coverage"
 msgstr "प्रार्थना कवरेज"
 
-#: functions.php:123
+#: functions.php:125
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: functions.php:124
+#: functions.php:126
 msgid "Close"
 msgstr "बन्द करें"
 
-#: functions.php:125
+#: functions.php:127
 msgid "Search people groups or locations"
 msgstr "लोगों के समूहों या स्थानों को खोजें"
 
@@ -516,7 +516,7 @@ msgstr "अपना नाम दर्ज करें"
 msgid "Email"
 msgstr "ईमेल"
 
-#: page-contact.php:31
+#: page-contact.php:31 template-adoption-form.php:99
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
@@ -529,12 +529,12 @@ msgid "Enter your message"
 msgstr "अपना संदेश दर्ज करें"
 
 #: page-contact.php:45 page-contact.php:118 page-contact.php:126
-#: template-adoption-form.php:147 template-adoption-form.php:248
-#: template-adoption-form.php:256
+#: template-adoption-form.php:146 template-adoption-form.php:281
+#: template-adoption-form.php:289
 msgid "Submit"
 msgstr "जमा करें"
 
-#: page-contact.php:82 template-adoption-form.php:206
+#: page-contact.php:82 template-adoption-form.php:205
 msgid "Submitting..."
 msgstr "सबमिट हो रहा है..।"
 
@@ -558,7 +558,7 @@ msgstr "प्रार्थना के माध्यम से सुस�
 msgid "Prayer Goal"
 msgstr "प्रार्थना का लक्ष्य"
 
-#: page-pray.php:26 template-uupg-detail.php:130
+#: page-pray.php:26 template-uupg-detail.php:167
 msgid "24-Hour Prayer Coverage"
 msgstr "24-घंटे की प्रार्थना कवरेज"
 
@@ -709,6 +709,66 @@ msgstr "प्रति पृष्ठ"
 msgid "Doxa Page"
 msgstr "डॉक्सा पेज"
 
+#: shortcodes/general-resources-shortcode.php:22
+msgid "DOXA Playbook"
+msgstr "डॉक्सा प्लेबुक"
+
+#: shortcodes/general-resources-shortcode.php:29
+msgid "DOXA Playbook Slides"
+msgstr "डॉक्सा प्लेबुक स्लाइड्स"
+
+#: shortcodes/general-resources-shortcode.php:36
+msgid "DOXA Promo Video"
+msgstr "डॉक्सा प्रमो वीडियो"
+
+#: shortcodes/general-resources-shortcode.php:46
+msgid "Champion Tips"
+msgstr "विजेता टिप्स"
+
+#: shortcodes/general-resources-shortcode.php:51
+msgid "Discussion Guide"
+msgstr "चर्चा मार्गदर्शिका"
+
+#: shortcodes/general-resources-shortcode.php:56
+msgid "DOXA Campaign Talking Points"
+msgstr "डॉक्सा अभियान के मुख्य बिंदु"
+
+#: shortcodes/general-resources-shortcode.php:61
+msgid "Email Templates"
+msgstr "ईमेल टेम्पलेट्स"
+
+#: shortcodes/general-resources-shortcode.php:69
+msgid "Introduction 2025"
+msgstr "परिचय 2025"
+
+#: shortcodes/general-resources-shortcode.php:74
+msgid "Vision and Values"
+msgstr "दृष्टि और मूल्य"
+
+#: shortcodes/general-resources-shortcode.php:79
+msgid "Definitions"
+msgstr "परिभाषाएँ"
+
+#: shortcodes/general-resources-shortcode.php:84
+msgid "Doxa Endowment Investment Policy Statement"
+msgstr "डॉक्सा अनुदान निवेश नीति विवरण"
+
+#: shortcodes/general-resources-shortcode.php:89
+msgid "Initial Proposal"
+msgstr "प्रारंभिक प्रस्ताव"
+
+#: shortcodes/general-resources-shortcode.php:112
+#: shortcodes/general-resources-shortcode.php:133
+#: template-uupg-resources.php:150
+msgid "View"
+msgstr "देखें"
+
+#: shortcodes/general-resources-shortcode.php:118
+#: shortcodes/general-resources-shortcode.php:139
+#: template-uupg-resources.php:151
+msgid "Download"
+msgstr "डाउनलोड"
+
 #: template-adoption-form.php:17 template-uupg-detail.php:30
 #: template-uupg-resources.php:29
 msgid "People Group Not Found"
@@ -817,10 +877,6 @@ msgstr "पहला नाम"
 msgid "Last Name"
 msgstr "अंतिम नाम"
 
-#: template-adoption-form.php:99
-msgid "Enter your Email"
-msgstr "अपना ईमेल दर्ज करें"
-
 #: template-adoption-form.php:102
 msgid "Phone"
 msgstr "फ़ोन"
@@ -837,61 +893,81 @@ msgstr "फ़ोन नंबर बहुत छोटा है"
 msgid "Phone number is too long"
 msgstr "फ़ोन नंबर बहुत लंबा है"
 
-#: template-adoption-form.php:113
+#: template-adoption-form.php:112
 msgid "Role"
 msgstr "भूमिका"
 
-#: template-adoption-form.php:114
+#: template-adoption-form.php:113
 msgid "Example: Pastor, Missions Pastor, Elder, Volunteer Leader etc."
 msgstr "उदाहरण: पादरी, मिशन पादरी, एल्डर, स्वयंसेवक नेता आदि।"
 
-#: template-adoption-form.php:118
+#: template-adoption-form.php:117
 msgid "Partnering Church"
 msgstr "सहभागी चर्च"
+
+#: template-adoption-form.php:119
+msgid "Church/Group Name"
+msgstr "चर्च/समूह का नाम"
 
 #: template-adoption-form.php:120
 msgid "Enter Church/Group Name"
 msgstr "चर्च/समूह का नाम दर्ज करें"
 
-#: template-adoption-form.php:121
-msgid "Church/Group Name"
-msgstr "चर्च/समूह का नाम"
-
-#: template-adoption-form.php:125
+#: template-adoption-form.php:124
 msgid "I am happy for this church name to appear publicly on this site."
 msgstr "मैं इस चर्च का नाम इस साइट पर सार्वजनिक रूप से दिखने के लिए खुश हूँ।"
 
-#: template-adoption-form.php:128
+#: template-adoption-form.php:127
 msgid "Location of Church/Group"
 msgstr "चर्च/समूह का स्थान"
 
-#: template-adoption-form.php:130
+#: template-adoption-form.php:129
 msgid "Select Country"
 msgstr "देश चुनें"
 
-#: template-adoption-form.php:139
+#: template-adoption-form.php:138
 msgid ""
 "I/my church/group commits to adopting this People Group for prayer, "
 "partnership and support."
 msgstr ""
 "मैं/मेरा चर्च/समूह इस जनसमूह को प्रार्थना, साझेदारी और समर्थन के लिए अपनाने का वचन देता हूँ।"
 
-#: template-adoption-form.php:143
+#: template-adoption-form.php:142
 msgid ""
 "I give permission for DOXA to connect me with others adopting this people "
 "group."
 msgstr ""
 "मैं DOXA को इस जनसमूह को गोद लेने वाले अन्य लोगों से मेरा संपर्क कराने की अनुमति देता हूँ।"
 
-#: template-adoption-form.php:199
+#: template-adoption-form.php:198
 msgid "Please confirm your adoption commitment."
 msgstr "कृपया अपने दत्तक ग्रहण की प्रतिबद्धता की पुष्टि करें।"
 
-#: template-adoption-form.php:235
+#: template-adoption-form.php:244
+msgid "Success! Form submitted."
+msgstr "सफल! फ़ॉर्म सबमिट हो गया।"
+
+#: template-adoption-form.php:246
+msgid ""
+"To confirm your adoption, please verify your email address. We sent a "
+"verification email to"
+msgstr ""
+"आपके गोद लेने की पुष्टि करने के लिए, कृपया अपना ईमेल पता सत्यापित करें। हमने एक सत्यापन "
+"ईमेल भेजा है।"
+
+#: template-adoption-form.php:250
+msgid "Don't see the email? Check your spam folder."
+msgstr "ईमेल नहीं दिख रहा है? अपना स्पैम फ़ोल्डर देखें।"
+
+#: template-adoption-form.php:258
 msgid "Thank you for your adoption commitment! We will be in touch soon."
 msgstr "आपकी गोद लेने की प्रतिबद्धता के लिए धन्यवाद! हम जल्द ही आपसे संपर्क करेंगे।"
 
-#: template-adoption-form.php:243 template-adoption-form.php:252
+#: template-adoption-form.php:267 template-uupg-detail.php:108
+msgid "View Adoption Resources"
+msgstr "दत्तक ग्रहण संसाधन देखें"
+
+#: template-adoption-form.php:276 template-adoption-form.php:285
 msgid "There was an error submitting your adoption. Please try again."
 msgstr "आपका दत्तक ग्रहण सबमिट करने में त्रुटि हुई। कृपया फिर से प्रयास करें।"
 
@@ -899,123 +975,230 @@ msgstr "आपका दत्तक ग्रहण सबमिट करन�
 msgid "UUPG Detail"
 msgstr "यूयूपीजी विवरण"
 
-#: template-uupg-detail.php:62
+#: template-uupg-detail.php:89
 msgid "Engaged"
 msgstr "सगाई हुई"
 
-#: template-uupg-detail.php:64
+#: template-uupg-detail.php:91
 msgid "Not Engaged"
 msgstr "सगाई नहीं हुई"
 
-#: template-uupg-detail.php:75
+#: template-uupg-detail.php:112
 msgid "Engagement Status"
 msgstr "सगाई की स्थिति"
 
-#: template-uupg-detail.php:80 template-uupg-detail.php:88
-#: template-uupg-detail.php:96 template-uupg-detail.php:104
-#: template-uupg-detail.php:112 template-uupg-detail.php:189
-#: template-uupg-detail.php:197 template-uupg-detail.php:205
-#: template-uupg-detail.php:213 template-uupg-detail.php:221
-#: template-uupg-detail.php:229
+#: template-uupg-detail.php:117 template-uupg-detail.php:125
+#: template-uupg-detail.php:133 template-uupg-detail.php:141
+#: template-uupg-detail.php:149 template-uupg-detail.php:226
+#: template-uupg-detail.php:234 template-uupg-detail.php:242
+#: template-uupg-detail.php:250 template-uupg-detail.php:258
+#: template-uupg-detail.php:266
 msgid "Done"
 msgstr "संपन्न"
 
-#: template-uupg-detail.php:82 template-uupg-detail.php:90
-#: template-uupg-detail.php:98 template-uupg-detail.php:106
-#: template-uupg-detail.php:114 template-uupg-detail.php:191
-#: template-uupg-detail.php:199 template-uupg-detail.php:207
-#: template-uupg-detail.php:215 template-uupg-detail.php:223
-#: template-uupg-detail.php:231
+#: template-uupg-detail.php:119 template-uupg-detail.php:127
+#: template-uupg-detail.php:135 template-uupg-detail.php:143
+#: template-uupg-detail.php:151 template-uupg-detail.php:228
+#: template-uupg-detail.php:236 template-uupg-detail.php:244
+#: template-uupg-detail.php:252 template-uupg-detail.php:260
+#: template-uupg-detail.php:268
 msgid "Not Done"
 msgstr "पूरा नहीं हुआ"
 
-#: template-uupg-detail.php:84 template-uupg-detail.php:123
+#: template-uupg-detail.php:121 template-uupg-detail.php:160
 msgid "Prayer Status"
 msgstr "प्रार्थना की स्थिति"
 
-#: template-uupg-detail.php:92 template-uupg-detail.php:135
+#: template-uupg-detail.php:129 template-uupg-detail.php:172
 msgid "Adoption Status"
 msgstr "दत्तक ग्रहण की स्थिति"
 
-#: template-uupg-detail.php:100
+#: template-uupg-detail.php:137
 msgid "Cross-cultural workers present"
 msgstr "अंतर-सांस्कृतिक कार्यकर्ता उपस्थित"
 
-#: template-uupg-detail.php:108
+#: template-uupg-detail.php:145
 msgid "Work in local language &amp; culture"
 msgstr "स्थानीय भाषा और संस्कृति में कार्य"
 
-#: template-uupg-detail.php:116
+#: template-uupg-detail.php:153
 msgid "Disciple &amp; church multiplication"
 msgstr "शिष्य और चर्च की वृद्धि"
 
-#: template-uupg-detail.php:125
+#: template-uupg-detail.php:162
 msgid "People committed to praying"
 msgstr "प्रार्थना के लिए प्रतिबद्ध लोग"
 
-#: template-uupg-detail.php:132
+#: template-uupg-detail.php:169
 msgid "Sign up to pray"
 msgstr "प्रार्थना के लिए साइन अप करें"
 
-#: template-uupg-detail.php:137
+#: template-uupg-detail.php:174
 msgid "churches / individuals have adopted this people group"
 msgstr "चर्चों/व्यक्तियों ने इस जनसमूह को गोद लिया है।"
 
-#: template-uupg-detail.php:153
+#: template-uupg-detail.php:190
 msgid "Adopt people group"
 msgstr "लोगों के समूह को गोद लें"
 
-#: template-uupg-detail.php:173
+#: template-uupg-detail.php:210
 msgid "Overview"
 msgstr "अवलोकन"
 
-#: template-uupg-detail.php:177
+#: template-uupg-detail.php:214
 msgid "Alternate Names"
 msgstr "वैकल्पिक नाम"
 
-#: template-uupg-detail.php:180
+#: template-uupg-detail.php:217
 msgid "Primary Language"
 msgstr "प्राथमिक भाषा"
 
-#: template-uupg-detail.php:181
+#: template-uupg-detail.php:218
 msgid "Primary Religion"
 msgstr "मुख्य धर्म"
 
-#: template-uupg-detail.php:182
+#: template-uupg-detail.php:219
 msgid "Religious Practices"
 msgstr "धार्मिक आचरण"
 
-#: template-uupg-detail.php:186
+#: template-uupg-detail.php:223
 msgid "Progress"
 msgstr "प्रगति"
 
-#: template-uupg-detail.php:193
+#: template-uupg-detail.php:230
 msgid "Bible Translation"
 msgstr "बाइबिल अनुवाद"
 
-#: template-uupg-detail.php:201
+#: template-uupg-detail.php:238
 msgid "Bible Stories"
 msgstr "बाइबिल की कहानियाँ"
 
-#: template-uupg-detail.php:209
+#: template-uupg-detail.php:246
 msgid "Jesus Film"
 msgstr "यीशु फिल्म"
 
-#: template-uupg-detail.php:217
+#: template-uupg-detail.php:254
 msgid "Radio Broadcasts"
 msgstr "रेडियो प्रसारण"
 
-#: template-uupg-detail.php:225
+#: template-uupg-detail.php:262
 msgid "Gospel Recordings"
 msgstr "सुसमाचार अभिलेखन"
 
-#: template-uupg-detail.php:233
+#: template-uupg-detail.php:270
 msgid "Audio Scripture"
 msgstr "ध्वनि शास्त्र"
 
-#: template-uupg-resources.php:54
-msgid "Resources"
-msgstr "संसाधने"
+#: template-uupg-resources.php:56
+msgid "Adoption Resources"
+msgstr "दत्तक ग्रहण संसाधन"
+
+#: template-uupg-resources.php:66
+msgid "Your UUPG"
+msgstr "आपका यूयूपीजी"
+
+#: template-uupg-resources.php:69
+msgid "View full profile"
+msgstr "पूरा प्रोफ़ाइल देखें"
+
+#: template-uupg-resources.php:76
+msgid "Introduction"
+msgstr "परिचय"
+
+#: template-uupg-resources.php:77
+msgid "Welcome to the adoption Journey"
+msgstr "दत्तक ग्रहण यात्रा में आपका स्वागत है"
+
+#: template-uupg-resources.php:78
+msgid ""
+"Thank you for adopting this Unengaged, Unreached People Group. Your church "
+"is joining a global movement asking God to open the way for the gospel among "
+"people who currently have little or no access to it. This page provides "
+"resources to help your church stay informed, mobilize prayer, and explore "
+"how God may use your community to help bring the good news of Jesus to this "
+"people group."
+msgstr ""
+"इस अनसंलग्न, अनपहुँचे जनसमूह को गोद लेने के लिए धन्यवाद। आपका चर्च एक वैश्विक आंदोलन में "
+"शामिल हो रहा है, जो परमेश्वर से प्रार्थना कर रहा है कि वह उन लोगों तक सुसमाचार का "
+"मार्ग खोलें, जिनके पास वर्तमान में इसकी पहुँच बहुत कम या बिल्कुल नहीं है। यह पृष्ठ आपके चर्च "
+"को सूचित रहने, प्रार्थना को संगठित करने, और यह पता लगाने में मदद करने के लिए संसाधन "
+"प्रदान करता है कि परमेश्वर आपके समुदाय का उपयोग कैसे कर सकते हैं ताकि इस जनसमूह तक यीशु "
+"की शुभ-सूचना पहुँचाई जा सके।"
+
+#: template-uupg-resources.php:80
+msgid "Your role as an adopting church"
+msgstr "एक गोद लेने वाले चर्च के रूप में आपकी भूमिका"
+
+#: template-uupg-resources.php:82
+msgid "Pray regularly for this people group and for gospel breakthrough"
+msgstr "इस जनसमूह और सुसमाचार की सफलता के लिए नियमित रूप से प्रार्थना करें।"
+
+#: template-uupg-resources.php:83
+msgid "Mobilize others in your church to join in prayer"
+msgstr "अपने चर्च में दूसरों को प्रार्थना में शामिल होने के लिए प्रेरित करें।"
+
+#: template-uupg-resources.php:84
+msgid "Give to support gospel work among unreached peoples"
+msgstr "अनपहुँचे लोगों के बीच सुसमाचार कार्य का समर्थन करने के लिए दें।"
+
+#: template-uupg-resources.php:85
+msgid "Send or raise up workers who may go and serve among them"
+msgstr "ऐसे कामगार भेजो या तैयार करो जो उनके बीच जाकर सेवा कर सकें।"
+
+#: template-uupg-resources.php:88
+msgid "Resources available on this page"
+msgstr "इस पृष्ठ पर उपलब्ध संसाधन"
+
+#: template-uupg-resources.php:90
+msgid "Printable prayer cards and people group images"
+msgstr "प्रिंट करने योग्य प्रार्थना कार्ड और जनसमूह की छवियाँ"
+
+#: template-uupg-resources.php:91
+msgid "Graphics, QR code and slides for sharing with your congregation"
+msgstr "आपकी मंडली के साथ साझा करने के लिए ग्राफिक्स, क्यूआर कोड और स्लाइड्स"
+
+#: template-uupg-resources.php:92
+msgid ""
+"Additional tools to help your church stay engaged in prayer for this people "
+"group"
+msgstr ""
+"इस जनसमूह के लिए प्रार्थना में आपकी चर्च को संलग्न बनाए रखने में मदद करने के लिए अतिरिक्त "
+"उपकरण"
+
+#: template-uupg-resources.php:97
+msgid "Your Adoption Resources"
+msgstr "आपका दत्तक ग्रहण संसाधन"
+
+#: template-uupg-resources.php:105
+msgid "Adoption Certificate"
+msgstr "दत्तक प्रमाणपत्र"
+
+#: template-uupg-resources.php:110
+msgid "UUPG Photo"
+msgstr "यूयूपीजी फोटो"
+
+#: template-uupg-resources.php:116
+msgid "Prayer Campaign QR Code"
+msgstr "प्रार्थना अभियान क्यूआर कोड"
+
+#: template-uupg-resources.php:122
+msgid "Printable Prayer Cards"
+msgstr "प्रिंट करने योग्य प्रार्थना कार्ड"
+
+#: template-uupg-resources.php:127
+msgid "Promo Slide"
+msgstr "प्रोमो स्लाइड"
+
+#: template-uupg-resources.php:132
+msgid "Social Share"
+msgstr "सामाजिक साझाकरण"
+
+#: template-uupg-resources.php:163
+msgid "General Resources"
+msgstr "सामान्य संसाधन"
+
+#~ msgid "Enter your Email"
+#~ msgstr "अपना ईमेल दर्ज करें"
 
 #~ msgid "Enter your Phone"
 #~ msgstr "अपना फ़ोन दर्ज करें"
