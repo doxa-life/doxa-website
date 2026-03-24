@@ -12,7 +12,7 @@ input[type="search"]:not(.iti__search-input) {
     text-indent: 1.5em;
 }
 input::placeholder {
-    color: var(--color-brand-secondary);
+    color: gray;
 }
 
 textarea,
