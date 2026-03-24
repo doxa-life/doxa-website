@@ -75,7 +75,7 @@
   --stack-spacing: var(--spacing-5xl, 2rem);
 }
 
-.stack-spacing-none,
-.stack--none > * + * {
+.stack-spacing-0,
+.stack--0 > * + * {
   --stack-spacing: 0;
 }
