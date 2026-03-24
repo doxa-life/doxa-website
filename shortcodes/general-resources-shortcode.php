@@ -124,9 +124,9 @@ function general_resources_shortcode( $atts ) {
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'md' : 'lg'; ?>>
+            <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'lg' : 'lg'; ?>>
                 <?php foreach ( $no_image_resources as $resource ) : ?>
-                    <div class="card | resource-card | repel | align-center rounded-md" padding-small>
+                    <div class="card | resource-card | switcher | align-center rounded-md" data-width="md" padding-small>
                         <h3 class="h5 font-weight-medium"><?php echo esc_html( $resource['title'] ); ?></h3>
                         <div class="switcher gap-md | text-center" data-width="xs">
                             <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact <?php echo $resource['download_type'] === 'file' ? 'outline' : ''; ?>">
