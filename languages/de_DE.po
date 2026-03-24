@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
 "POT-Creation-Date: 2026-03-23T17:00:31+00:00\n"
-"PO-Revision-Date: 2026-03-23 17:20+0000\n"
-"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"PO-Revision-Date: 2026-03-24 12:06+0000\n"
+"Last-Translator: Weblate Admin <translator@disciple.tools>\n"
 "Language-Team: German <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/de_DE/>\n"
 "Language: de_DE\n"
@@ -531,7 +531,7 @@ msgstr "Name"
 
 #: page-contact.php:27
 msgid "Enter your name"
-msgstr "Geben Sie Ihren Namen ein"
+msgstr "Gib deinen Namen ein"
 
 #: page-contact.php:30 template-adoption-form.php:98
 msgid "Email"
@@ -539,7 +539,7 @@ msgstr "E-Mail"
 
 #: page-contact.php:31 template-adoption-form.php:99
 msgid "Enter your email"
-msgstr "Geben Sie Ihre E-Mail-Adresse ein"
+msgstr "Gib deine Email Adresse ein"
 
 #: page-contact.php:34
 msgid "Message"
@@ -547,7 +547,7 @@ msgstr "Nachricht"
 
 #: page-contact.php:35
 msgid "Enter your message"
-msgstr "Geben Sie Ihre Nachricht ein"
+msgstr "Gib deine Nachricht ein"
 
 #: page-contact.php:45 page-contact.php:118 page-contact.php:126
 #: template-adoption-form.php:146 template-adoption-form.php:281
@@ -712,7 +712,7 @@ msgstr "UUPGS"
 
 #: page-uupgs.php:18
 msgid "Find a UUPG"
-msgstr "Eine UUPG finden"
+msgstr "Eine VUVG finden"
 
 #: page-uupgs.php:27
 msgid "Search names, locations, religions..."
@@ -724,7 +724,7 @@ msgstr "Angenommen"
 
 #: page-uupgs.php:29
 msgid "Not Adopted"
-msgstr "Nicht angenommen"
+msgstr "noch nicht adoptiert"
 
 #: page-uupgs.php:31
 msgid "Search"
@@ -831,15 +831,15 @@ msgid ""
 "Please complete the form below so we can confirm your church's adoption, "
 "connect with your Champion, and begin sending prayer updates and resources."
 msgstr ""
-"Vielen Dank, dass Sie einen Schritt in Richtung der Adoption einer nicht "
-"erreichten Volksgruppe gemacht haben. Bitte füllen Sie das untenstehende "
-"Formular aus, damit wir die Adoption Ihrer Gemeinde bestätigen, Sie mit "
-"Ihrem Champion in Verbindung bringen und Ihnen Gebetsupdates und Ressourcen "
+"Vielen Dank, dass du einen Schritt in Richtung der Adoption einer nicht-"
+"erreichten Volksgruppe gemacht habst. Bitte fülle das unten stehende "
+"Formular aus, damit wir die Adoption deiner Gemeinde bestätigen, dich mit "
+"deinem “Champion” in Verbindung bringen und dir Gebetsupdates und Ressourcen "
 "zusenden können."
 
 #: template-adoption-form.php:66
 msgid "What is your commitment? Pray. Give. Send."
-msgstr "Was ist Ihr Engagement? Beten. Spenden. Senden."
+msgstr "Was ist Dein Engagement? Beten. Spenden. Senden."
 
 #: template-adoption-form.php:67
 msgid ""
@@ -847,18 +847,18 @@ msgid ""
 "behalf—standing in the gap until the gospel takes root. This involves a "
 "commitment to:"
 msgstr ""
-"Wenn Sie eine Volksgruppe adoptieren, übernehmen Sie eine Führungsrolle für "
-"diese Gruppe – Sie stehen für sie ein, bis das Evangelium Wurzeln schlägt. "
-"Dies beinhaltet die Verpflichtung zu:"
+"Wenn Du eine Volksgruppe adoptierst, übernimmst Du eine Führungsrolle für "
+"diese Gruppe – Du stehst für sie ein, bis das Evangelium Wurzeln schlägt. "
+"Diese Verpflichtung beinhaltet:"
 
 #: template-adoption-form.php:71
 msgid ""
 "Mobilize toward the goal of at least 144 prayer partners to cover the people "
 "group in continuous, daily prayer (10 minutes each, 24 hours a day)."
 msgstr ""
-"Mobilisieren Sie sich für das Ziel, mindestens 144 Gebetspartner zu "
-"gewinnen, die diese Volksgruppe täglich ununterbrochen im Gebet begleiten "
-"(jeweils 10 Minuten, 24 Stunden am Tag)."
+"Mobilisiere für das Ziel, mindestens 144 Gebetspartner zu gewinnen, die "
+"diese Volksgruppe täglich ununterbrochen im Gebet begleiten (jeweils 10 "
+"Minuten, innerhalb 24 Stunden eines Tages)."
 
 #: template-adoption-form.php:74
 msgid "Give"
@@ -870,9 +870,8 @@ msgid ""
 "sustain prayer mobilization, campaign operations, and the sending of gospel "
 "workers."
 msgstr ""
-"Unterstützen Sie die Doxa Foundation monatlich finanziell, um die "
-"Mobilisierung von Gebeten, Kampagnen und die Entsendung von Evangelisten zu "
-"fördern."
+"Unterstütze die Doxa Foundation monatlich finanziell, um die Mobilisierung "
+"von Betern, Kampagnen und die Entsendung von Evangelisten zu fördern."
 
 #: template-adoption-form.php:78
 msgid ""
@@ -882,10 +881,9 @@ msgid ""
 "around 1000, etc."
 msgstr ""
 "Wir empfehlen Kirchen, eine monatliche Spende entsprechend der Größe ihrer "
-"Gemeinde zu leisten.  Das heißt, 100 Dollar pro Monat für eine Gemeinde mit "
-"etwa 100 Mitgliedern,  500 Dollar pro Monat für eine Gemeinde mit etwa 500 "
-"Mitgliedern, 1000 Dollar pro Monat für eine Gemeinde mit etwa 1000 "
-"Mitgliedern usw."
+"Gemeinde zu leisten. Zum Beispiel: 100 Dollar pro Monat für eine Gemeinde "
+"mit etwa 100 Mitgliedern, 500 Dollar pro Monat für etwa 500 Mitglieder, 1000 "
+"Dollar pro Monat für etwa 1000 Mitglieder usw."
 
 #: template-adoption-form.php:81
 msgid "Send"
@@ -896,9 +894,9 @@ msgid ""
 "Actively help surface and support potential goers, encouraging those God may "
 "be calling to cross cultures and serve this people group directly."
 msgstr ""
-"Aktiv dabei helfen, potenzielle Teilnehmer zu finden und zu unterstützen, "
-"indem man diejenigen ermutigt, die Gott vielleicht dazu beruft, Kulturen zu "
-"überschreiten und dieser Volksgruppe direkt zu dienen."
+"Hilf aktiv mit, potenzielle Leute zu finden und zu begleiten, welche Gott "
+"vielleicht dazu beruft, Kulturen zu überschreiten, um dieser Volksgruppe "
+"direkt zu dienen."
 
 #: template-adoption-form.php:87
 msgid "Champion Details"
@@ -1032,11 +1030,11 @@ msgstr "Verlobt"
 
 #: template-uupg-detail.php:91
 msgid "Not Engaged"
-msgstr "Nicht verlobt"
+msgstr "Völlig Unerreicht"
 
 #: template-uupg-detail.php:112
 msgid "Engagement Status"
-msgstr "Engagementstatus"
+msgstr "Status"
 
 #: template-uupg-detail.php:117 template-uupg-detail.php:125
 #: template-uupg-detail.php:133 template-uupg-detail.php:141
@@ -1078,7 +1076,7 @@ msgstr "Jüngerschaft &amp; Gemeindemultiplikation"
 
 #: template-uupg-detail.php:162
 msgid "People committed to praying"
-msgstr "Menschen, die sich dem Beten verschrieben haben"
+msgstr "Menschen, die sich dem Beten verpflichtet haben"
 
 #: template-uupg-detail.php:169
 msgid "Sign up to pray"
@@ -1090,7 +1088,7 @@ msgstr "Kirchen / Einzelpersonen haben diese Volksgruppe adoptiert"
 
 #: template-uupg-detail.php:190
 msgid "Adopt people group"
-msgstr "Bevölkerungsgruppe adoptieren"
+msgstr "Volksgruppe adoptieren"
 
 #: template-uupg-detail.php:210
 msgid "Overview"
