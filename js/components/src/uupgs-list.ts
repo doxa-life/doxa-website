@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { property, customElement } from 'lit/decorators.js';
+import Fuse from 'fuse.js';
 import type { Uupg } from './types/uupg';
 
 @customElement('uupgs-list')
@@ -204,14 +205,27 @@ export class UupgsList extends LitElement {
 
     filterUUPGs() {
         this.dontShowListOnLoad = false;
-        this.filteredUUPGs = this.uupgs.filter(uupg => {
-            return uupg.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                uupg.country.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                uupg.rop1.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                uupg.religion.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                uupg.wagf_region.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                uupg.wagf_block.label.toLowerCase().includes(this.searchTerm.toLowerCase())
-        });
+        const options = {
+            includeScore: true,
+            includeMatches: true,
+            ignoreLocation: true,
+            minMatchCharLength: 3,
+            threshold: 0.4,
+            keys: [
+                'name',
+                'country.label',
+                'rop1.label',
+                'religion.label',
+                'wagf_region.label',
+                'wagf_block.label',
+            ]
+        }
+
+        const fuse = new Fuse(this.uupgs, options)
+
+        const result = fuse.search(this.searchTerm);
+        console.log(result);
+        this.filteredUUPGs = result.map(res => res.item);
         this.total = this.filteredUUPGs.length;
         this.loading = false;
     }
