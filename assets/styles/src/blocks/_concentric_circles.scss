@@ -1,6 +1,12 @@
 .concentric-circles {
   display: flex;
   gap: var(--spacing-md);
+
+  [lang="ru-RU"] & {
+    transform: scale(0.9) translateX(-7%);
+    z-index: -1;
+  }
+
 }
 .concentric-circles > * {
   &:nth-child(1) {
@@ -94,6 +100,10 @@
 
   .concentric-circles {
     flex-direction: column;
+    [lang="ru-RU"] & {
+      transform: unset;
+      z-index: -1;
+    }
   }
   .concentric-circles > * {
     flex-basis: 100%;
