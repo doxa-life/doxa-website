@@ -124,14 +124,14 @@ ul:not([role="list"]):not([role="listbox"]):not(.role-list):not(.sub-menu) li::b
 }
 
 a {
-  text-decoration: none;
   color: var(--color-brand-light);
   font-weight: var(--font-weight-medium);
   transition: color 0.3s ease;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 
   &:hover {
     color: var(--color-brand-lighter);
-    text-decoration: underline;
   }
 
   &.light-link {
