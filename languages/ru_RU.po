@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
-"POT-Creation-Date: 2026-03-23T17:00:31+00:00\n"
-"PO-Revision-Date: 2026-03-23 17:20+0000\n"
-"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"POT-Creation-Date: 2026-03-25T14:18:02+00:00\n"
+"PO-Revision-Date: 2026-03-25 15:08+0000\n"
+"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: Russian <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/ru_RU/>\n"
 "Language: ru_RU\n"
@@ -733,7 +733,7 @@ msgstr "За страницу"
 msgid "Doxa Page"
 msgstr "Страница Doxa"
 
-#: shortcodes/general-resources-shortcode.php:22
+#: shortcodes/general-resources-shortcode.php:21
 msgid "DOXA Playbook"
 msgstr "Руководство DOXA"
 
@@ -741,54 +741,59 @@ msgstr "Руководство DOXA"
 msgid "DOXA Playbook Slides"
 msgstr "Слайды из руководства DOXA"
 
-#: shortcodes/general-resources-shortcode.php:36
+#: shortcodes/general-resources-shortcode.php:37
 msgid "DOXA Promo Video"
 msgstr "Промо-ролик DOXA"
 
-#: shortcodes/general-resources-shortcode.php:46
+#: shortcodes/general-resources-shortcode.php:48
 msgid "Champion Tips"
 msgstr "Советы от чемпионов"
 
-#: shortcodes/general-resources-shortcode.php:51
+#: shortcodes/general-resources-shortcode.php:53
 msgid "Discussion Guide"
 msgstr "Руководство по обсуждению"
 
-#: shortcodes/general-resources-shortcode.php:56
+#: shortcodes/general-resources-shortcode.php:58
 msgid "DOXA Campaign Talking Points"
 msgstr "Ключевые тезисы кампании DOXA"
 
-#: shortcodes/general-resources-shortcode.php:61
+#: shortcodes/general-resources-shortcode.php:63
 msgid "Email Templates"
 msgstr "Шаблоны писем"
 
-#: shortcodes/general-resources-shortcode.php:69
+#: shortcodes/general-resources-shortcode.php:71
 msgid "Introduction 2025"
 msgstr "Введение 2025"
 
-#: shortcodes/general-resources-shortcode.php:74
+#: shortcodes/general-resources-shortcode.php:77
 msgid "Vision and Values"
 msgstr "Видение и ценности"
 
-#: shortcodes/general-resources-shortcode.php:79
+#: shortcodes/general-resources-shortcode.php:83
 msgid "Definitions"
 msgstr "Определения"
 
-#: shortcodes/general-resources-shortcode.php:84
+#: shortcodes/general-resources-shortcode.php:89
 msgid "Doxa Endowment Investment Policy Statement"
 msgstr "Заявление об инвестиционной политике фонда Doxa"
 
-#: shortcodes/general-resources-shortcode.php:89
+#: shortcodes/general-resources-shortcode.php:95
 msgid "Initial Proposal"
 msgstr "Первоначальное предложение"
 
-#: shortcodes/general-resources-shortcode.php:112
-#: shortcodes/general-resources-shortcode.php:133
+#: shortcodes/general-resources-shortcode.php:119
+#: shortcodes/general-resources-shortcode.php:146
+msgid "In English"
+msgstr "На английском языке"
+
+#: shortcodes/general-resources-shortcode.php:125
+#: shortcodes/general-resources-shortcode.php:152
 #: template-uupg-resources.php:150
 msgid "View"
 msgstr "Посмотреть"
 
-#: shortcodes/general-resources-shortcode.php:118
-#: shortcodes/general-resources-shortcode.php:139
+#: shortcodes/general-resources-shortcode.php:131
+#: shortcodes/general-resources-shortcode.php:158
 #: template-uupg-resources.php:151
 msgid "Download"
 msgstr "Скачать"

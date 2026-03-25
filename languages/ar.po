@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
-"POT-Creation-Date: 2026-03-23T17:00:31+00:00\n"
-"PO-Revision-Date: 2026-03-23 17:20+0000\n"
-"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"POT-Creation-Date: 2026-03-25T14:18:02+00:00\n"
+"PO-Revision-Date: 2026-03-25 15:08+0000\n"
+"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: Arabic <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/ar/>\n"
 "Language: ar\n"
@@ -710,7 +710,7 @@ msgstr "لكل صفحة"
 msgid "Doxa Page"
 msgstr "صفحة دوكسا"
 
-#: shortcodes/general-resources-shortcode.php:22
+#: shortcodes/general-resources-shortcode.php:21
 msgid "DOXA Playbook"
 msgstr "دليل دوكسا"
 
@@ -718,54 +718,59 @@ msgstr "دليل دوكسا"
 msgid "DOXA Playbook Slides"
 msgstr "شرائح دليل DOXA"
 
-#: shortcodes/general-resources-shortcode.php:36
+#: shortcodes/general-resources-shortcode.php:37
 msgid "DOXA Promo Video"
 msgstr "فيديو ترويجي لـ DOXA"
 
-#: shortcodes/general-resources-shortcode.php:46
+#: shortcodes/general-resources-shortcode.php:48
 msgid "Champion Tips"
 msgstr "نصائح الأبطال"
 
-#: shortcodes/general-resources-shortcode.php:51
+#: shortcodes/general-resources-shortcode.php:53
 msgid "Discussion Guide"
 msgstr "دليل المناقشة"
 
-#: shortcodes/general-resources-shortcode.php:56
+#: shortcodes/general-resources-shortcode.php:58
 msgid "DOXA Campaign Talking Points"
 msgstr "النقاط الرئيسية لحملة دوكسا"
 
-#: shortcodes/general-resources-shortcode.php:61
+#: shortcodes/general-resources-shortcode.php:63
 msgid "Email Templates"
 msgstr "قوالب البريد الإلكتروني"
 
-#: shortcodes/general-resources-shortcode.php:69
+#: shortcodes/general-resources-shortcode.php:71
 msgid "Introduction 2025"
 msgstr "مقدمة 2025"
 
-#: shortcodes/general-resources-shortcode.php:74
+#: shortcodes/general-resources-shortcode.php:77
 msgid "Vision and Values"
 msgstr "الرؤية والقيم"
 
-#: shortcodes/general-resources-shortcode.php:79
+#: shortcodes/general-resources-shortcode.php:83
 msgid "Definitions"
 msgstr "التعريفات"
 
-#: shortcodes/general-resources-shortcode.php:84
+#: shortcodes/general-resources-shortcode.php:89
 msgid "Doxa Endowment Investment Policy Statement"
 msgstr "بيان سياسة الاستثمار في صندوق دوكسا"
 
-#: shortcodes/general-resources-shortcode.php:89
+#: shortcodes/general-resources-shortcode.php:95
 msgid "Initial Proposal"
 msgstr "الاقتراح الأولي"
 
-#: shortcodes/general-resources-shortcode.php:112
-#: shortcodes/general-resources-shortcode.php:133
+#: shortcodes/general-resources-shortcode.php:119
+#: shortcodes/general-resources-shortcode.php:146
+msgid "In English"
+msgstr "باللغة الإنجليزية"
+
+#: shortcodes/general-resources-shortcode.php:125
+#: shortcodes/general-resources-shortcode.php:152
 #: template-uupg-resources.php:150
 msgid "View"
 msgstr "عرض"
 
-#: shortcodes/general-resources-shortcode.php:118
-#: shortcodes/general-resources-shortcode.php:139
+#: shortcodes/general-resources-shortcode.php:131
+#: shortcodes/general-resources-shortcode.php:158
 #: template-uupg-resources.php:151
 msgid "Download"
 msgstr "تحميل"
@@ -950,8 +955,8 @@ msgid ""
 "To confirm your adoption, please verify your email address. We sent a "
 "verification email to"
 msgstr ""
-"لتأكيد عملية التسجيل، يرجى التحقق من عنوان بريدك الإلكتروني. لقد أرسلنا رسالة "
-"إلكترونية للتحقق إلى"
+"لتأكيد عملية التسجيل، يرجى التحقق من عنوان بريدك الإلكتروني. لقد أرسلنا "
+"رسالة إلكترونية للتحقق إلى"
 
 #: template-adoption-form.php:250
 msgid "Don't see the email? Check your spam folder."
@@ -1119,10 +1124,10 @@ msgid ""
 msgstr ""
 "شكرًا لكم على تبنيكم لهذه المجموعة العرقية غير المتفاعلة وغير المبلغة. إن "
 "كنيستكم تنضم إلى حركة عالمية تطلب من الله أن يفتح الطريق أمام الإنجيل بين "
-"الناس الذين لا يزالون يفتقرون إلى الوصول إليه أو لا يصلهم إلا قليلاً. توفر هذه "
-"الصفحة موارد لمساعدة كنيستكم على البقاء على اطلاع، وحشد الصلوات، واستكشاف "
-"الطرق التي قد يستخدم بها الله مجتمعكم للمساعدة في إيصال بشرى يسوع إلى هذه "
-"المجموعة العرقية."
+"الناس الذين لا يزالون يفتقرون إلى الوصول إليه أو لا يصلهم إلا قليلاً. توفر "
+"هذه الصفحة موارد لمساعدة كنيستكم على البقاء على اطلاع، وحشد الصلوات، "
+"واستكشاف الطرق التي قد يستخدم بها الله مجتمعكم للمساعدة في إيصال بشرى يسوع "
+"إلى هذه المجموعة العرقية."
 
 #: template-uupg-resources.php:80
 msgid "Your role as an adopting church"
