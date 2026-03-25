@@ -16,7 +16,7 @@ function general_resources_shortcode( $atts ) {
     $s3_url = 'https://s3.doxa.life/';
     $image_url = get_template_directory_uri() . '/assets/images/';
 
-    $general_resources = [
+    $general_resources_with_image = [
         'doxa_playbook' => [
             'title' => esc_html__('DOXA Playbook', 'doxa-website'),
             'image_url' => $image_url . 'playbook.png',
@@ -110,12 +110,12 @@ function general_resources_shortcode( $atts ) {
 
         <div class="stack stack--2xl">
             <div class="grid" data-width-<?php echo $layout === 'on-sidebar-page' ? 'sm' : 'md'; ?>>
-                <?php foreach ( $general_resources as $resource ) : ?>
+                <?php foreach ( $general_resources_with_image as $resource ) : ?>
                     <div class="card | resource-card | stack stack--xs | align-center rounded-md" padding-small>
                         <div class="resource-card__image" style="<?php echo isset( $resource['style'] ) ? esc_attr( $resource['style'] ) : ''; ?>"><img src="<?php echo esc_attr( $resource['image_url'] ); ?>" alt="<?php echo esc_attr( $resource['title'] ); ?>"></div>
                         <div class="mb-auto">
                             <h3 class="h4 text-center font-heading"><?php echo esc_html( $resource['title'] ); ?></h3>
-                            <?php if ( $resource['download_type'] === 'file' && ! $resource['has_translation'] ) : ?>
+                            <?php if ( ! $resource['has_translation'] ) : ?>
                                 <p class="text-center font-size-sm font-style-italic color-brand-lighter"><?php echo esc_html__('In English', 'doxa-website'); ?></p>
                             <?php endif; ?>
                         </div>
