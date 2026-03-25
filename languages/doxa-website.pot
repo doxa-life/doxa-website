@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-23T17:00:31+00:00\n"
+"POT-Creation-Date: 2026-03-25T14:18:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: doxa-website\n"
@@ -681,7 +681,7 @@ msgstr ""
 msgid "Doxa Page"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:22
+#: shortcodes/general-resources-shortcode.php:21
 msgid "DOXA Playbook"
 msgstr ""
 
@@ -689,54 +689,59 @@ msgstr ""
 msgid "DOXA Playbook Slides"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:36
+#: shortcodes/general-resources-shortcode.php:37
 msgid "DOXA Promo Video"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:46
+#: shortcodes/general-resources-shortcode.php:48
 msgid "Champion Tips"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:51
+#: shortcodes/general-resources-shortcode.php:53
 msgid "Discussion Guide"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:56
+#: shortcodes/general-resources-shortcode.php:58
 msgid "DOXA Campaign Talking Points"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:61
+#: shortcodes/general-resources-shortcode.php:63
 msgid "Email Templates"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:69
+#: shortcodes/general-resources-shortcode.php:71
 msgid "Introduction 2025"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:74
+#: shortcodes/general-resources-shortcode.php:77
 msgid "Vision and Values"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:79
+#: shortcodes/general-resources-shortcode.php:83
 msgid "Definitions"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:84
+#: shortcodes/general-resources-shortcode.php:89
 msgid "Doxa Endowment Investment Policy Statement"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:89
+#: shortcodes/general-resources-shortcode.php:95
 msgid "Initial Proposal"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:112
-#: shortcodes/general-resources-shortcode.php:133
+#: shortcodes/general-resources-shortcode.php:119
+#: shortcodes/general-resources-shortcode.php:146
+msgid "In English"
+msgstr ""
+
+#: shortcodes/general-resources-shortcode.php:125
+#: shortcodes/general-resources-shortcode.php:152
 #: template-uupg-resources.php:150
 msgid "View"
 msgstr ""
 
-#: shortcodes/general-resources-shortcode.php:118
-#: shortcodes/general-resources-shortcode.php:139
+#: shortcodes/general-resources-shortcode.php:131
+#: shortcodes/general-resources-shortcode.php:158
 #: template-uupg-resources.php:151
 msgid "Download"
 msgstr ""
