@@ -144,7 +144,7 @@ if ( $lang_code !== 'en' ) {
                         <?php foreach ( $adoption_resources as $resource ) : ?>
 
                             <div class="card | resource-card | stack stack--xs | align-center rounded-md" padding-small>
-                                <div class="resource-card__image" style="<?php echo isset( $resource['style'] ) ? esc_attr( $resource['style'] ) : ''; ?>"><img crossorigin="anonymous" src="<?php echo esc_attr( $resource['image_url'] ); ?>" alt="<?php echo esc_attr( $resource['title'] ); ?>"></div>
+                                <div class="resource-card__image" style="<?php echo isset( $resource['style'] ) ? esc_attr( $resource['style'] ) : ''; ?>"><img src="<?php echo esc_attr( $resource['image_url'] ); ?>" alt="<?php echo esc_attr( $resource['title'] ); ?>"></div>
                                 <h3 class="h4 text-center font-heading mb-auto"><?php echo esc_html( $resource['title'] ); ?></h3>
                                 <div class="switcher | text-center gap-md" data-width="xs">
                                     <a target="_blank" href="<?php echo esc_url( $resource['download_link'] ); ?>" class="button extra-compact outline"><?php echo esc_html__('View', 'doxa-website'); ?></a>
