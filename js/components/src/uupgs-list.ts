@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { property, customElement } from 'lit/decorators.js';
-import Fuse from 'fuse.js';
+import Fuse from 'fuse.js/min-basic';
 import type { Uupg } from './types/uupg';
 
 @customElement('uupgs-list')
@@ -98,6 +98,9 @@ export class UupgsList extends LitElement {
                                             <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region.label}</p>
                                         </div>
                                         <p class="">${uupg.display_name}</p>
+                                        ${uupg.matches ? html`
+                                            <p class="matches">${uupg.matches}</p>
+                                        ` : ''}
                                         <div class="repel">
                                             <p class="font-size-sm color-brand-lighter">${this.t.prayer_coverage}:</p>
                                             <p class="font-size-xl font-button">${uupg.people_committed ?? 0}/144</p>
@@ -212,7 +215,7 @@ export class UupgsList extends LitElement {
             minMatchCharLength: 3,
             threshold: 0.4,
             keys: [
-                'name',
+                'display_name',
                 'country.label',
                 'rop1.label',
                 'religion.label',
@@ -225,7 +228,46 @@ export class UupgsList extends LitElement {
 
         const result = fuse.search(this.searchTerm);
         console.log(result);
-        this.filteredUUPGs = result.map(res => res.item);
+        this.filteredUUPGs = result.map(res => {
+            if (!res.matches) {
+                return res.item
+            }
+            for (const match of res.matches) {
+                const matchKey = match.key;
+                if (!matchKey) {
+                    continue;
+                }
+                const key = matchKey as keyof Uupg;
+                let value = ''
+                if (key.includes('.')) {
+                    const [parentKey, childKey] = key.split('.');
+                    value = (res.item as unknown as Record<string, Record<string,string>>)[parentKey][childKey];
+                } else {
+                    value = (res.item as unknown as Record<string, string>)[key];
+                }
+                if (value && typeof value === 'string') {
+                    let highlightedValue = html`
+                        ${match.indices.map(index => {
+                            const start = index[0];
+                            const end = index[1];
+                            return html`${value.slice(0, start)}<span class="highlight">${value.slice(start, end + 1)}</span>${value.slice(end + 1)}`;
+                        })}
+                    `;
+                    if (key.includes('.')) {
+                        const [parentKey, childKey] = key.split('.');
+                        (res.item as unknown as Record<string, unknown>)[parentKey] = {
+                            ...(res.item as unknown as Record<string, Record<string,unknown>>)[parentKey],
+                            [childKey]: highlightedValue,
+                        };
+                    } else {
+                        (res.item as unknown as Record<string, unknown>)[key] = highlightedValue;
+                    }
+                }
+            }
+            // if the strongest match is a hidden field (e.g religion.label), add it to res.item.matches
+
+            return res.item
+        });
         this.total = this.filteredUUPGs.length;
         this.loading = false;
     }

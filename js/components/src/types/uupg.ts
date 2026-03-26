@@ -3,24 +3,26 @@ export interface Uupg {
     slug: string;
     name: string;
     display_name: string;
-    wagf_region: KeyLabel;
-    wagf_block: KeyLabel;
+    wagf_region: ValueLabel;
+    wagf_block: ValueLabel;
     wagf_member: boolean;
-    country: KeyLabel;
-    rop1: KeyLabel;
+    country: ValueLabel;
+    rop1: ValueLabel;
     location_description: string;
     has_image: boolean;
     picture_url: string;
     picture_credit_html: string;
     population: number;
-    religion: KeyLabel;
+    religion: ValueLabel;
     adopted?: boolean;
     adopted_by_churches?: number;
     people_praying?: number;
     people_committed?: number;
+    matches?: string;
 }
 
-interface KeyLabel {
-    key: string;
+interface ValueLabel {
+    value: string;
     label: string;
+    description?: string;
 }
