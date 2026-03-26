@@ -95,11 +95,13 @@ export class UupgsList extends LitElement {
                                     <div class="stack stack--sm | card | highlighted-uupg__card">
                                         <div class="repel align-start">
                                             <img class="" src="${uupg.picture_url}" alt="${uupg.display_name}">
-                                            <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region.label}</p>
+                                            <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region_label ? uupg.wagf_region_label : uupg.wagf_region.label}</p>
                                         </div>
                                         <p class="">${uupg.display_name}</p>
                                         ${uupg.matches ? html`
-                                            <p class="matches">${uupg.matches}</p>
+                                            ${uupg.matches.map(match => html`
+                                                <p class="font-size-sm color-brand-lighter"><strong>${match.key}</strong>: ${match.label}</p>
+                                            `)}
                                         ` : ''}
                                         <div class="repel">
                                             <p class="font-size-sm color-brand-lighter">${this.t.prayer_coverage}:</p>
@@ -207,6 +209,15 @@ export class UupgsList extends LitElement {
     }
 
     filterUUPGs() {
+        if (this.searchTerm === '') {
+            this.filteredUUPGs = this.uupgs.map(uupg => {
+                uupg.matches = [];
+                return uupg;
+            });
+            this.total = this.filteredUUPGs.length;
+            this.loading = false;
+            return
+        }
         this.dontShowListOnLoad = false;
         const options = {
             includeScore: true,
@@ -229,9 +240,12 @@ export class UupgsList extends LitElement {
         const result = fuse.search(this.searchTerm);
         console.log(result);
         this.filteredUUPGs = result.map(res => {
+            // We need to not mutate the original item, so we create a new object
+            const newItem = { ...res.item };
             if (!res.matches) {
-                return res.item
+                return newItem
             }
+            (newItem as Uupg).matches = [];
             for (const match of res.matches) {
                 const matchKey = match.key;
                 if (!matchKey) {
@@ -241,32 +255,47 @@ export class UupgsList extends LitElement {
                 let value = ''
                 if (key.includes('.')) {
                     const [parentKey, childKey] = key.split('.');
-                    value = (res.item as unknown as Record<string, Record<string,string>>)[parentKey][childKey];
+                    value = (newItem as unknown as Record<string, Record<string,string>>)[parentKey][childKey];
                 } else {
-                    value = (res.item as unknown as Record<string, string>)[key];
+                    value = (newItem as unknown as Record<string, string>)[key];
                 }
                 if (value && typeof value === 'string') {
+                    let currentIndex = 0;
                     let highlightedValue = html`
-                        ${match.indices.map(index => {
+                        ${match.indices.map((index, i) => {
                             const start = index[0];
                             const end = index[1];
-                            return html`${value.slice(0, start)}<span class="highlight">${value.slice(start, end + 1)}</span>${value.slice(end + 1)}`;
+                            const isLastMatch = match.indices.length - 1 === i;
+                            const highlight = html`${value.slice(currentIndex, start)}<span class="search-highlight">${value.slice(start, end + 1)}</span>${isLastMatch ? value.slice(end + 1) : ''}`;
+                            currentIndex = end + 1;
+                            return highlight;
                         })}
                     `;
                     if (key.includes('.')) {
                         const [parentKey, childKey] = key.split('.');
-                        (res.item as unknown as Record<string, unknown>)[parentKey] = {
-                            ...(res.item as unknown as Record<string, Record<string,unknown>>)[parentKey],
-                            [childKey]: highlightedValue,
+                        const keyTranslations = {
+                            religion: this.t.religion,
+                            country: this.t.country,
+                            rop1: this.t.rop1,
+                            wagf_region: this.t.wagf_region,
+                            wagf_block: this.t.wagf_block,
                         };
+                        if (['wagf_region'].includes(parentKey)) {
+                            newItem.wagf_region_label = highlightedValue;
+                        } else {
+                            (newItem as Uupg).matches!.push({
+                                key: keyTranslations[parentKey as keyof typeof keyTranslations],
+                                label: highlightedValue,
+                            });
+                        }
                     } else {
-                        (res.item as unknown as Record<string, unknown>)[key] = highlightedValue;
+                        (newItem as unknown as Record<string, unknown>)[key] = highlightedValue;
                     }
                 }
             }
             // if the strongest match is a hidden field (e.g religion.label), add it to res.item.matches
 
-            return res.item
+            return newItem
         });
         this.total = this.filteredUUPGs.length;
         this.loading = false;

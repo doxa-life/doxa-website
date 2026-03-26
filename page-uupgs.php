@@ -19,20 +19,7 @@ get_header( 'top' ); ?>
             <uupgs-list
                 languageCode="<?php echo doxa_get_language_code(); ?>"
                 researchUrl="<?php echo esc_url( doxa_translation_url( 'research' ) ); ?>"
-                t="<?php echo esc_attr( json_encode( [
-                    'full_profile' => __('Full Profile', 'doxa-website'),
-                    'loading' => __('Loading results...', 'doxa-website'),
-                    'load_more' => __('Load More', 'doxa-website'),
-                    'total' => __('Total', 'doxa-website'),
-                    'search' => __('Search names, locations, religions...', 'doxa-website'),
-                    'adopted' => __('Adopted', 'doxa-website'),
-                    'not_adopted' => __('Not Adopted', 'doxa-website'),
-                    'filters' => [
-                        'search' => __('Search', 'doxa-website'),
-                        'sort' => __('Sort', 'doxa-website'),
-                        'per_page' => __('Per Page', 'doxa-website'),
-                    ],
-                ])); ?>"
+                t="<?php echo esc_attr( json_encode( get_uupg_list_translations() )); ?>"
                 initialSearchTerm="<?php echo esc_attr( $search ); ?>"
             ></uupgs-list>
         </div>

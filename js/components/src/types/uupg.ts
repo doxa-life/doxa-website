@@ -4,6 +4,7 @@ export interface Uupg {
     name: string;
     display_name: string;
     wagf_region: ValueLabel;
+    wagf_region_label?: any;
     wagf_block: ValueLabel;
     wagf_member: boolean;
     country: ValueLabel;
@@ -18,7 +19,10 @@ export interface Uupg {
     adopted_by_churches?: number;
     people_praying?: number;
     people_committed?: number;
-    matches?: string;
+    matches?: Array<{
+        key: string;
+        label: any;
+    }>;
 }
 
 interface ValueLabel {
