@@ -123,7 +123,6 @@ export class UupgsList extends LitElement {
                                 : window.uupgsData.icons_url + '/RedX-Circle.png';
                             const adoptedBadgeText = isAdopted ? this.t.adopted : this.t.not_adopted;
 
-                            console.log(uupg);
                             return html`<div class="card | uupg__card">
                                 <img class="uupg__image" src="${uupg.picture_url}" alt="${uupg.display_name}">
                                 <div class="uupg__header">
@@ -216,11 +215,15 @@ export class UupgsList extends LitElement {
     }
 
     filterUUPGs() {
+        this.uupgs = this.uupgs.map(uupg => {
+            uupg.matches = [];
+            uupg.country_label = ''
+            uupg.rop1_label = ''
+            uupg.wagf_region_label = ''
+            return uupg;
+        });
         if (this.searchTerm === '') {
-            this.filteredUUPGs = this.uupgs.map(uupg => {
-                uupg.matches = [];
-                return uupg;
-            });
+            this.filteredUUPGs = this.uupgs;
             this.total = this.filteredUUPGs.length;
             this.loading = false;
             return
@@ -245,7 +248,6 @@ export class UupgsList extends LitElement {
         const fuse = new Fuse(this.uupgs, options)
 
         const result = fuse.search(this.searchTerm);
-        console.log(result);
         this.filteredUUPGs = result.map(res => {
             // We need to not mutate the original item, so we create a new object
             const newItem = { ...res.item };
