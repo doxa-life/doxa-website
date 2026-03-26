@@ -31,6 +31,15 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                     <input type="email" id="contact_email" name="contact_email" required placeholder="<?php echo esc_attr__('Enter your email', 'doxa-website'); ?>">
                 </div>
                 <div class="">
+                    <label for="country"><?php echo esc_html__('Country', 'doxa-website'); ?></label>
+                    <select id="country" name="country">
+                        <option value=""><?php echo esc_html__('Select Country (optional)', 'doxa-website'); ?></option>
+                        <?php foreach ( doxa_get_countries() as $country ) : ?>
+                            <option value="<?php echo esc_attr( $country['value'] ); ?>"><?php echo esc_html( $country['label'] ); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="">
                     <label for="message"><?php echo esc_html__('Message', 'doxa-website'); ?></label>
                     <textarea id="message" name="message" rows="5" required placeholder="<?php echo esc_attr__('Enter your message', 'doxa-website'); ?>"></textarea>
                 </div>
@@ -84,6 +93,7 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
             const formData = {
                 name: form.querySelector('#name').value,
                 email: form.querySelector('#contact_email').value,
+                country: form.querySelector('#country').value,
                 message: form.querySelector('#message').value,
                 cf_turnstile: turnstileToken
             };

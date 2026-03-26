@@ -57,6 +57,7 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
     // Sanitize inputs
     $name    = sanitize_text_field( $params['name'] ?? '' );
     $email   = sanitize_email( $params['email'] ?? '' );
+    $country = sanitize_text_field( $params['country'] ?? '' );
     $message = sanitize_textarea_field( $params['message'] ?? '' );
 
     // Validate required fields
@@ -76,6 +77,7 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
         'body'    => wp_json_encode( [
             'name'    => $name,
             'email'   => $email,
+            'country' => $country,
             'message' => $message,
         ] ),
         'headers' => [
