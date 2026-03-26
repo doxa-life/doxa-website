@@ -31,9 +31,9 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                     <input type="email" id="contact_email" name="contact_email" required placeholder="<?php echo esc_attr__('Enter your email', 'doxa-website'); ?>">
                 </div>
                 <div class="">
-                    <label for="country"><?php echo esc_html__('Country', 'doxa-website'); ?></label>
+                    <label for="country"><?php echo esc_html__('Your Country (optional)', 'doxa-website'); ?></label>
                     <select id="country" name="country">
-                        <option value=""><?php echo esc_html__('Select Country (optional)', 'doxa-website'); ?></option>
+                        <option value=""><?php echo esc_html__('Select Country', 'doxa-website'); ?></option>
                         <?php foreach ( doxa_get_countries() as $country ) : ?>
                             <option value="<?php echo esc_attr( $country['value'] ); ?>"><?php echo esc_html( $country['label'] ); ?></option>
                         <?php endforeach; ?>
