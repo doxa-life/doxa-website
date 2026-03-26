@@ -98,7 +98,7 @@ export class UupgsList extends LitElement {
                                             <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region_label ? uupg.wagf_region_label : uupg.wagf_region.label}</p>
                                         </div>
                                         <div>
-                                            <p class="">${uupg.display_name}</p>
+                                            <p class="line-height-tight">${uupg.display_name}</p>
                                             ${uupg.matches ? html`
                                                 ${uupg.matches.map(match => html`
                                                     <p class="font-size-sm color-brand-lighter"><strong>${match.key}</strong>: ${match.label}</p>
@@ -126,7 +126,7 @@ export class UupgsList extends LitElement {
                             return html`<div class="card | uupg__card">
                                 <img class="uupg__image" src="${uupg.picture_url}" alt="${uupg.display_name}">
                                 <div class="uupg__header">
-                                    <h3 class="uupg__name">${uupg.display_name}</h3>
+                                    <h3 class="uupg__name line-height-tight">${uupg.display_name}</h3>
                                     <p class="uupg__country">${uupg.country.label} (${uupg.rop1.label})</p>
                                     ${uupg.matches ? html`
                                         ${uupg.matches.map(match => html`

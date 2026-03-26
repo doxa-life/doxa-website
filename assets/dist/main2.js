@@ -63,7 +63,7 @@ const Tt=globalThis,Kt=Tt.ShadowRoot&&(Tt.ShadyCSS===void 0||Tt.ShadyCSS.nativeS
                                             <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${o.wagf_region_label?o.wagf_region_label:o.wagf_region.label}</p>
                                         </div>
                                         <div>
-                                            <p class="">${o.display_name}</p>
+                                            <p class="line-height-tight">${o.display_name}</p>
                                             ${o.matches?V`
                                                 ${o.matches.map(l=>V`
                                                     <p class="font-size-sm color-brand-lighter"><strong>${l.key}</strong>: ${l.label}</p>
@@ -82,7 +82,7 @@ const Tt=globalThis,Kt=Tt.ShadowRoot&&(Tt.ShadyCSS===void 0||Tt.ShadyCSS.nativeS
                                 `;const t=o.adopted_by_churches&&o.adopted_by_churches>0,e=t?window.uupgsData.icons_url+"/Check-GreenCircle.png":window.uupgsData.icons_url+"/RedX-Circle.png",r=t?this.t.adopted:this.t.not_adopted;return V`<div class="card | uupg__card">
                                 <img class="uupg__image" src="${o.picture_url}" alt="${o.display_name}">
                                 <div class="uupg__header">
-                                    <h3 class="uupg__name">${o.display_name}</h3>
+                                    <h3 class="uupg__name line-height-tight">${o.display_name}</h3>
                                     <p class="uupg__country">${o.country.label} (${o.rop1.label})</p>
                                     ${o.matches?V`
                                         ${o.matches.map(l=>V`
