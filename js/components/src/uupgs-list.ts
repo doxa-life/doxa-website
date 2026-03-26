@@ -123,11 +123,12 @@ export class UupgsList extends LitElement {
                                 : window.uupgsData.icons_url + '/RedX-Circle.png';
                             const adoptedBadgeText = isAdopted ? this.t.adopted : this.t.not_adopted;
 
+                            console.log(uupg);
                             return html`<div class="card | uupg__card">
                                 <img class="uupg__image" src="${uupg.picture_url}" alt="${uupg.display_name}">
                                 <div class="uupg__header">
                                     <h3 class="uupg__name line-height-tight">${uupg.display_name}</h3>
-                                    <p class="uupg__country">${uupg.country.label} (${uupg.rop1.label})</p>
+                                    <p class="uupg__country">${uupg.country_label ? uupg.country_label : uupg.country.label} (${uupg.rop1_label ? uupg.rop1_label : uupg.rop1.label})</p>
                                     ${uupg.matches ? html`
                                         ${uupg.matches.map(match => html`
                                             <p class="font-size-sm color-brand-lighter"><strong>${match.key}</strong>: ${match.label}</p>
@@ -278,7 +279,7 @@ export class UupgsList extends LitElement {
                         })}
                     `;
                     if (key.includes('.')) {
-                        const [parentKey, childKey] = key.split('.');
+                        const [parentKey] = key.split('.');
                         const keyTranslations = {
                             religion: this.t.religion,
                             country: this.t.country,
@@ -286,8 +287,12 @@ export class UupgsList extends LitElement {
                             wagf_region: this.t.wagf_region,
                             wagf_block: this.t.wagf_block,
                         };
-                        if (['wagf_region'].includes(parentKey)) {
+                        if ('wagf_region' === parentKey && this.useSelectCard) {
                             newItem.wagf_region_label = highlightedValue;
+                        } else if ('rop1' === parentKey && !this.useSelectCard) {
+                            newItem.rop1_label = highlightedValue;
+                        } else if ('country' === parentKey && !this.useSelectCard) {
+                            newItem.country_label = highlightedValue;
                         } else {
                             (newItem as Uupg).matches!.push({
                                 key: keyTranslations[parentKey as keyof typeof keyTranslations],
