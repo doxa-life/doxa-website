@@ -69,7 +69,7 @@ export class UupgsList extends LitElement {
                         </svg>
                         <input
                             type="search"
-                            placeholder="${this.initialSearchTerm ? this.initialSearchTerm : this.t.search}"
+                            placeholder="${this.initialSearchTerm ? decodeURI(this.initialSearchTerm) : this.t.search}"
                             @input=${this.debounce(this.onSearch, 500)}
                         />
                     </div>
@@ -295,6 +295,8 @@ export class UupgsList extends LitElement {
                             newItem.rop1_label = highlightedValue;
                         } else if ('country' === parentKey && !this.useSelectCard) {
                             newItem.country_label = highlightedValue;
+                        } else if ('wagf_region' === parentKey && !this.useSelectCard) {
+                            // do nothing
                         } else {
                             (newItem as Uupg).matches!.push({
                                 key: keyTranslations[parentKey as keyof typeof keyTranslations],
