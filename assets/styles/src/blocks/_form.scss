@@ -1,6 +1,7 @@
 textarea,
 select,
-input {
+input,
+.input {
     border: 1px solid var(--input-border-color);
     border-radius: 8px;
     background-color: var(--color-surface-white);

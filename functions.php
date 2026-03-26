@@ -1820,6 +1820,13 @@ function get_uupg_list_translations() {
         'rop1' => __('People Group', 'doxa-website'),
         'wagf_region' => __('WAGF Region', 'doxa-website'),
         'wagf_block' => __('WAGF Block', 'doxa-website'),
+        'show_filters' => __('Show Filters', 'doxa-website'),
+        'hide_filters' => __('Hide Filters', 'doxa-website'),
+        'clear_all' => __('Clear All', 'doxa-website'),
+        'adopted_filter' => __('Adopted', 'doxa-website'),
+        'engaged_filter' => __('Engaged', 'doxa-website'),
+        'type_to_search' => __('Type to search...', 'doxa-website'),
+        'no_options' => __('No options found', 'doxa-website'),
         'filters' => [
             'search' => __('Search', 'doxa-website'),
             'sort' => __('Sort', 'doxa-website'),
