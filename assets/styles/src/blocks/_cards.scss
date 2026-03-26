@@ -247,7 +247,8 @@
     }
 }
 .search-highlight {
-    background-color: #ffe430;
+    background-color: var(--color-brand-primary);
+    color: var(--color-white);
 }
 
 .info-card {

@@ -21,6 +21,7 @@ get_header( 'top' ); ?>
                 researchUrl="<?php echo esc_url( doxa_translation_url( 'research' ) ); ?>"
                 t="<?php echo esc_attr( json_encode( get_uupg_list_translations() )); ?>"
                 initialSearchTerm="<?php echo esc_attr( $search ); ?>"
+                hideSeeAllLink
             ></uupgs-list>
         </div>
     </main>

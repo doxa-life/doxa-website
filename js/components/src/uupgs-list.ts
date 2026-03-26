@@ -160,6 +160,9 @@ export class UupgsList extends LitElement {
     }
 
     firstUpdated() {
+        if (this.initialSearchTerm) {
+            this.searchTerm = this.initialSearchTerm;
+        }
         if (this.useHighlightedUUPGs) {
             this.getHighlightedUUPGs()
                 .then(() => {
@@ -167,10 +170,6 @@ export class UupgsList extends LitElement {
                 });
         } else {
             this.getUUPGs();
-        }
-
-        if (this.initialSearchTerm) {
-            this.searchTerm = this.initialSearchTerm;
         }
     }
 
