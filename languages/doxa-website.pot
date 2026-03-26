@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-25T14:18:02+00:00\n"
+"POT-Creation-Date: 2026-03-26T11:59:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: doxa-website\n"
@@ -54,7 +54,7 @@ msgstr ""
 #. Template Name of the theme
 #: 404.php:25
 #: front-page.php:54
-#: page-adopt.php:137
+#: page-adopt.php:138
 msgid "Adopt"
 msgstr ""
 
@@ -259,6 +259,7 @@ msgid "Language"
 msgstr ""
 
 #: functions.php:122
+#: functions.php:1818
 #: template-uupg-detail.php:211
 msgid "Country"
 msgstr ""
@@ -282,6 +283,82 @@ msgstr ""
 
 #: functions.php:127
 msgid "Search people groups or locations"
+msgstr ""
+
+#: functions.php:1808
+#: shortcodes/uupg-list-shortcode.php:6
+msgid "Select"
+msgstr ""
+
+#: functions.php:1809
+#: shortcodes/uupg-list-shortcode.php:14
+msgid "Full Profile"
+msgstr ""
+
+#: functions.php:1810
+#: shortcodes/uupg-list-shortcode.php:15
+msgid "Intercessors"
+msgstr ""
+
+#: functions.php:1811
+msgid "Adopted"
+msgstr ""
+
+#: functions.php:1812
+msgid "Not Adopted"
+msgstr ""
+
+#: functions.php:1813
+#: shortcodes/uupg-list-shortcode.php:16
+msgid "Loading results..."
+msgstr ""
+
+#: functions.php:1814
+#: shortcodes/uupg-list-shortcode.php:17
+msgid "Load More"
+msgstr ""
+
+#: functions.php:1815
+#: shortcodes/uupg-list-shortcode.php:18
+msgid "Total"
+msgstr ""
+
+#: functions.php:1816
+#: shortcodes/uupg-list-shortcode.php:19
+msgid "Search names, country/continent, religions..."
+msgstr ""
+
+#: functions.php:1817
+#: shortcodes/uupg-list-shortcode.php:20
+msgid "See All"
+msgstr ""
+
+#: functions.php:1819
+msgid "Religion"
+msgstr ""
+
+#: functions.php:1820
+msgid "People Group"
+msgstr ""
+
+#: functions.php:1821
+msgid "WAGF Region"
+msgstr ""
+
+#: functions.php:1822
+msgid "WAGF Block"
+msgstr ""
+
+#: functions.php:1824
+msgid "Search"
+msgstr ""
+
+#: functions.php:1825
+msgid "Sort"
+msgstr ""
+
+#: functions.php:1826
+msgid "Per Page"
 msgstr ""
 
 #: header.php:35
@@ -425,60 +502,14 @@ msgstr ""
 msgid "Select a highlighted unengaged people group, or search for a specific group or location below."
 msgstr ""
 
-#: page-adopt.php:138
-#: page-pray.php:148
-#: page-uupgs.php:23
-#: shortcodes/uupg-list-shortcode.php:14
-msgid "Full Profile"
-msgstr ""
-
-#: page-adopt.php:139
-#: page-pray.php:149
-#: shortcodes/uupg-list-shortcode.php:15
-msgid "Intercessors"
-msgstr ""
-
-#: page-adopt.php:140
-#: page-pray.php:150
-#: page-uupgs.php:24
-#: shortcodes/uupg-list-shortcode.php:16
-msgid "Loading results..."
-msgstr ""
-
-#: page-adopt.php:141
-#: page-pray.php:151
-#: page-uupgs.php:25
-#: shortcodes/uupg-list-shortcode.php:17
-msgid "Load More"
-msgstr ""
-
-#: page-adopt.php:142
-#: page-pray.php:152
-#: page-uupgs.php:26
-#: shortcodes/uupg-list-shortcode.php:18
-msgid "Total"
-msgstr ""
-
-#: page-adopt.php:143
-#: page-pray.php:153
-#: shortcodes/uupg-list-shortcode.php:19
-msgid "Search names, country/continent, religions..."
-msgstr ""
-
-#: page-adopt.php:144
-#: page-pray.php:154
-#: shortcodes/uupg-list-shortcode.php:20
-msgid "See All"
-msgstr ""
-
-#: page-adopt.php:157
+#: page-adopt.php:151
 msgid "I was a stranger and you invited me in."
 msgstr ""
 
-#: page-adopt.php:158
-#: page-adopt.php:160
-#: page-pray.php:174
-#: page-pray.php:176
+#: page-adopt.php:152
+#: page-adopt.php:154
+#: page-pray.php:165
+#: page-pray.php:167
 msgid "Jesus"
 msgstr ""
 
@@ -628,16 +659,11 @@ msgstr ""
 msgid "When we pray, we join believers around the world in God's mission, standing together for peoples still waiting to hear the name of Jesus."
 msgstr ""
 
-#: page-pray.php:147
-#: shortcodes/uupg-list-shortcode.php:6
-msgid "Select"
-msgstr ""
-
-#: page-pray.php:166
+#: page-pray.php:157
 msgid "Prayer Progress"
 msgstr ""
 
-#: page-pray.php:173
+#: page-pray.php:164
 msgid "Pray earnestly to the Lord of the harvest ...that He would send laborers to the [Unengaged]."
 msgstr ""
 
@@ -651,30 +677,6 @@ msgstr ""
 
 #: page-uupgs.php:18
 msgid "Find a UUPG"
-msgstr ""
-
-#: page-uupgs.php:27
-msgid "Search names, locations, religions..."
-msgstr ""
-
-#: page-uupgs.php:28
-msgid "Adopted"
-msgstr ""
-
-#: page-uupgs.php:29
-msgid "Not Adopted"
-msgstr ""
-
-#: page-uupgs.php:31
-msgid "Search"
-msgstr ""
-
-#: page-uupgs.php:32
-msgid "Sort"
-msgstr ""
-
-#: page-uupgs.php:33
-msgid "Per Page"
 msgstr ""
 
 #. Template Name of the theme

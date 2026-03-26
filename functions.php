@@ -1802,3 +1802,28 @@ function doxa_has_document_translation( $document_key ) {
     $in_array = in_array($lang_code, $langs, true);
     return $in_array;
 }
+
+function get_uupg_list_translations() {
+    return [
+        'select' => __('Select', 'doxa-website'),
+        'full_profile' => __('Full Profile', 'doxa-website'),
+        'prayer_coverage' => __('Intercessors', 'doxa-website'),
+        'adopted' => __('Adopted', 'doxa-website'),
+        'not_adopted' => __('Not Adopted', 'doxa-website'),
+        'loading' => __('Loading results...', 'doxa-website'),
+        'load_more' => __('Load More', 'doxa-website'),
+        'total' => __('Total', 'doxa-website'),
+        'search' => __('Search names, country/continent, religions...', 'doxa-website'),
+        'see_all' => __('See All', 'doxa-website'),
+        'country' => __('Country', 'doxa-website'),
+        'religion' => __('Religion', 'doxa-website'),
+        'rop1' => __('People Group', 'doxa-website'),
+        'wagf_region' => __('WAGF Region', 'doxa-website'),
+        'wagf_block' => __('WAGF Block', 'doxa-website'),
+        'filters' => [
+            'search' => __('Search', 'doxa-website'),
+            'sort' => __('Sort', 'doxa-website'),
+            'per_page' => __('Per Page', 'doxa-website'),
+        ],
+    ];
+}
