@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
-"POT-Creation-Date: 2026-03-23T17:00:31+00:00\n"
-"PO-Revision-Date: 2026-03-24 12:06+0000\n"
-"Last-Translator: Weblate Admin <translator@disciple.tools>\n"
+"POT-Creation-Date: 2026-03-25T14:18:02+00:00\n"
+"PO-Revision-Date: 2026-03-25 15:08+0000\n"
+"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
 "Language-Team: German <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/de_DE/>\n"
 "Language: de_DE\n"
@@ -742,7 +742,7 @@ msgstr "Pro Seite"
 msgid "Doxa Page"
 msgstr "Doxa-Seite"
 
-#: shortcodes/general-resources-shortcode.php:22
+#: shortcodes/general-resources-shortcode.php:21
 msgid "DOXA Playbook"
 msgstr "DOXA-Leitfaden"
 
@@ -750,54 +750,59 @@ msgstr "DOXA-Leitfaden"
 msgid "DOXA Playbook Slides"
 msgstr "DOXA-Playbook-Folien"
 
-#: shortcodes/general-resources-shortcode.php:36
+#: shortcodes/general-resources-shortcode.php:37
 msgid "DOXA Promo Video"
 msgstr "DOXA-Werbevideo"
 
-#: shortcodes/general-resources-shortcode.php:46
+#: shortcodes/general-resources-shortcode.php:48
 msgid "Champion Tips"
 msgstr "Tipps für Champions"
 
-#: shortcodes/general-resources-shortcode.php:51
+#: shortcodes/general-resources-shortcode.php:53
 msgid "Discussion Guide"
 msgstr "Diskussionsleitfaden"
 
-#: shortcodes/general-resources-shortcode.php:56
+#: shortcodes/general-resources-shortcode.php:58
 msgid "DOXA Campaign Talking Points"
 msgstr "DOXA-Kampagne: Kernaussagen"
 
-#: shortcodes/general-resources-shortcode.php:61
+#: shortcodes/general-resources-shortcode.php:63
 msgid "Email Templates"
 msgstr "E-Mail-Vorlagen"
 
-#: shortcodes/general-resources-shortcode.php:69
+#: shortcodes/general-resources-shortcode.php:71
 msgid "Introduction 2025"
 msgstr "Einleitung 2025"
 
-#: shortcodes/general-resources-shortcode.php:74
+#: shortcodes/general-resources-shortcode.php:77
 msgid "Vision and Values"
 msgstr "Leitbild und Werte"
 
-#: shortcodes/general-resources-shortcode.php:79
+#: shortcodes/general-resources-shortcode.php:83
 msgid "Definitions"
 msgstr "Begriffsbestimmungen"
 
-#: shortcodes/general-resources-shortcode.php:84
+#: shortcodes/general-resources-shortcode.php:89
 msgid "Doxa Endowment Investment Policy Statement"
 msgstr "Erklärung zur Anlagepolitik des Doxa-Stiftungsfonds"
 
-#: shortcodes/general-resources-shortcode.php:89
+#: shortcodes/general-resources-shortcode.php:95
 msgid "Initial Proposal"
 msgstr "Erstantrag"
 
-#: shortcodes/general-resources-shortcode.php:112
-#: shortcodes/general-resources-shortcode.php:133
+#: shortcodes/general-resources-shortcode.php:119
+#: shortcodes/general-resources-shortcode.php:146
+msgid "In English"
+msgstr "Auf Englisch"
+
+#: shortcodes/general-resources-shortcode.php:125
+#: shortcodes/general-resources-shortcode.php:152
 #: template-uupg-resources.php:150
 msgid "View"
 msgstr "Anzeigen"
 
-#: shortcodes/general-resources-shortcode.php:118
-#: shortcodes/general-resources-shortcode.php:139
+#: shortcodes/general-resources-shortcode.php:131
+#: shortcodes/general-resources-shortcode.php:158
 #: template-uupg-resources.php:151
 msgid "Download"
 msgstr "Download"
@@ -1186,7 +1191,8 @@ msgstr ""
 
 #: template-uupg-resources.php:83
 msgid "Mobilize others in your church to join in prayer"
-msgstr "Mobilisieren Sie andere in Ihrer Gemeinde, sich dem Gebet anzuschließen"
+msgstr ""
+"Mobilisieren Sie andere in Ihrer Gemeinde, sich dem Gebet anzuschließen"
 
 #: template-uupg-resources.php:84
 msgid "Give to support gospel work among unreached peoples"
