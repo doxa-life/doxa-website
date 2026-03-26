@@ -69,7 +69,7 @@ export class UupgsList extends LitElement {
                         </svg>
                         <input
                             type="search"
-                            placeholder="${this.initialSearchTerm ? decodeURI(this.initialSearchTerm) : this.t.search}"
+                            placeholder="${this.initialSearchTerm ? this.initialSearchTerm : this.t.search}"
                             @input=${this.debounce(this.onSearch, 500)}
                         />
                     </div>
@@ -161,6 +161,7 @@ export class UupgsList extends LitElement {
 
     firstUpdated() {
         if (this.initialSearchTerm) {
+            this.initialSearchTerm = decodeURI(this.initialSearchTerm);
             this.searchTerm = this.initialSearchTerm;
         }
         if (this.useHighlightedUUPGs) {
@@ -308,7 +309,6 @@ export class UupgsList extends LitElement {
                     }
                 }
             }
-            // if the strongest match is a hidden field (e.g religion.label), add it to res.item.matches
 
             return newItem
         });
