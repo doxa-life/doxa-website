@@ -59,6 +59,8 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
     $email   = sanitize_email( $params['email'] ?? '' );
     $country = sanitize_text_field( $params['country'] ?? '' );
     $message = sanitize_textarea_field( $params['message'] ?? '' );
+    $consent_doxa_general = ! empty( $params['consent_doxa_general'] );
+    $language = sanitize_text_field( $params['language'] ?? 'en' );
 
     // Validate required fields
     if ( empty( $email ) || empty( $message ) ) {
@@ -75,10 +77,12 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
 
     $response = wp_remote_post( rtrim( $api_url, '/' ) . '/api/contact', [
         'body'    => wp_json_encode( [
-            'name'    => $name,
-            'email'   => $email,
-            'country' => $country,
-            'message' => $message,
+            'name'                 => $name,
+            'email'                => $email,
+            'country'              => $country,
+            'message'              => $message,
+            'consent_doxa_general' => $consent_doxa_general,
+            'language'             => $language,
         ] ),
         'headers' => [
             'X-API-Key'    => $api_key,

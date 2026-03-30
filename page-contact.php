@@ -43,6 +43,10 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                     <label for="message"><?php echo esc_html__('Message', 'doxa-website'); ?></label>
                     <textarea id="message" name="message" rows="5" required placeholder="<?php echo esc_attr__('Enter your message', 'doxa-website'); ?>"></textarea>
                 </div>
+                <div class="form-control color-primary-darker">
+                    <input type="checkbox" id="consent-doxa-general" name="consent_doxa_general">
+                    <label for="consent-doxa-general"><?php echo esc_html__('I would like to receive email updates from the DOXA partnership.', 'doxa-website'); ?></label>
+                </div>
                 <div class="cf-turnstile" data-sitekey="<?php echo esc_attr( $cf_site_key ); ?>" data-theme="light" data-callback="onTurnstileSuccess"></div>
                 <div id="contact-message" class="contact-message" style="display: none;"></div>
                 <button
@@ -95,6 +99,8 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                 email: form.querySelector('#contact_email').value,
                 country: form.querySelector('#country').value,
                 message: form.querySelector('#message').value,
+                consent_doxa_general: form.querySelector('#consent-doxa-general').checked,
+                language: '<?php echo esc_js( doxa_get_language_code() ); ?>',
                 cf_turnstile: turnstileToken
             };
 
