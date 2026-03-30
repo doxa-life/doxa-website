@@ -100,6 +100,7 @@ $cf_site_key = get_option( 'dt_webform_cf_site_key', '' );
                 country: form.querySelector('#country').value,
                 message: form.querySelector('#message').value,
                 consent_doxa_general: form.querySelector('#consent-doxa-general').checked,
+                language: '<?php echo esc_js( doxa_get_language_code() ); ?>',
                 cf_turnstile: turnstileToken
             };
 

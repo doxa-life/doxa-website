@@ -60,6 +60,7 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
     $country = sanitize_text_field( $params['country'] ?? '' );
     $message = sanitize_textarea_field( $params['message'] ?? '' );
     $consent_doxa_general = ! empty( $params['consent_doxa_general'] );
+    $language = sanitize_text_field( $params['language'] ?? 'en' );
 
     // Validate required fields
     if ( empty( $email ) || empty( $message ) ) {
@@ -81,6 +82,7 @@ function doxa_handle_contact_form( WP_REST_Request $request ) {
             'country'              => $country,
             'message'              => $message,
             'consent_doxa_general' => $consent_doxa_general,
+            'language'             => $language,
         ] ),
         'headers' => [
             'X-API-Key'    => $api_key,
