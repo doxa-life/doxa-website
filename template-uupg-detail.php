@@ -66,9 +66,9 @@ $pray_url .= '?source=doxalife';
                                         <div class="info__content">
                                             <?php foreach ( $uupg['picture_credit'] as $credit ) : ?>
                                                 <?php if ( !is_null( $credit['link'] ) ) : ?>
-                                                    <a class="light-link" href="<?php echo $credit['link']; ?>" target="_blank"><?php echo $credit['text']; ?></a>
+                                                    <a class="light-link" href="<?php echo esc_url( $credit['link'] ); ?>" target="_blank"><?php echo esc_html( $credit['text'] ); ?></a>
                                                 <?php else : ?>
-                                                    <span><?php echo $credit['text']; ?></span>
+                                                    <span><?php echo esc_html( $credit['text'] ); ?></span>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </div>
@@ -129,7 +129,7 @@ $pray_url .= '?source=doxalife';
                                     <p><?php echo __('Adoption Status', 'doxa-website'); ?></p>
                                 </div>
                                 <div class="status-item">
-                                    <?php if ( $uupg['cross_cultural_workers_present'] ) : ?>
+                                    <?php if ( !empty( $uupg['cross_cultural_workers_present'] ) ) : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
@@ -137,7 +137,7 @@ $pray_url .= '?source=doxalife';
                                     <p><?php echo __('Cross-cultural workers present', 'doxa-website'); ?></p>
                                 </div>
                                 <div class="status-item">
-                                    <?php if ( $uupg['work_in_local_language'] ) : ?>
+                                    <?php if ( !empty( $uupg['work_in_local_language'] ) ) : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
@@ -145,7 +145,7 @@ $pray_url .= '?source=doxalife';
                                     <p><?php echo __('Work in local language &amp; culture', 'doxa-website'); ?></p>
                                 </div>
                                 <div class="status-item">
-                                    <?php if ( $uupg['disciple_and_church_multiplication'] ) : ?>
+                                    <?php if ( !empty( $uupg['disciple_and_church_multiplication'] ) ) : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
