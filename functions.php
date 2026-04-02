@@ -107,10 +107,12 @@ function doxa_map_scripts() {
     wp_enqueue_style( 'prayer-map', get_template_directory_uri() . '/css/prayer-map.css', array( 'mapbox-gl' ), filemtime( get_template_directory() . '/css/prayer-map.css' ) );
     wp_enqueue_script( 'prayer-map', get_template_directory_uri() . '/js/prayer-map.js', array( 'mapbox-gl' ), filemtime( get_template_directory() . '/js/prayer-map.js' ), true );
 
+    $pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
+
     $language_code = doxa_get_language_code();
     wp_add_inline_script( 'prayer-map', 'window.prayerMapConfig = ' . wp_json_encode( array(
         'mapboxToken'  => defined( 'MAPBOX_PUBLIC_TOKEN' ) ? MAPBOX_PUBLIC_TOKEN : '',
-        'prayBaseUrl'  => 'https://pray.doxa.life' . ( $language_code !== 'en' ? '/' . $language_code : '' ),
+        'prayBaseUrl'  => $pray_base_url . ( $language_code !== 'en' ? '/' . $language_code : '' ),
         'researchUrl'  => doxa_translation_url( 'research' ),
         'languageCode' => $language_code,
         't' => array(

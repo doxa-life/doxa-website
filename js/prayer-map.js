@@ -5,7 +5,7 @@
   var researchUrl = config.researchUrl || '/research';
   var languageCode = config.languageCode || 'en';
   var t = config.t || {};
-  var apiUrl = 'https://pray.doxa.life/api/people-groups/list?fields=slug,name,imb_lat,imb_lng,people_committed,population,picture_url,country,imb_reg_of_language&lang=' + languageCode;
+  var apiUrl = prayBaseUrl + '/api/people-groups/list?fields=slug,name,imb_lat,imb_lng,people_committed,population,picture_url,country,imb_reg_of_language&lang=' + languageCode;
 
   var COLOR_NO_PRAYER = '#e57373';
   var COLOR_HAS_PRAYER = '#4caf50';
