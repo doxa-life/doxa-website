@@ -217,9 +217,8 @@ export class UupgsList extends LitElement {
     }
 
     getUUPGs() {
-        const uupgAPIUrl = this.isDevelopment()
-            ? 'http://uupg.doxa.test/wp-json/dt-public/disciple-tools-people-groups-api/v1/list'
-            : 'https://pray.doxa.life/api/people-groups/list?lang=' + this.languageCode;
+        const prayBaseUrl = window.uupgsData?.prayBaseUrl || 'https://pray.doxa.life';
+        const uupgAPIUrl = prayBaseUrl + '/api/people-groups/list?lang=' + this.languageCode;
 
         this.loading = true
         return fetch(uupgAPIUrl)
@@ -250,9 +249,8 @@ export class UupgsList extends LitElement {
     }
 
     getHighlightedUUPGs() {
-        const uupgAPIUrl = this.isDevelopment()
-            ? 'http://uupg.doxa.test/wp-json/dt-public/disciple-tools-people-groups-api/v1/highlighted'
-            : 'https://pray.doxa.life/api/people-groups/highlighted?lang=' + this.languageCode;
+        const prayBaseUrl = window.uupgsData?.prayBaseUrl || 'https://pray.doxa.life';
+        const uupgAPIUrl = prayBaseUrl + '/api/people-groups/highlighted?lang=' + this.languageCode;
 
         const url = new URL(uupgAPIUrl);
 
@@ -269,12 +267,6 @@ export class UupgsList extends LitElement {
             .finally(() => {
                 this.loading = false;
             });
-    }
-
-    isDevelopment() {
-        return false;
-        const url = new URL(window.location.href);
-        return url.hostname !== 'doxa.life';
     }
 
     protected createRenderRoot(): HTMLElement | DocumentFragment {

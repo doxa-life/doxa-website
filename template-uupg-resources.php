@@ -9,11 +9,12 @@ $slug = get_query_var( 'uupg_slug' );
 
 $uupg = get_uupg_by_slug( $slug );
 
+$pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
 $lang_code = doxa_get_language_code();
 if ( $lang_code !== 'en' ) {
-    $pray_url = 'https://pray.doxa.life/' . $lang_code . '/' . $slug;
+    $pray_url = $pray_base_url . '/' . $lang_code . '/' . $slug;
 } else {
-    $pray_url = 'https://pray.doxa.life/' . $slug;
+    $pray_url = $pray_base_url . '/' . $slug;
 }
 
 ?>
