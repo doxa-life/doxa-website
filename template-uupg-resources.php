@@ -65,8 +65,8 @@ if ( $lang_code !== 'en' ) {
                         </div>
                         <div class="stack stack--xs | uupg__header">
                             <h2 class="color-primary"><?php echo esc_html__('Your UUPG', 'doxa-website'); ?></h2>
-                            <h3 class="h1 font-weight-medium"><?php echo esc_html( $uupg['display_name'] ); ?></h3>
-                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['country_code']['label'] ); ?> (<?php echo esc_html( $uupg['imb_reg_of_people_1']['label'] ); ?>)</p>
+                            <h3 class="h1 font-weight-medium"><?php echo esc_html( $uupg['name'] ); ?></h3>
+                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['country_code']['label'] ); ?> (<?php echo esc_html( $uupg['rop1']['label'] ); ?>)</p>
                             <a href="<?php echo esc_url( doxa_translation_url('research/' ) . $slug ); ?>" class="button compact"><?php echo esc_html__('View full profile', 'doxa-website'); ?></a>
                         </div>
                     </div>

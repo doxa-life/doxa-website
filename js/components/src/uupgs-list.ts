@@ -88,15 +88,15 @@ export class UupgsList extends LitElement {
                         }
                     </div>
                     <div id="results" class="grid | uupgs-list ${this.useSelectCard ? 'gap-md' : ''}" ?data-width-lg=${!this.useSelectCard} ?data-width-md=${this.useSelectCard}>
-                        ${repeat(this.getUUPGsToDisplay(), (uupg: Uupg) => uupg.id, (uupg: Uupg) => {
+                        ${repeat(this.getUUPGsToDisplay(), (uupg: Uupg) => uupg.slug, (uupg: Uupg) => {
                             if (this.useSelectCard) {
                                 return html`
                                     <div class="stack stack--sm | card | highlighted-uupg__card">
                                         <div class="repel align-start">
-                                            <img class="" src="${uupg.picture_url}" alt="${uupg.display_name}">
+                                            <img class="" src="${uupg.image_url}" alt="${uupg.name}">
                                             <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region.label}</p>
                                         </div>
-                                        <p class="">${uupg.display_name}</p>
+                                        <p class="">${uupg.name}</p>
                                         <div class="repel">
                                             <p class="font-size-sm color-brand-lighter">${this.t.prayer_coverage}:</p>
                                             <p class="font-size-xl font-button">${uupg.people_committed ?? 0}/144</p>
@@ -116,10 +116,10 @@ export class UupgsList extends LitElement {
                             const adoptedBadgeText = isAdopted ? this.t.adopted : this.t.not_adopted;
 
                             return html`<div class="card | uupg__card">
-                                <img class="uupg__image" src="${uupg.picture_url}" alt="${uupg.name}">
+                                <img class="uupg__image" src="${uupg.image_url}" alt="${uupg.name}">
                                 <div class="uupg__header">
                                     <h3 class="uupg__name">${uupg.name}</h3>
-                                    <p class="uupg__country">${uupg.country.label} (${uupg.rop1.label})</p>
+                                    <p class="uupg__country">${uupg.country_code.label} (${uupg.rop1.label})</p>
                                 </div>
                                 <div class="uupg_adopted">
                                     <div>
@@ -206,7 +206,7 @@ export class UupgsList extends LitElement {
         this.dontShowListOnLoad = false;
         this.filteredUUPGs = this.uupgs.filter(uupg => {
             return uupg.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-                uupg.country.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                uupg.country_code.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
                 uupg.rop1.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
                 uupg.religion.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
                 uupg.wagf_region.label.toLowerCase().includes(this.searchTerm.toLowerCase()) ||

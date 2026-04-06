@@ -5,7 +5,7 @@
   var researchUrl = config.researchUrl || '/research';
   var languageCode = config.languageCode || 'en';
   var t = config.t || {};
-  var apiUrl = prayBaseUrl + '/api/people-groups/list?fields=slug,name,latitude,longitude,people_committed,population,picture_url,country,primary_language&lang=' + languageCode;
+  var apiUrl = prayBaseUrl + '/api/people-groups/list?fields=slug,name,latitude,longitude,people_committed,population,image_url,country_code,primary_language&lang=' + languageCode;
 
   var COLOR_NO_PRAYER = '#e57373';
   var COLOR_HAS_PRAYER = '#4caf50';
@@ -312,8 +312,8 @@
               people_committed: p.people_committed,
               population: p.population,
               language: p.primary_language ? p.primary_language.label : null,
-              country: p.country ? p.country.label : null,
-              picture_url: p.picture_url,
+              country: p.country_code ? p.country_code.label : null,
+              picture_url: p.image_url,
               hasPrayer: p.people_committed > 0 ? 1 : 0,
             },
           });
