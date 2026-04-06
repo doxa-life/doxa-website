@@ -167,7 +167,7 @@
 
             let hasDeafPeopleGroup = false;
             let filteredPeopleGroups = peopleGroups.filter((group) => {
-                if (group.display_name.toLowerCase().includes('deaf')) {
+                if (group.name.toLowerCase().includes('deaf')) {
                     if (hasDeafPeopleGroup) {
                         return false;
                     }
@@ -183,8 +183,8 @@
                 item.href = reel.dataset.researchUrl + group.slug;
                 item.target = '_blank';
                 item.innerHTML = `
-                    <div><img class="square rounded-md size-md" src="${group.picture_url}" alt="${group.display_name}"></div>
-                    <p class="text-center uppercase width-md">${group.display_name}</p>
+                    <div><img class="square rounded-md size-md" src="${group.image_url}" alt="${group.name}"></div>
+                    <p class="text-center uppercase width-md">${group.name}</p>
                 `;
                 reel.appendChild(item);
             });

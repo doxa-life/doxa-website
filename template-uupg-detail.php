@@ -93,8 +93,8 @@ $pray_url .= '?source=doxalife';
                             </div>
                         </div>
                         <div class="stack stack--xs | uupg__header">
-                            <h4 class="font-base font-weight-medium"><?php echo esc_html( $uupg['display_name'] ); ?></h4>
-                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['country_code']['label'] ); ?> (<?php echo esc_html( $uupg['imb_reg_of_people_1']['label'] ); ?>)</p>
+                            <h4 class="font-base font-weight-medium"><?php echo esc_html( $uupg['name'] ); ?></h4>
+                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['country_code']['label'] ); ?> (<?php echo esc_html( $uupg['rop1']['label'] ); ?>)</p>
                             <p><?php echo esc_html( $uupg['imb_people_description'] ); ?></p>
 
                             <style>
@@ -172,19 +172,12 @@ $pray_url .= '?source=doxalife';
                             <h2><?php echo __('Adoption Status', 'doxa-website'); ?></h2>
                             <p class="font-size-4xl font-weight-medium"><?php echo $uupg['adopted_by_churches'] ? $uupg['adopted_by_churches'] : 0; ?></p>
                             <p class="font-size-lg margin-bottom-md"><?php echo __('churches / individuals have adopted this people group', 'doxa-website'); ?></p>
-                            <?php if ( isset( $uupg['adopted_by_churches_list'] ) && count( $uupg['adopted_by_churches_list'] ) > 0 ) : ?>
+                            <?php if ( isset( $uupg['adopted_by_names'] ) && count( $uupg['adopted_by_names'] ) > 0 ) : ?>
                                 <ul>
-                                    <?php foreach ( $uupg['adopted_by_churches_list'] as $church ) : ?>
-
-                                        <?php if ( isset( $church['confirm_public_display'] ) && $church['confirm_public_display'] === 'Yes' ) : ?>
-
-                                            <li><?php echo $church['post_title']; ?></li>
-
-                                        <?php endif; ?>
-
+                                    <?php foreach ( $uupg['adopted_by_names'] as $name ) : ?>
+                                        <li><?php echo esc_html( $name ); ?></li>
                                     <?php endforeach; ?>
                                 </ul>
-
                             <?php endif; ?>
 
                             <a class="button fit-content mx-auto mt-auto clamp-padding" href="<?php echo doxa_translation_url('adopt' ) . $uupg['slug']; ?>"><?php echo __('Adopt people group', 'doxa-website'); ?></a>
@@ -215,8 +208,8 @@ $pray_url .= '?source=doxalife';
                                 <?php endif; ?>
                                 <p><strong><?php echo __('Population', 'doxa-website'); ?>:</strong> ~<?php echo esc_html( $uupg['population'] ); ?></p>
                                 <p><strong><?php echo __('Primary Language', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['primary_language']['label'] ); ?></p>
-                                <p><strong><?php echo __('Primary Religion', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['primary_religion']['label'] ); ?></p>
-                                <p><strong><?php echo __('Religious Practices', 'doxa-website'); ?>:</strong> <br><?php echo esc_html( $uupg['primary_religion']['description'] ); ?></p>
+                                <p><strong><?php echo __('Primary Religion', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['religion']['label'] ); ?></p>
+                                <p><strong><?php echo __('Religious Practices', 'doxa-website'); ?>:</strong> <br><?php echo esc_html( $uupg['religion']['description'] ); ?></p>
                             </div>
                         </div>
                         <div class="stack | card" data-variant="primary">
