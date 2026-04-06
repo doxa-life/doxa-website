@@ -159,7 +159,8 @@
 
             const numberOfPeopleGroups = 20;
             const language = getLanguage();
-            const response = await fetch('https://pray.doxa.life/api/people-groups/list?lang=' + language);
+            const prayBaseUrl = (window.uupgsData && window.uupgsData.prayBaseUrl) || 'https://pray.doxa.life';
+            const response = await fetch(prayBaseUrl + '/api/people-groups/list?lang=' + language);
             const data = await response.json();
 
             const peopleGroups = data.posts.filter(group => group.has_photo)
