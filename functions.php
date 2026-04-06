@@ -82,9 +82,11 @@ function gospel_ambition_scripts() {
     // unenqueue jquery
     wp_dequeue_script('jquery');
     wp_enqueue_script('uupgs-script', get_template_directory_uri() . '/assets/dist/main2.js', array(), filemtime(get_template_directory() . '/assets/dist/main2.js'), true);
+    $pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
     wp_localize_script('uupgs-script', 'uupgsData', array(
         'images_url' => trailingslashit( get_template_directory_uri() ) . 'assets/images',
         'icons_url' => trailingslashit( get_template_directory_uri() ) . 'assets/icons',
+        'prayBaseUrl' => $pray_base_url,
         'translations' => [
             'click_twice' => __( 'Click again to interact with map', 'doxa-website' ),
         ],

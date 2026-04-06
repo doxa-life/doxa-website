@@ -7,6 +7,7 @@ declare global {
         uupgsData: {
             images_url: string;
             icons_url: string;
+            prayBaseUrl: string;
         };
         doxaData: {
             statistics: {
@@ -20,10 +21,8 @@ declare global {
 
 async function getPeopleGroupsStatistics() {
 
-    const apiUrl =
-        location.href.includes('doxa.test')
-        ? 'http://pray.doxa.test/api/people-groups/statistics'
-        : 'https://pray.doxa.life/api/people-groups/statistics';
+    const prayBaseUrl = window.uupgsData?.prayBaseUrl || 'https://pray.doxa.life';
+    const apiUrl = prayBaseUrl + '/api/people-groups/statistics';
 
     const response = await fetch(apiUrl);
     const data = await response.json();
