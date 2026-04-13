@@ -114,9 +114,9 @@ export class UupgsList extends LitElement {
                             ></filter-dropdown>
                             <filter-dropdown
                                 label="${this.t.country || 'Country'}"
-                                name="country"
-                                .options=${this.filterOptions.country || []}
-                                value=${this.activeFilters.country?.value ?? ''}
+                                name="country_code"
+                                .options=${this.filterOptions.country_code || []}
+                                value=${this.activeFilters.country_code?.value ?? ''}
                                 placeholder="${this.t.type_to_search || 'Type to search...'}"
                                 @filter-change=${this.onFilterChange}
                                 @filter-clear=${this.onFilterClear}
@@ -187,11 +187,11 @@ export class UupgsList extends LitElement {
                                 return html`
                                     <div class="stack stack--sm | card | highlighted-uupg__card">
                                         <div class="repel align-start">
-                                            <img class="" src="${uupg.picture_url}" alt="${uupg.display_name}">
+                                            <img class="" src="${uupg.image_url}" alt="${uupg.name}">
                                             <p class="color-brand-lighter uppercase text-end overflow-wrap-anywhere">${uupg.wagf_region_label ? uupg.wagf_region_label : uupg.wagf_region.label}</p>
                                         </div>
                                         <div>
-                                            <p class="line-height-tight">${uupg.display_name}</p>
+                                            <p class="line-height-tight">${uupg.name}</p>
                                             ${uupg.matches ? html`
                                                 ${uupg.matches.map(match => html`
                                                     <p class="font-size-sm color-brand-lighter"><strong>${match.key}</strong>: ${match.label}</p>
@@ -217,10 +217,10 @@ export class UupgsList extends LitElement {
                             const adoptedBadgeText = isAdopted ? this.t.adopted : this.t.not_adopted;
 
                             return html`<div class="card | uupg__card">
-                                <img class="uupg__image" src="${uupg.picture_url}" alt="${uupg.display_name}">
+                                <img class="uupg__image" src="${uupg.image_url}" alt="${uupg.name}">
                                 <div class="uupg__header">
-                                    <h3 class="uupg__name line-height-tight">${uupg.display_name}</h3>
-                                    <p class="uupg__country">${uupg.country_label ? uupg.country_label : uupg.country.label} (${uupg.rop1_label ? uupg.rop1_label : uupg.rop1.label})</p>
+                                    <h3 class="uupg__name line-height-tight">${uupg.name}</h3>
+                                    <p class="uupg__country">${uupg.country_label ? uupg.country_label : uupg.country_code.label} (${uupg.rop1_label ? uupg.rop1_label : uupg.rop1.label})</p>
                                     ${uupg.matches ? html`
                                         ${uupg.matches.map(match => html`
                                             <p class="font-size-sm color-brand-lighter"><strong>${match.key}</strong>: ${match.label}</p>
@@ -389,7 +389,7 @@ export class UupgsList extends LitElement {
                 .sort((a, b) => a.label.localeCompare(b.label));
         };
         this.filterOptions = {
-            country: extract('country'),
+            country_code: extract('country_code'),
             rop1: extract('rop1'),
             wagf_region: extract('wagf_region'),
             wagf_block: extract('wagf_block'),
@@ -464,8 +464,8 @@ export class UupgsList extends LitElement {
             minMatchCharLength: 3,
             threshold: 0.4,
             keys: [
-                'display_name',
-                'country.label',
+                'name',
+                'country_code.label',
                 'rop1.label',
                 'religion.label',
                 'wagf_region.label',
@@ -512,7 +512,7 @@ export class UupgsList extends LitElement {
                         const [parentKey] = key.split('.');
                         const keyTranslations = {
                             religion: this.t.religion,
-                            country: this.t.country,
+                            country_code: this.t.country,
                             rop1: this.t.rop1,
                             wagf_region: this.t.wagf_region,
                             wagf_block: this.t.wagf_block,
@@ -521,7 +521,7 @@ export class UupgsList extends LitElement {
                             newItem.wagf_region_label = highlightedValue;
                         } else if ('rop1' === parentKey && !this.useSelectCard) {
                             newItem.rop1_label = highlightedValue;
-                        } else if ('country' === parentKey && !this.useSelectCard) {
+                        } else if ('country_code' === parentKey && !this.useSelectCard) {
                             newItem.country_label = highlightedValue;
                         } else if ('wagf_region' === parentKey && !this.useSelectCard) {
                             // do nothing
