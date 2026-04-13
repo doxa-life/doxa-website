@@ -1,5 +1,4 @@
 export interface Uupg {
-    id: string;
     slug: string;
     name: string;
     display_name: string;
@@ -12,9 +11,9 @@ export interface Uupg {
     rop1: ValueLabel;
     rop1_label?: any;
     location_description: string;
-    has_image: boolean;
-    picture_url: string;
-    picture_credit_html: string;
+    has_photo: boolean;
+    image_url: string;
+    picture_credit: any;
     population: number;
     religion: ValueLabel;
     adopted?: boolean;

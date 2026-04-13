@@ -2,7 +2,7 @@
 
 function uupg_list_shortcode( $atts ) {
     $atts = shortcode_atts( array(
-        'select_url' => 'https://pray.doxa.life',
+        'select_url' => defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life',
         'select_text' => __('Select', 'doxa-website'),
         'per_page' => 6,
         'more_per_page' => 12,

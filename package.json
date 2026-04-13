@@ -14,7 +14,7 @@
     "vite": "^7.2.6"
   },
   "dependencies": {
-    "fuse.js": "^7.1.0",
+    "fuse.js": "^7.3.0",
     "intl-tel-input": "^26.7.5",
     "lit": "^3.3.1"
   }

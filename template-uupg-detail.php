@@ -9,11 +9,12 @@ $slug = get_query_var( 'uupg_slug' );
 
 $uupg = get_uupg_by_slug( $slug );
 
+$pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
 $lang_code = doxa_get_language_code();
 if ( $lang_code !== 'en' ) {
-    $pray_url = 'https://pray.doxa.life/' . $lang_code . '/' . $slug;
+    $pray_url = $pray_base_url . '/' . $lang_code . '/' . $slug;
 } else {
-    $pray_url = 'https://pray.doxa.life/' . $slug;
+    $pray_url = $pray_base_url . '/' . $slug;
 }
 $pray_url .= '?source=doxalife';
 
@@ -66,9 +67,9 @@ $pray_url .= '?source=doxalife';
                                         <div class="info__content">
                                             <?php foreach ( $uupg['picture_credit'] as $credit ) : ?>
                                                 <?php if ( !is_null( $credit['link'] ) ) : ?>
-                                                    <a class="light-link" href="<?php echo $credit['link']; ?>" target="_blank"><?php echo $credit['text']; ?></a>
+                                                    <a class="light-link" href="<?php echo esc_url( $credit['link'] ); ?>" target="_blank"><?php echo esc_html( $credit['text'] ); ?></a>
                                                 <?php else : ?>
-                                                    <span><?php echo $credit['text']; ?></span>
+                                                    <span><?php echo esc_html( $credit['text'] ); ?></span>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </div>
@@ -84,8 +85,8 @@ $pray_url .= '?source=doxalife';
                                 <?php endif; ?>
 
                             </div>
-                            <div class="engaged-stamp" data-engaged="<?php echo $uupg['imb_engagement_status']['value'] === 'engaged' ? 'true' : 'false'; ?>">
-                                <?php if ( $uupg['imb_engagement_status']['value'] === 'engaged' ) : ?>
+                            <div class="engaged-stamp" data-engaged="<?php echo $uupg['engagement_status']['value'] === 'engaged' ? 'true' : 'false'; ?>">
+                                <?php if ( $uupg['engagement_status']['value'] === 'engaged' ) : ?>
                                     <span><?php echo __('Engaged', 'doxa-website'); ?></span>
                                 <?php else : ?>
                                     <span><?php echo __('Not Engaged', 'doxa-website'); ?></span>
@@ -93,8 +94,8 @@ $pray_url .= '?source=doxalife';
                             </div>
                         </div>
                         <div class="stack stack--xs | uupg__header">
-                            <h4 class="font-base font-weight-medium"><?php echo esc_html( $uupg['display_name'] ); ?></h4>
-                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['imb_isoalpha3']['label'] ); ?> (<?php echo esc_html( $uupg['imb_reg_of_people_1']['label'] ); ?>)</p>
+                            <h4 class="font-base font-weight-medium"><?php echo esc_html( $uupg['name'] ); ?></h4>
+                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['country_code']['label'] ); ?> (<?php echo esc_html( $uupg['rop1']['label'] ); ?>)</p>
                             <p><?php echo esc_html( $uupg['imb_people_description'] ); ?></p>
 
                             <style>
@@ -129,7 +130,7 @@ $pray_url .= '?source=doxalife';
                                     <p><?php echo __('Adoption Status', 'doxa-website'); ?></p>
                                 </div>
                                 <div class="status-item">
-                                    <?php if ( $uupg['cross_cultural_workers_present'] ) : ?>
+                                    <?php if ( !empty( $uupg['workers_long_term'] ) ) : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
@@ -137,7 +138,7 @@ $pray_url .= '?source=doxalife';
                                     <p><?php echo __('Cross-cultural workers present', 'doxa-website'); ?></p>
                                 </div>
                                 <div class="status-item">
-                                    <?php if ( $uupg['work_in_local_language'] ) : ?>
+                                    <?php if ( !empty( $uupg['work_in_local_language'] ) ) : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
@@ -145,7 +146,7 @@ $pray_url .= '?source=doxalife';
                                     <p><?php echo __('Work in local language &amp; culture', 'doxa-website'); ?></p>
                                 </div>
                                 <div class="status-item">
-                                    <?php if ( $uupg['disciple_and_church_multiplication'] ) : ?>
+                                    <?php if ( !empty( $uupg['disciple_and_church_multiplication'] ) ) : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                     <?php else : ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
@@ -172,31 +173,24 @@ $pray_url .= '?source=doxalife';
                             <h2><?php echo __('Adoption Status', 'doxa-website'); ?></h2>
                             <p class="font-size-4xl font-weight-medium"><?php echo $uupg['adopted_by_churches'] ? $uupg['adopted_by_churches'] : 0; ?></p>
                             <p class="font-size-lg margin-bottom-md"><?php echo __('churches / individuals have adopted this people group', 'doxa-website'); ?></p>
-                            <?php if ( isset( $uupg['adopted_by_churches_list'] ) && count( $uupg['adopted_by_churches_list'] ) > 0 ) : ?>
+                            <?php if ( isset( $uupg['adopted_by_names'] ) && count( $uupg['adopted_by_names'] ) > 0 ) : ?>
                                 <ul>
-                                    <?php foreach ( $uupg['adopted_by_churches_list'] as $church ) : ?>
-
-                                        <?php if ( isset( $church['confirm_public_display'] ) && $church['confirm_public_display'] === 'Yes' ) : ?>
-
-                                            <li><?php echo $church['post_title']; ?></li>
-
-                                        <?php endif; ?>
-
+                                    <?php foreach ( $uupg['adopted_by_names'] as $name ) : ?>
+                                        <li><?php echo esc_html( $name ); ?></li>
                                     <?php endforeach; ?>
                                 </ul>
-
                             <?php endif; ?>
 
                             <a class="button fit-content mx-auto mt-auto clamp-padding" href="<?php echo doxa_translation_url('adopt' ) . $uupg['slug']; ?>"><?php echo __('Adopt people group', 'doxa-website'); ?></a>
                         </div>
                     </div>
 
-                    <?php if ( isset( $uupg['imb_lat'] ) && isset( $uupg['imb_lng'] )) : ?>
+                    <?php if ( isset( $uupg['latitude'] ) && isset( $uupg['longitude'] )) : ?>
 
                         <div class="map-card">
                             <iframe
                                 class="map"
-                                src="https://www.openstreetmap.org/export/embed.html?bbox=<?php echo esc_html( (float) $uupg['imb_lng'] - 10 ) ?>,<?php echo esc_html( (float) $uupg['imb_lat'] - 10 ) ?>,<?php echo esc_html( (float) $uupg['imb_lng'] + 10 ) ?>,<?php echo esc_html( (float) $uupg['imb_lat'] + 10 ) ?>&layer=mapnik&marker=<?php echo esc_html( $uupg['imb_lat'] ) ?>,<?php echo esc_html( $uupg['imb_lng'] ) ?>"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=<?php echo esc_html( (float) $uupg['longitude'] - 10 ) ?>,<?php echo esc_html( (float) $uupg['latitude'] - 10 ) ?>,<?php echo esc_html( (float) $uupg['longitude'] + 10 ) ?>,<?php echo esc_html( (float) $uupg['latitude'] + 10 ) ?>&layer=mapnik&marker=<?php echo esc_html( $uupg['latitude'] ) ?>,<?php echo esc_html( $uupg['longitude'] ) ?>"
                                 loading="lazy"
                             ></iframe>
                             <div class="overlay"></div>
@@ -208,66 +202,66 @@ $pray_url .= '?source=doxalife';
                         <div class="card" data-variant="primary">
                             <div class="stack">
                                 <h2 class="color-primary"><?php echo __('Overview', 'doxa-website'); ?></h2>
-                                <p><strong><?php echo __('Country', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_isoalpha3']['label'] ); ?></p>
+                                <p><strong><?php echo __('Country', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['country_code']['label'] ); ?></p>
 
                                 <?php if ( isset( $uupg['imb_alternate_name'] ) ) : ?>
                                     <p><strong><?php echo __('Alternate Names', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_alternate_name'] ); ?></p>
                                 <?php endif; ?>
-                                <p><strong><?php echo __('Population', 'doxa-website'); ?>:</strong> ~<?php echo esc_html( $uupg['imb_population'] ); ?></p>
-                                <p><strong><?php echo __('Primary Language', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_reg_of_language']['label'] ); ?></p>
-                                <p><strong><?php echo __('Primary Religion', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_reg_of_religion']['label'] ); ?></p>
-                                <p><strong><?php echo __('Religious Practices', 'doxa-website'); ?>:</strong> <br><?php echo esc_html( $uupg['imb_reg_of_religion']['description'] ); ?></p>
+                                <p><strong><?php echo __('Population', 'doxa-website'); ?>:</strong> ~<?php echo esc_html( $uupg['population'] ); ?></p>
+                                <p><strong><?php echo __('Primary Language', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['primary_language']['label'] ); ?></p>
+                                <p><strong><?php echo __('Primary Religion', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['religion']['label'] ); ?></p>
+                                <p><strong><?php echo __('Religious Practices', 'doxa-website'); ?>:</strong> <br><?php echo esc_html( $uupg['religion']['description'] ); ?></p>
                             </div>
                         </div>
                         <div class="stack | card" data-variant="primary">
                             <h2 class="color-primary"><?php echo __('Progress', 'doxa-website'); ?></h2>
                             <p class="progress-item">
-                                <?php if ( $uupg['imb_bible_available']['value'] === '1' ) : ?>
+                                <?php if ( $uupg['imb_bible_available'] ) : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
                                 <?php endif; ?>
-                                <strong><?php echo __('Bible Translation', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_bible_available']['label'] ); ?>
+                                <strong><?php echo __('Bible Translation', 'doxa-website'); ?>:</strong> <?php echo $uupg['imb_bible_available'] ? __('Yes', 'doxa-website') : __('No', 'doxa-website'); ?>
                             </p>
                             <p class="progress-item">
-                                <?php if ( $uupg['imb_bible_stories_available']['value'] === '1' ) : ?>
+                                <?php if ( $uupg['imb_bible_stories_available'] ) : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
                                 <?php endif; ?>
-                                <strong><?php echo __('Bible Stories', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_bible_stories_available']['label'] ); ?>
+                                <strong><?php echo __('Bible Stories', 'doxa-website'); ?>:</strong> <?php echo $uupg['imb_bible_stories_available'] ? __('Yes', 'doxa-website') : __('No', 'doxa-website'); ?>
                             </p>
                             <p class="progress-item">
-                                <?php if ( $uupg['imb_jesus_film_available']['value'] === '1' ) : ?>
+                                <?php if ( $uupg['imb_jesus_film_available'] ) : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
                                 <?php endif; ?>
-                                <strong><?php echo __('Jesus Film', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_jesus_film_available']['label'] ); ?>
+                                <strong><?php echo __('Jesus Film', 'doxa-website'); ?>:</strong> <?php echo $uupg['imb_jesus_film_available'] ? __('Yes', 'doxa-website') : __('No', 'doxa-website'); ?>
                             </p>
                             <p class="progress-item">
-                                <?php if ( $uupg['imb_radio_broadcast_available']['value'] === '1' ) : ?>
+                                <?php if ( $uupg['imb_radio_broadcast_available'] ) : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
                                 <?php endif; ?>
-                                <strong><?php echo __('Radio Broadcasts', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_radio_broadcast_available']['label'] ); ?>
+                                <strong><?php echo __('Radio Broadcasts', 'doxa-website'); ?>:</strong> <?php echo $uupg['imb_radio_broadcast_available'] ? __('Yes', 'doxa-website') : __('No', 'doxa-website'); ?>
                             </p>
                             <p class="progress-item">
-                                <?php if ( $uupg['imb_gospel_recordings_available']['value'] === '1' ) : ?>
+                                <?php if ( $uupg['imb_gospel_recordings_available'] ) : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
                                 <?php endif; ?>
-                                <strong><?php echo __('Gospel Recordings', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_gospel_recordings_available']['label'] ); ?>
+                                <strong><?php echo __('Gospel Recordings', 'doxa-website'); ?>:</strong> <?php echo $uupg['imb_gospel_recordings_available'] ? __('Yes', 'doxa-website') : __('No', 'doxa-website'); ?>
                             </p>
                             <p class="progress-item">
-                                <?php if ( $uupg['imb_audio_scripture_available']['value'] === '1' ) : ?>
+                                <?php if ( $uupg['imb_audio_scripture_available'] ) : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/Check-GreenCircle.png" alt="<?php echo __('Done', 'doxa-website'); ?>">
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/RedX-Circle.png" alt="<?php echo __('Not Done', 'doxa-website'); ?>">
                                 <?php endif; ?>
-                                <strong><?php echo __('Audio Scripture', 'doxa-website'); ?>:</strong> <?php echo esc_html( $uupg['imb_audio_scripture_available']['label'] ); ?>
+                                <strong><?php echo __('Audio Scripture', 'doxa-website'); ?>:</strong> <?php echo $uupg['imb_audio_scripture_available'] ? __('Yes', 'doxa-website') : __('No', 'doxa-website'); ?>
                             </p>
                         </div>
                     </div>

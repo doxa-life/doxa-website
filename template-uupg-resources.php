@@ -9,11 +9,12 @@ $slug = get_query_var( 'uupg_slug' );
 
 $uupg = get_uupg_by_slug( $slug );
 
+$pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
 $lang_code = doxa_get_language_code();
 if ( $lang_code !== 'en' ) {
-    $pray_url = 'https://pray.doxa.life/' . $lang_code . '/' . $slug;
+    $pray_url = $pray_base_url . '/' . $lang_code . '/' . $slug;
 } else {
-    $pray_url = 'https://pray.doxa.life/' . $slug;
+    $pray_url = $pray_base_url . '/' . $slug;
 }
 
 ?>
@@ -64,8 +65,8 @@ if ( $lang_code !== 'en' ) {
                         </div>
                         <div class="stack stack--xs | uupg__header">
                             <h2 class="color-primary"><?php echo esc_html__('Your UUPG', 'doxa-website'); ?></h2>
-                            <h3 class="h1 font-weight-medium"><?php echo esc_html( $uupg['display_name'] ); ?></h3>
-                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['imb_isoalpha3']['label'] ); ?> (<?php echo esc_html( $uupg['imb_reg_of_people_1']['label'] ); ?>)</p>
+                            <h3 class="h1 font-weight-medium"><?php echo esc_html( $uupg['name'] ); ?></h3>
+                            <p class="font-weight-medium font-size-lg"><?php echo esc_html( $uupg['country_code']['label'] ); ?> (<?php echo esc_html( $uupg['rop1']['label'] ); ?>)</p>
                             <a href="<?php echo esc_url( doxa_translation_url('research/' ) . $slug ); ?>" class="button compact"><?php echo esc_html__('View full profile', 'doxa-website'); ?></a>
                         </div>
                     </div>

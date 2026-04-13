@@ -135,7 +135,8 @@ get_header( 'top' ); ?>
                     <?php
 
                         $language_code = doxa_get_language_code();
-                        $select_url = $language_code !== 'en' ? 'https://pray.doxa.life/' . $language_code . '/' : 'https://pray.doxa.life/';
+                        $pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
+                        $select_url = $language_code !== 'en' ? $pray_base_url . '/' . $language_code . '/' : $pray_base_url . '/';
 
                     ?>
 
