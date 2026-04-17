@@ -1727,8 +1727,9 @@ function doxa_remove_langs_link( $url, $slug, $locale ) {
 
 function doxa_get_video_urls() {
     return [
-        'fr' => 'https://player.vimeo.com/video/1174779547?h=8c00c1c764&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
         'en' => 'https://player.vimeo.com/video/1143355099?h=39f8c1f131&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        'es' => 'https://player.vimeo.com/video/1183374525?h=003bb3e2c0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        'fr' => 'https://player.vimeo.com/video/1174779547?h=8c00c1c764&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     ];
 }
 
@@ -1754,13 +1755,13 @@ function doxa_has_video_translation( $lang_code = null ) {
 
 function doxa_resources_translations_manifest() {
     $available_languages = [
-        'doxa-playbook'          => ['en'],
+        'doxa-playbook'          => ['en', 'es'],
         'doxa-playbook-slides'   => ['en'],
         'introduction-2025'      => ['en'],
         'vision-and-values'      => ['en'],
         'definitions'            => ['en'],
         'doxa-endowment-policy'  => ['en'],
-        'initial-proposal'       => ['en', 'fr', 'es'],
+        'initial-proposal'       => ['en', 'es', 'fr'],
     ];
 
     return $available_languages;
