@@ -1807,6 +1807,7 @@ function get_uupg_list_translations() {
         'clear_all' => __('Clear All', 'doxa-website'),
         'adopted_filter' => __('Adopted', 'doxa-website'),
         'engaged_filter' => __('Engaged', 'doxa-website'),
+        'exact_filter' => __('Exact', 'doxa-website'),
         'type_to_search' => __('Type to search...', 'doxa-website'),
         'no_options' => __('No options found', 'doxa-website'),
         'filters' => [

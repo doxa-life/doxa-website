@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { property, customElement } from 'lit/decorators.js';
-import Fuse from 'fuse.js/min-basic';
+import Fuse from 'fuse.js';
 import type { Uupg } from './types/uupg';
 import type { FilterOption } from './filter-dropdown';
 
@@ -153,6 +153,14 @@ export class UupgsList extends LitElement {
                                 ?data-active=${!!this.activeFilters.engaged}
                                 @click=${this.toggleEngaged}
                             >${this.t.engaged_filter || 'Engaged'}</button>
+                            <button
+                                class="filter-toggle input fit-content"
+                                type="button"
+                                ?data-active=${!!this.activeFilters.exact}
+                                @click=${this.toggleExact}
+                            >
+                                ${this.t.exact_filter || "Exact"}
+                            </button>
                         </div>
                     ` : nothing}
                     ${Object.keys(this.activeFilters).length > 0 ? html`
@@ -357,6 +365,19 @@ export class UupgsList extends LitElement {
         }
     }
 
+    toggleExact() {
+        if (this.activeFilters.exact) {
+            this.removeFilter("exact");
+        } else {
+            this.activeFilters = {
+                ...this.activeFilters,
+                exact: { value: "yes", label: this.t.exact_filter || "Exact" },
+            };
+        this.page = 1;
+            this.filterUUPGs();
+        }
+    }
+
     applyDropdownFilters(uupgs: Uupg[]): Uupg[] {
         let filtered = uupgs;
         for (const [field, selection] of Object.entries(this.activeFilters)) {
@@ -364,6 +385,8 @@ export class UupgsList extends LitElement {
                 filtered = filtered.filter(u => (u.adopted_by_churches ?? 0) > 0);
             } else if (field === 'engaged') {
                 filtered = filtered.filter(u => (u.people_praying ?? 0) > 0);
+            } else if (field === "exact") {
+                filtered = filtered;
             } else {
                 filtered = filtered.filter(u => {
                     const vl = (u as unknown as Record<string, { value: string }>)[field];
@@ -458,11 +481,12 @@ export class UupgsList extends LitElement {
         }
         this.dontShowListOnLoad = false;
         const options = {
+            useTokenSearch: true,
             includeScore: true,
             includeMatches: true,
             ignoreLocation: true,
             minMatchCharLength: 3,
-            threshold: 0.4,
+            threshold: !!this.activeFilters.exact ? 0 : 0.4,
             keys: [
                 'name',
                 'country_code.label',
