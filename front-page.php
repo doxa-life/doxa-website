@@ -28,6 +28,24 @@ get_header( 'top' ); ?>
                 </div>
                 <p class="text-center color-primary uppercase font-button font-weight-medium"><?php echo __('The DOXA Vision: Click image to watch the video', 'doxa-website'); ?></p>
             </section>
+                 
+            <section class="stack stack--md container">
+                <div>
+                    <h2 class="color-brand"><?php echo __('Where are they?', 'doxa-website'); ?></h2>
+                    <h1 class="color-brand-light highlight" data-highlight-index="1" data-highlight-last data-highlight-color="primary"><?php echo __('Unengaged peoples around the world', 'doxa-website'); ?></h1>
+                </div>
+                <?php get_template_part( 'partials/shadow-dom-slot', null, [
+                    'profile'      => 'doxa-simple-map',
+                    'tk'           => defined('MAPBOX_PUBLIC_TOKEN') ? MAPBOX_PUBLIC_TOKEN : '',
+                    'instance_id'  => 'home-map',
+                    'data_source'  => 'pray-tools',
+                    'radius'       => 'xlg',
+                    'aspect_ratio' => '16/7',
+                    'tabs'         => [ [ 'id' => 'engagement', 'label' => 'Engagement', 'colorStrategy' => 'engagement', 'legend' => 'engagement', 'popup' => 'engagement' ] ],
+                ] ); ?>
+            </section>
+
+            
             <section class="stack stack--md | surface-brand-light">
                 <div class="container stack stack--4xl">
                     <div class="stack stack--2xl">

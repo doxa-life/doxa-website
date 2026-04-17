@@ -42,6 +42,17 @@ get_header( 'top' ); ?>
                     </div>
                 </div>
             </section>
+            <section class="stack stack--md container">
+                <?php get_template_part( 'partials/shadow-dom-slot', null, [
+                    'profile'      => 'doxa-simple-map',
+                    'tk'           => defined('MAPBOX_PUBLIC_TOKEN') ? MAPBOX_PUBLIC_TOKEN : '',
+                    'instance_id'  => 'pray-map',
+                    'data_source'  => 'pray-tools',
+                    'radius'       => 'md',
+                    'aspect_ratio' => '16/7',
+                    'tabs'         => [ [ 'id' => 'prayer', 'label' => 'Prayer', 'colorStrategy' => 'prayer', 'legend' => 'prayer', 'popup' => 'prayer' ] ],
+                ] ); ?>
+            </section>
             <section class="surface-brand-light">
                 <div class="container stack stack--3xl">
                     <h2><?php echo __('Where do I start?', 'doxa-website'); ?></h2>

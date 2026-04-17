@@ -1,3 +1,6 @@
 .DS_Store
 
 node_modules/
+
+# Note: assets/map-app/ IS committed — WordPress loads the IIFE bundle directly from the theme.
+# To update it: npm run build in DOXA/test-wheel — the bundle auto-copies here.
