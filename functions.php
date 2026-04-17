@@ -103,11 +103,10 @@ function doxa_map_scripts() {
         return;
     }
 
-    wp_enqueue_script( 'mapbox-gl', 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js', array(), '2.15.0', true );
-    wp_enqueue_style( 'mapbox-gl', 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css', array(), '2.15.0' );
-
-    wp_enqueue_style( 'prayer-map', get_template_directory_uri() . '/css/prayer-map.css', array( 'mapbox-gl' ), filemtime( get_template_directory() . '/css/prayer-map.css' ) );
-    wp_enqueue_script( 'prayer-map', get_template_directory_uri() . '/js/prayer-map.js', array( 'mapbox-gl' ), filemtime( get_template_directory() . '/js/prayer-map.js' ), true );
+    // Mapbox GL JS v3 is loaded by doxa_map_app_scripts() via the 'mapbox-gl-v3' handle.
+    // prayer-map.js depends on it so it loads in the correct order.
+    wp_enqueue_style( 'prayer-map', get_template_directory_uri() . '/css/prayer-map.css', array( 'mapbox-gl-v3' ), filemtime( get_template_directory() . '/css/prayer-map.css' ) );
+    wp_enqueue_script( 'prayer-map', get_template_directory_uri() . '/js/prayer-map.js', array( 'mapbox-gl-v3' ), filemtime( get_template_directory() . '/js/prayer-map.js' ), true );
 
     $pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
 
@@ -133,6 +132,68 @@ function doxa_map_scripts() {
     ) ) . ';', 'before' );
 }
 add_action( 'wp_enqueue_scripts', 'doxa_map_scripts' );
+
+/**
+ * Enqueue the doxa-map Web Component (IIFE micro-frontend) on pages that use it.
+ *
+ * The IIFE registers the <doxa-map> custom element globally. It is loaded once
+ * per page regardless of how many <doxa-map> instances are on the page.
+ * Each instance is independently configured via the profile-config attribute.
+ *
+ * Pages: pray, adopt, front-page (home)
+ */
+function doxa_map_app_scripts() {
+    $is_map_page = is_front_page() || is_page( 'pray' ) || is_page( 'adopt' );
+    if ( ! $is_map_page ) {
+        return;
+    }
+
+    // Mapbox GL JS v3 — required by the doxa-map Web Component (uses window.mapboxgl)
+    wp_enqueue_script(
+        'mapbox-gl-v3',
+        'https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js',
+        array(),
+        '3.3.0',
+        true  // footer
+    );
+    wp_enqueue_style(
+        'mapbox-gl-v3',
+        'https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css',
+        array(),
+        '3.3.0'
+    );
+
+    // Mapbox Geocoder plugin — exposes window.MapboxGeocoder used by GeocoderComponent.vue
+    wp_enqueue_script(
+        'mapbox-geocoder',
+        'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js',
+        array( 'mapbox-gl-v3' ),
+        '5.0.0',
+        true
+    );
+    wp_enqueue_style(
+        'mapbox-geocoder',
+        'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css',
+        array(),
+        '5.0.0'
+    );
+
+    wp_enqueue_style(
+        'doxa-map-app',
+        get_template_directory_uri() . '/assets/map-app/map-app.css',
+        array(),
+        filemtime( get_template_directory() . '/assets/map-app/map-app.css' )
+    );
+
+    wp_enqueue_script(
+        'doxa-map-app',
+        get_template_directory_uri() . '/assets/map-app/map-app.iife.js',
+        array( 'mapbox-gl-v3', 'mapbox-geocoder' ),   // IIFE must load AFTER mapboxgl + geocoder
+        filemtime( get_template_directory() . '/assets/map-app/map-app.iife.js' ),
+        true  // load in footer so DOM is ready
+    );
+}
+add_action( 'wp_enqueue_scripts', 'doxa_map_app_scripts' );
 
 /**
  * Register widget areas

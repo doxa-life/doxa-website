@@ -1,0 +1,75 @@
+/**
+ * Shadow DOM Slot
+ *
+ * Provides a perfectly bounded, isolated mount point for JavaScript
+ * micro-frontends (IIFE / Vue / Web Component). The host element's
+ * border-radius + overflow: hidden clip the shadow content — no styles
+ * leak in or out of the Shadow DOM boundary.
+ *
+ * Design tokens used:
+ *   --border-radius-sm   0.75rem
+ *   --border-radius-md   1.5rem   (unused by utility classes but available)
+ *   --border-radius-lg   2.5rem   → .rounded-md
+ *   --border-radius-xlg  3.5rem   → .rounded-xlg
+ *
+ * Aspect ratio / height are driven by CSS custom properties set inline
+ * by the PHP partial so each instance is independently configurable.
+ */
+
+.shadow-dom-slot {
+    /* ── Layout ─────────────────────────────────────────────── */
+    display: block;           /* custom elements are inline by default */
+    width: 100%;
+
+    /*
+     * aspect-ratio is the default sizing mode.
+     * Desktop: 16/9 (~547px tall at 972px wide — usable rectangle).
+     * Mobile: 1/2 portrait (~760px tall at 380px wide — plenty of map height).
+     * An explicit --sdslot-height-desktop/mobile overrides aspect-ratio entirely.
+     */
+    aspect-ratio: var(--sdslot-aspect-ratio, 16 / 9);
+    min-height: 640px;
+
+    /* Mobile: tall portrait so map is usable on small screens */
+    @media (max-width: 768px) {
+        aspect-ratio: var(--sdslot-aspect-ratio-mobile, 1 / 2);
+        min-height: 560px;
+    }
+
+    /* ── Boundary enforcement ────────────────────────────────── */
+    overflow: hidden;         /* clips shadow DOM content to host border-radius  */
+    contain: layout;          /* prevents shadow content affecting page layout   */
+    isolation: isolate;       /* stacking context — shadow content stays inside  */
+    position: relative;       /* coordinate root for any absolutely-positioned   */
+                              /* content the micro-frontend may render            */
+
+    /* ── Spacing ─────────────────────────────────────────────── */
+    /* Slots sit in a .stack, so vertical rhythm comes from the   */
+    /* parent stack gap — no extra margin needed here.            */
+}
+
+/* Desktop height override (opt-in via prop) */
+@media (min-width: 993px) {
+    .shadow-dom-slot[style*="--sdslot-height-desktop"] {
+        aspect-ratio: unset;
+        height: var(--sdslot-height-desktop);
+    }
+}
+
+/* Mobile height override (opt-in via prop) */
+@media (max-width: 992px) {
+    .shadow-dom-slot[style*="--sdslot-height-mobile"] {
+        aspect-ratio: unset;
+        height: var(--sdslot-height-mobile);
+    }
+}
+
+/*
+ * Radius modifier classes — these come from the theme's existing
+ * .rounded-md and .rounded-xlg utilities in _shapes.scss.
+ * No new rules needed here; the utilities already apply the right
+ * --border-radius-* token. They are listed below as documentation only.
+ *
+ *   .rounded-md   → border-radius: var(--border-radius-lg)   = 2.5rem  (Pray, Adopt pages)
+ *   .rounded-xlg  → border-radius: var(--border-radius-xlg)  = 3.5rem  (Homepage video slot)
+ */
