@@ -41,6 +41,28 @@ get_header( 'top' ); ?>
                     </div>
                 </div>
             </section>
+            <section class="stack stack--md container">
+                <div class="doxa-map-slot rounded-md">
+                    <doxa-map
+                        id="adopt-map"
+                        profile-config="<?php echo esc_attr( wp_json_encode( [
+                            'profile'    => 'doxa-simple-map',
+                            'tk'         => defined( 'MAPBOX_PUBLIC_TOKEN' ) ? MAPBOX_PUBLIC_TOKEN : '',
+                            'instanceId' => 'adopt-map',
+                            'dataSource' => 'pray-tools',
+                            'tabs'       => [
+                                [
+                                    'id'            => 'adoption',
+                                    'label'         => 'Adoption',
+                                    'colorStrategy' => 'adoption',
+                                    'legend'        => 'adoption',
+                                    'popup'         => 'adoption',
+                                ],
+                            ],
+                        ] ) ); ?>"
+                    ></doxa-map>
+                </div>
+            </section>
             <section class="surface-brand-light">
                 <div class="container stack stack--3xl">
                     <h2><?php echo __('How Adoption Works', 'doxa-website'); ?></h2>

@@ -42,6 +42,28 @@ get_header( 'top' ); ?>
                     </div>
                 </div>
             </section>
+            <section class="stack stack--md container">
+                <div class="doxa-map-slot rounded-md">
+                    <doxa-map
+                        id="pray-map"
+                        profile-config="<?php echo esc_attr( wp_json_encode( [
+                            'profile'    => 'doxa-simple-map',
+                            'tk'         => defined( 'MAPBOX_PUBLIC_TOKEN' ) ? MAPBOX_PUBLIC_TOKEN : '',
+                            'instanceId' => 'pray-map',
+                            'dataSource' => 'pray-tools',
+                            'tabs'       => [
+                                [
+                                    'id'            => 'prayer',
+                                    'label'         => 'Prayer',
+                                    'colorStrategy' => 'prayer',
+                                    'legend'        => 'prayer',
+                                    'popup'         => 'prayer',
+                                ],
+                            ],
+                        ] ) ); ?>"
+                    ></doxa-map>
+                </div>
+            </section>
             <section class="surface-brand-light">
                 <div class="container stack stack--3xl">
                     <h2><?php echo __('Where do I start?', 'doxa-website'); ?></h2>

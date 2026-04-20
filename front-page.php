@@ -28,6 +28,35 @@ get_header( 'top' ); ?>
                 </div>
                 <p class="text-center color-primary uppercase font-button font-weight-medium"><?php echo __('The DOXA Vision: Click image to watch the video', 'doxa-website'); ?></p>
             </section>
+                 
+            <section class="stack stack--md container">
+                <div>
+                    <h2 class="color-brand"><?php echo __('Where are they?', 'doxa-website'); ?></h2>
+                    <h1 class="color-brand-light highlight" data-highlight-index="1" data-highlight-last data-highlight-color="primary"><?php echo __('Unengaged peoples around the world', 'doxa-website'); ?></h1>
+                </div>
+                <div class="doxa-map-slot rounded-xlg">
+                    <doxa-map
+                        id="home-map"
+                        profile-config="<?php echo esc_attr( wp_json_encode( [
+                            'profile'    => 'doxa-simple-map',
+                            'tk'         => defined( 'MAPBOX_PUBLIC_TOKEN' ) ? MAPBOX_PUBLIC_TOKEN : '',
+                            'instanceId' => 'home-map',
+                            'dataSource' => 'pray-tools',
+                            'tabs'       => [
+                                [
+                                    'id'            => 'engagement',
+                                    'label'         => 'Engagement',
+                                    'colorStrategy' => 'engagement',
+                                    'legend'        => 'engagement',
+                                    'popup'         => 'engagement',
+                                ],
+                            ],
+                        ] ) ); ?>"
+                    ></doxa-map>
+                </div>
+            </section>
+
+            
             <section class="stack stack--md | surface-brand-light">
                 <div class="container stack stack--4xl">
                     <div class="stack stack--2xl">
