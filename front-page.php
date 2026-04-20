@@ -191,6 +191,9 @@ get_header( 'top' ); ?>
             <div style="padding:41.89% 0 0 0;position:relative;">
                 <iframe id="vimeo-player" src="<?php echo esc_url( doxa_get_video_url() ); ?>" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Doxa Video"></iframe>
             </div>
+            <button class="video-modal-close icon-button">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/whiteX.png" alt="<?php echo __('Close video', 'doxa-website'); ?>">
+            </button>
             <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
     </main>

@@ -56,6 +56,17 @@
     opacity: 0;
     visibility: hidden;
 }
+.video-modal-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-2xl);
+    width: var(--spacing-2xl);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
 body:has(.video-modal[data-state="open"]) {
     overflow: hidden;
 }
