@@ -1,4 +1,5 @@
-/**/dist/**/*.css diff=buildartifactsa
+/**/dist/**/*.css diff=buildartifacts
+/**/dist/*.css diff=buildartifacts
 /**/dist/**/*.js diff=buildartifacts
 /**/dist/**/*.js.map diff=buildartifacts
 /**/dist/**/*.js.map diff=buildartifacts

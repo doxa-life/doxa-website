@@ -217,6 +217,7 @@
         // Video modal toggle
         const videoModalButton = document.querySelector('.video-modal-button');
         const videoModal = document.querySelector('.video-modal');
+        const videoModalClose = document.querySelector('.video-modal-close');
         const videoModalOverlay = document.querySelector('.video-modal-overlay');
         const vimeoPlayer = document.getElementById('vimeo-player');
 
@@ -235,6 +236,7 @@
                 vimeoPlayer.src = '';
                 vimeoPlayer.src = videoSrc;
             }
+            videoModalClose.addEventListener('click', closeVideoModal);
             videoModalOverlay.addEventListener('click', closeVideoModal);
             window.addEventListener('keydown', function(e) {
                 if (videoModal.dataset.state === 'open' && e.key === 'Escape') {
