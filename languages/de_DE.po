@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DOXA Life 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/doxa-website\n"
-"POT-Creation-Date: 2026-03-25T14:18:02+00:00\n"
-"PO-Revision-Date: 2026-03-25 15:08+0000\n"
-"Last-Translator: DeepL <noreply-mt-deepl@weblate.org>\n"
+"POT-Creation-Date: 2026-04-20T10:05:55+00:00\n"
+"PO-Revision-Date: 2026-04-20 11:08+0000\n"
+"Last-Translator: Weblate Admin <translator@disciple.tools>\n"
 "Language-Team: German <https://translate.disciple.tools/projects/doxa/doxa-"
 "life/de_DE/>\n"
 "Language: de_DE\n"
@@ -14,14 +14,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16.2\n"
+"X-Generator: Weblate 5.17\n"
 "X-Domain: doxa-website\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "DOXA Life"
 msgstr "DOXA Leben"
 
 #. Description of the theme
+#: style.css
 msgid ""
 "A clean, elegant theme for DOXA Life - Engaging every people group by 2033"
 msgstr ""
@@ -29,6 +31,7 @@ msgstr ""
 "erreichen"
 
 #. Author of the theme
+#: style.css
 msgid "Gospel Ambition Team"
 msgstr "Gospel Ambition Team"
 
@@ -59,7 +62,7 @@ msgid "Pray"
 msgstr "Ich bete"
 
 #. Template Name of the theme
-#: 404.php:25 front-page.php:54 page-adopt.php:137
+#: 404.php:25 front-page.php:54 page-adopt.php:138
 msgid "Adopt"
 msgstr "Adoptieren"
 
@@ -100,6 +103,7 @@ msgid "The DOXA Vision: Click image to watch the video"
 msgstr "Klicke auf das Bild, um mehr über die Doxa-Vision zu erfahren"
 
 #: front-page.php:34
+#, php-format
 msgctxt "number of unengaged people groups"
 msgid "%s unengaged people groups"
 msgstr "%s völlig unerreichte Volksgruppen"
@@ -161,11 +165,13 @@ msgid "Unreached"
 msgstr "Unerreicht"
 
 #: front-page.php:82 front-page.php:91 front-page.php:100
+#, php-format
 msgctxt "number of billions"
 msgid "%s Billion"
 msgstr "%s Milliarden"
 
 #: front-page.php:83 front-page.php:92 front-page.php:101 front-page.php:110
+#, php-format
 msgctxt "number of people groups"
 msgid "%s People Groups"
 msgstr "%s Volksgruppen"
@@ -183,6 +189,7 @@ msgid "Unengaged"
 msgstr "Völlig unerreicht"
 
 #: front-page.php:109
+#, php-format
 msgctxt "number of millions"
 msgid "%s Million"
 msgstr "%s Millionen"
@@ -262,53 +269,153 @@ msgstr ""
 "zu tragen – bis Menschen aus allen Nationen Jesus anbeten und ihm allein "
 "alle Ehre zuteil wird."
 
-#: functions.php:89
+#: functions.php:91
 msgid "Click again to interact with map"
 msgstr "Klicken Sie erneut, um mit der Karte zu interagieren."
 
-#: functions.php:117
+#: functions.php:121
 msgid "No prayer coverage"
 msgstr "Keine Gebetsberichterstattung"
 
-#: functions.php:118
+#: functions.php:122
 msgid "Has prayer coverage"
 msgstr "Hat Gebetsabdeckung"
 
-#: functions.php:119
+#: functions.php:123
 msgid "Pray for them"
 msgstr "Betet für sie"
 
-#: functions.php:120
+#: functions.php:124
 msgid "Info"
 msgstr "Info"
 
-#: functions.php:121
+#: functions.php:125
 msgid "Language"
 msgstr "Sprache"
 
-#: functions.php:122 template-uupg-detail.php:211
+#: functions.php:126 functions.php:1800 template-uupg-detail.php:205
 msgid "Country"
 msgstr "Land"
 
-#: functions.php:123 template-uupg-detail.php:216
+#: functions.php:127 template-uupg-detail.php:210
 msgid "Population"
 msgstr "Bevölkerung"
 
-#: functions.php:124
+#: functions.php:128
 msgid "Prayer Coverage"
 msgstr "Gebetsabdeckung"
 
-#: functions.php:125
+#: functions.php:129
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: functions.php:126
+#: functions.php:130
 msgid "Close"
 msgstr "Schließen"
 
-#: functions.php:127
+#: functions.php:131
 msgid "Search people groups or locations"
 msgstr "Personengruppen oder Orte suchen"
+
+#: functions.php:1790 shortcodes/uupg-list-shortcode.php:6
+msgid "Select"
+msgstr "Auswählen"
+
+#: functions.php:1791 shortcodes/uupg-list-shortcode.php:14
+msgid "Full Profile"
+msgstr "Vollständiges Profil"
+
+#: functions.php:1792 shortcodes/uupg-list-shortcode.php:15
+msgid "Intercessors"
+msgstr "Fürbitter"
+
+#: functions.php:1793 functions.php:1808
+msgid "Adopted"
+msgstr "Angenommen"
+
+#: functions.php:1794
+msgid "Not Adopted"
+msgstr "noch nicht adoptiert"
+
+#: functions.php:1795 shortcodes/uupg-list-shortcode.php:16
+msgid "Loading results..."
+msgstr "Ergebnisse werden geladen..."
+
+#: functions.php:1796 shortcodes/uupg-list-shortcode.php:17
+msgid "Load More"
+msgstr "Mehr laden"
+
+#: functions.php:1797 shortcodes/uupg-list-shortcode.php:18
+msgid "Total"
+msgstr "Gesamt"
+
+#: functions.php:1798 shortcodes/uupg-list-shortcode.php:19
+msgid "Search names, country/continent, religions..."
+msgstr "Suche nach Namen, Land/Kontinent, Religionen..."
+
+#: functions.php:1799 shortcodes/uupg-list-shortcode.php:20
+msgid "See All"
+msgstr "Alle anzeigen"
+
+#: functions.php:1801
+#, fuzzy
+#| msgid "Primary Religion"
+msgid "Religion"
+msgstr "Primäre Religion"
+
+#: functions.php:1802
+msgid "People Group"
+msgstr "Personengruppe"
+
+#: functions.php:1803
+msgid "WAGF Region"
+msgstr "WAGF-Region"
+
+#: functions.php:1804
+msgid "WAGF Block"
+msgstr "WAGF-Block"
+
+#: functions.php:1805
+msgid "Show Filters"
+msgstr "Filter anzeigen"
+
+#: functions.php:1806
+msgid "Hide Filters"
+msgstr "Filter ausblenden"
+
+#: functions.php:1807
+#, fuzzy
+#| msgid "See All"
+msgid "Clear All"
+msgstr "Alle anzeigen"
+
+#: functions.php:1809 template-uupg-detail.php:90
+msgid "Engaged"
+msgstr "Verlobt"
+
+#: functions.php:1810
+msgid "Exact"
+msgstr "Exakt"
+
+#: functions.php:1811
+msgid "Type to search..."
+msgstr "Geben Sie etwas ein, um danach zu suchen"
+
+#: functions.php:1812
+msgid "No options found"
+msgstr "Keine Standorte gefunden"
+
+#: functions.php:1814
+msgid "Search"
+msgstr "Suche"
+
+#: functions.php:1815
+msgid "Sort"
+msgstr "Sortieren"
+
+#: functions.php:1816
+msgid "Per Page"
+msgstr "Pro Seite"
 
 #: header.php:35
 msgid "World assemblies of God Fellowship"
@@ -481,43 +588,11 @@ msgstr ""
 "Wähle eine der hier vorgestellten völlig unerreichten Volksgruppen aus oder "
 "suche nach einer bestimmten Gruppe oder nach einem bestimmten Ort."
 
-#: page-adopt.php:138 page-pray.php:148 page-uupgs.php:23
-#: shortcodes/uupg-list-shortcode.php:14
-msgid "Full Profile"
-msgstr "Vollständiges Profil"
-
-#: page-adopt.php:139 page-pray.php:149 shortcodes/uupg-list-shortcode.php:15
-msgid "Intercessors"
-msgstr "Fürbitter"
-
-#: page-adopt.php:140 page-pray.php:150 page-uupgs.php:24
-#: shortcodes/uupg-list-shortcode.php:16
-msgid "Loading results..."
-msgstr "Ergebnisse werden geladen..."
-
-#: page-adopt.php:141 page-pray.php:151 page-uupgs.php:25
-#: shortcodes/uupg-list-shortcode.php:17
-msgid "Load More"
-msgstr "Mehr laden"
-
-#: page-adopt.php:142 page-pray.php:152 page-uupgs.php:26
-#: shortcodes/uupg-list-shortcode.php:18
-msgid "Total"
-msgstr "Gesamt"
-
-#: page-adopt.php:143 page-pray.php:153 shortcodes/uupg-list-shortcode.php:19
-msgid "Search names, country/continent, religions..."
-msgstr "Suche nach Namen, Land/Kontinent, Religionen..."
-
-#: page-adopt.php:144 page-pray.php:154 shortcodes/uupg-list-shortcode.php:20
-msgid "See All"
-msgstr "Alle anzeigen"
-
-#: page-adopt.php:157
+#: page-adopt.php:151
 msgid "I was a stranger and you invited me in."
 msgstr "Ich war fremd und ihr habt mich aufgenommen."
 
-#: page-adopt.php:158 page-adopt.php:160 page-pray.php:174 page-pray.php:176
+#: page-adopt.php:152 page-adopt.php:154 page-pray.php:166 page-pray.php:168
 msgid "Jesus"
 msgstr "Jesus"
 
@@ -542,28 +617,41 @@ msgid "Enter your email"
 msgstr "Gib deine Email Adresse ein"
 
 #: page-contact.php:34
+msgid "Your Country (optional)"
+msgstr "Ihr Land (optional)"
+
+#: page-contact.php:36 template-adoption-form.php:129
+msgid "Select Country"
+msgstr "Land auswählen"
+
+#: page-contact.php:43
 msgid "Message"
 msgstr "Nachricht"
 
-#: page-contact.php:35
+#: page-contact.php:44
 msgid "Enter your message"
 msgstr "Gib deine Nachricht ein"
 
-#: page-contact.php:45 page-contact.php:118 page-contact.php:126
+#: page-contact.php:48
+msgid "I would like to receive email updates from the DOXA partnership."
+msgstr ""
+"Ich möchte E-Mail-Benachrichtigungen von der DOXA-Partnerschaft erhalten."
+
+#: page-contact.php:58 page-contact.php:134 page-contact.php:142
 #: template-adoption-form.php:146 template-adoption-form.php:281
 #: template-adoption-form.php:289
 msgid "Submit"
 msgstr "Senden"
 
-#: page-contact.php:82 template-adoption-form.php:205
+#: page-contact.php:95 template-adoption-form.php:205
 msgid "Submitting..."
 msgstr "Senden..."
 
-#: page-contact.php:105
+#: page-contact.php:121
 msgid "Thank you for your message. We will get back to you soon!"
 msgstr "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen!"
 
-#: page-contact.php:113 page-contact.php:122
+#: page-contact.php:129 page-contact.php:138
 msgid "There was an error sending your message. Please try again."
 msgstr ""
 "Es ist ein Fehler beim Senden Ihrer Nachricht aufgetreten. Bitte versuchen "
@@ -582,7 +670,7 @@ msgstr ""
 msgid "Prayer Goal"
 msgstr "Gebetsziel"
 
-#: page-pray.php:26 template-uupg-detail.php:167
+#: page-pray.php:26 template-uupg-detail.php:168
 msgid "24-Hour Prayer Coverage"
 msgstr "24-Stunden-Gebetsabdeckung"
 
@@ -686,15 +774,11 @@ msgstr ""
 "Gottes Mission zusammen und stehen gemeinsam für Menschen ein, die noch "
 "darauf warten, den Namen Jesu zu hören."
 
-#: page-pray.php:147 shortcodes/uupg-list-shortcode.php:6
-msgid "Select"
-msgstr "Auswählen"
-
-#: page-pray.php:166
+#: page-pray.php:158
 msgid "Prayer Progress"
 msgstr "Gebetsfortschritt"
 
-#: page-pray.php:173
+#: page-pray.php:165
 msgid ""
 "Pray earnestly to the Lord of the harvest ...that He would send laborers to "
 "the [Unengaged]."
@@ -713,30 +797,6 @@ msgstr "UUPGS"
 #: page-uupgs.php:18
 msgid "Find a UUPG"
 msgstr "Eine VUVG finden"
-
-#: page-uupgs.php:27
-msgid "Search names, locations, religions..."
-msgstr "Namen, Orte, Religionen suchen..."
-
-#: page-uupgs.php:28
-msgid "Adopted"
-msgstr "Angenommen"
-
-#: page-uupgs.php:29
-msgid "Not Adopted"
-msgstr "noch nicht adoptiert"
-
-#: page-uupgs.php:31
-msgid "Search"
-msgstr "Suche"
-
-#: page-uupgs.php:32
-msgid "Sort"
-msgstr "Sortieren"
-
-#: page-uupgs.php:33
-msgid "Per Page"
-msgstr "Pro Seite"
 
 #. Template Name of the theme
 msgid "Doxa Page"
@@ -797,23 +857,23 @@ msgstr "Auf Englisch"
 
 #: shortcodes/general-resources-shortcode.php:125
 #: shortcodes/general-resources-shortcode.php:152
-#: template-uupg-resources.php:150
+#: template-uupg-resources.php:151
 msgid "View"
 msgstr "Anzeigen"
 
 #: shortcodes/general-resources-shortcode.php:131
 #: shortcodes/general-resources-shortcode.php:158
-#: template-uupg-resources.php:151
+#: template-uupg-resources.php:152
 msgid "Download"
 msgstr "Download"
 
-#: template-adoption-form.php:17 template-uupg-detail.php:30
-#: template-uupg-resources.php:29
+#: template-adoption-form.php:17 template-uupg-detail.php:31
+#: template-uupg-resources.php:30
 msgid "People Group Not Found"
 msgstr "Personengruppe nicht gefunden"
 
-#: template-adoption-form.php:18 template-uupg-detail.php:31
-#: template-uupg-resources.php:30
+#: template-adoption-form.php:18 template-uupg-detail.php:32
+#: template-uupg-resources.php:31
 msgid ""
 "The people group you are looking for could not be found. Please try again."
 msgstr ""
@@ -821,8 +881,8 @@ msgstr ""
 "Sie es erneut."
 
 #: template-adoption-form.php:20 template-adoption-form.php:24
-#: template-uupg-detail.php:33 template-uupg-detail.php:37
-#: template-uupg-resources.php:32 template-uupg-resources.php:36
+#: template-uupg-detail.php:34 template-uupg-detail.php:38
+#: template-uupg-resources.php:33 template-uupg-resources.php:37
 msgid "Back"
 msgstr "Zurück"
 
@@ -969,10 +1029,6 @@ msgstr ""
 msgid "Location of Church/Group"
 msgstr "Standort der Kirche/Gruppe"
 
-#: template-adoption-form.php:129
-msgid "Select Country"
-msgstr "Land auswählen"
-
 #: template-adoption-form.php:138
 msgid ""
 "I/my church/group commits to adopting this People Group for prayer, "
@@ -1015,7 +1071,7 @@ msgstr ""
 msgid "Thank you for your adoption commitment! We will be in touch soon."
 msgstr "Vielen Dank für Ihre Adoptionszusage! Wir melden uns bald bei Ihnen."
 
-#: template-adoption-form.php:267 template-uupg-detail.php:108
+#: template-adoption-form.php:267 template-uupg-detail.php:109
 msgid "View Adoption Resources"
 msgstr "Adoptionsressourcen anzeigen"
 
@@ -1029,141 +1085,149 @@ msgstr ""
 msgid "UUPG Detail"
 msgstr "UUPG-Detail"
 
-#: template-uupg-detail.php:89
-msgid "Engaged"
-msgstr "Verlobt"
-
-#: template-uupg-detail.php:91
+#: template-uupg-detail.php:92
 msgid "Not Engaged"
 msgstr "Völlig Unerreicht"
 
-#: template-uupg-detail.php:112
+#: template-uupg-detail.php:113
 msgid "Engagement Status"
 msgstr "Status"
 
-#: template-uupg-detail.php:117 template-uupg-detail.php:125
-#: template-uupg-detail.php:133 template-uupg-detail.php:141
-#: template-uupg-detail.php:149 template-uupg-detail.php:226
-#: template-uupg-detail.php:234 template-uupg-detail.php:242
-#: template-uupg-detail.php:250 template-uupg-detail.php:258
-#: template-uupg-detail.php:266
+#: template-uupg-detail.php:118 template-uupg-detail.php:126
+#: template-uupg-detail.php:134 template-uupg-detail.php:142
+#: template-uupg-detail.php:150 template-uupg-detail.php:220
+#: template-uupg-detail.php:228 template-uupg-detail.php:236
+#: template-uupg-detail.php:244 template-uupg-detail.php:252
+#: template-uupg-detail.php:260
 msgid "Done"
 msgstr "Fertig"
 
-#: template-uupg-detail.php:119 template-uupg-detail.php:127
-#: template-uupg-detail.php:135 template-uupg-detail.php:143
-#: template-uupg-detail.php:151 template-uupg-detail.php:228
-#: template-uupg-detail.php:236 template-uupg-detail.php:244
-#: template-uupg-detail.php:252 template-uupg-detail.php:260
-#: template-uupg-detail.php:268
+#: template-uupg-detail.php:120 template-uupg-detail.php:128
+#: template-uupg-detail.php:136 template-uupg-detail.php:144
+#: template-uupg-detail.php:152 template-uupg-detail.php:222
+#: template-uupg-detail.php:230 template-uupg-detail.php:238
+#: template-uupg-detail.php:246 template-uupg-detail.php:254
+#: template-uupg-detail.php:262
 msgid "Not Done"
 msgstr "Nicht fertig"
 
-#: template-uupg-detail.php:121 template-uupg-detail.php:160
+#: template-uupg-detail.php:122 template-uupg-detail.php:161
 msgid "Prayer Status"
 msgstr "Gebetsstatus"
 
-#: template-uupg-detail.php:129 template-uupg-detail.php:172
+#: template-uupg-detail.php:130 template-uupg-detail.php:173
 msgid "Adoption Status"
 msgstr "Adoptionsstatus"
 
-#: template-uupg-detail.php:137
+#: template-uupg-detail.php:138
 msgid "Cross-cultural workers present"
 msgstr "Interkulturelle Mitarbeiter anwesend"
 
-#: template-uupg-detail.php:145
+#: template-uupg-detail.php:146
 msgid "Work in local language &amp; culture"
 msgstr "Arbeiten in der lokalen Sprache und Kultur"
 
-#: template-uupg-detail.php:153
+#: template-uupg-detail.php:154
 msgid "Disciple &amp; church multiplication"
 msgstr "Jüngerschaft &amp; Gemeindemultiplikation"
 
-#: template-uupg-detail.php:162
+#: template-uupg-detail.php:163
 msgid "People committed to praying"
 msgstr "Menschen, die sich dem Beten verpflichtet haben"
 
-#: template-uupg-detail.php:169
+#: template-uupg-detail.php:170
 msgid "Sign up to pray"
 msgstr "Anmelden zum Beten"
 
-#: template-uupg-detail.php:174
+#: template-uupg-detail.php:175
 msgid "churches / individuals have adopted this people group"
 msgstr "Kirchen / Einzelpersonen haben diese Volksgruppe adoptiert"
 
-#: template-uupg-detail.php:190
+#: template-uupg-detail.php:184
 msgid "Adopt people group"
 msgstr "Volksgruppe adoptieren"
 
-#: template-uupg-detail.php:210
+#: template-uupg-detail.php:204
 msgid "Overview"
 msgstr "Übersicht"
 
-#: template-uupg-detail.php:214
+#: template-uupg-detail.php:208
 msgid "Alternate Names"
 msgstr "Alternative Namen"
 
-#: template-uupg-detail.php:217
+#: template-uupg-detail.php:211
 msgid "Primary Language"
 msgstr "Hauptsprache"
 
-#: template-uupg-detail.php:218
+#: template-uupg-detail.php:212
 msgid "Primary Religion"
 msgstr "Primäre Religion"
 
-#: template-uupg-detail.php:219
+#: template-uupg-detail.php:213
 msgid "Religious Practices"
 msgstr "Religiöse Praktiken"
 
-#: template-uupg-detail.php:223
+#: template-uupg-detail.php:217
 msgid "Progress"
 msgstr "Fortschritt"
 
-#: template-uupg-detail.php:230
+#: template-uupg-detail.php:224
 msgid "Bible Translation"
 msgstr "Bibelübersetzung"
 
-#: template-uupg-detail.php:238
+#: template-uupg-detail.php:224 template-uupg-detail.php:232
+#: template-uupg-detail.php:240 template-uupg-detail.php:248
+#: template-uupg-detail.php:256 template-uupg-detail.php:264
+msgid "Yes"
+msgstr "Ja"
+
+#: template-uupg-detail.php:224 template-uupg-detail.php:232
+#: template-uupg-detail.php:240 template-uupg-detail.php:248
+#: template-uupg-detail.php:256 template-uupg-detail.php:264
+msgid "No"
+msgstr "Nein"
+
+#: template-uupg-detail.php:232
 msgid "Bible Stories"
 msgstr "Biblische Geschichten"
 
-#: template-uupg-detail.php:246
+#: template-uupg-detail.php:240
 msgid "Jesus Film"
 msgstr "Jesus-Film"
 
-#: template-uupg-detail.php:254
+#: template-uupg-detail.php:248
 msgid "Radio Broadcasts"
 msgstr "Radiosendungen"
 
-#: template-uupg-detail.php:262
+#: template-uupg-detail.php:256
 msgid "Gospel Recordings"
 msgstr "Gospel-Aufnahmen"
 
-#: template-uupg-detail.php:270
+#: template-uupg-detail.php:264
 msgid "Audio Scripture"
 msgstr "Audio-Schriftstelle"
 
-#: template-uupg-resources.php:56
+#: template-uupg-resources.php:57
 msgid "Adoption Resources"
 msgstr "Ressourcen zum Thema Adoption"
 
-#: template-uupg-resources.php:66
+#: template-uupg-resources.php:67
 msgid "Your UUPG"
 msgstr "Ihre UUPG"
 
-#: template-uupg-resources.php:69
+#: template-uupg-resources.php:70
 msgid "View full profile"
 msgstr "Vollständiges Profil anzeigen"
 
-#: template-uupg-resources.php:76
+#: template-uupg-resources.php:77
 msgid "Introduction"
 msgstr "Einleitung"
 
-#: template-uupg-resources.php:77
+#: template-uupg-resources.php:78
 msgid "Welcome to the adoption Journey"
 msgstr "Willkommen auf dem Weg zur Adoption"
 
-#: template-uupg-resources.php:78
+#: template-uupg-resources.php:79
 msgid ""
 "Thank you for adopting this Unengaged, Unreached People Group. Your church "
 "is joining a global movement asking God to open the way for the gospel among "
@@ -1180,44 +1244,44 @@ msgstr ""
 "zum Gebet zu mobilisieren und zu erkunden, wie Gott Ihre Gemeinde dazu "
 "nutzen kann, dieser Volksgruppe die frohe Botschaft von Jesus zu bringen."
 
-#: template-uupg-resources.php:80
+#: template-uupg-resources.php:81
 msgid "Your role as an adopting church"
 msgstr "Ihre Rolle als aufnehmende Gemeinde"
 
-#: template-uupg-resources.php:82
+#: template-uupg-resources.php:83
 msgid "Pray regularly for this people group and for gospel breakthrough"
 msgstr ""
 "Betet regelmäßig für dieses Volk und für einen Durchbruch des Evangeliums"
 
-#: template-uupg-resources.php:83
+#: template-uupg-resources.php:84
 msgid "Mobilize others in your church to join in prayer"
 msgstr ""
 "Mobilisieren Sie andere in Ihrer Gemeinde, sich dem Gebet anzuschließen"
 
-#: template-uupg-resources.php:84
+#: template-uupg-resources.php:85
 msgid "Give to support gospel work among unreached peoples"
 msgstr ""
 "Spenden Sie, um die Evangelisationsarbeit unter unerreichten Völkern zu "
 "unterstützen"
 
-#: template-uupg-resources.php:85
+#: template-uupg-resources.php:86
 msgid "Send or raise up workers who may go and serve among them"
 msgstr ""
 "Sende oder berufe Arbeiter aus, die hingehen und unter ihnen dienen können"
 
-#: template-uupg-resources.php:88
+#: template-uupg-resources.php:89
 msgid "Resources available on this page"
 msgstr "Auf dieser Seite verfügbare Ressourcen"
 
-#: template-uupg-resources.php:90
+#: template-uupg-resources.php:91
 msgid "Printable prayer cards and people group images"
 msgstr "Druckbare Gebetskarten und Bilder von Volksgruppen"
 
-#: template-uupg-resources.php:91
+#: template-uupg-resources.php:92
 msgid "Graphics, QR code and slides for sharing with your congregation"
 msgstr "Grafiken, QR-Codes und Folien zum Weitergeben an Ihre Gemeinde"
 
-#: template-uupg-resources.php:92
+#: template-uupg-resources.php:93
 msgid ""
 "Additional tools to help your church stay engaged in prayer for this people "
 "group"
@@ -1225,37 +1289,40 @@ msgstr ""
 "Weitere Hilfsmittel, die Ihrer Gemeinde helfen, diese Volksgruppe weiterhin "
 "im Gebet zu begleiten"
 
-#: template-uupg-resources.php:97
+#: template-uupg-resources.php:98
 msgid "Your Adoption Resources"
 msgstr "Ihre Ressourcen zum Thema Adoption"
 
-#: template-uupg-resources.php:105
+#: template-uupg-resources.php:106
 msgid "Adoption Certificate"
 msgstr "Adoptionsurkunde"
 
-#: template-uupg-resources.php:110
+#: template-uupg-resources.php:111
 msgid "UUPG Photo"
 msgstr "Foto der UUPG"
 
-#: template-uupg-resources.php:116
+#: template-uupg-resources.php:117
 msgid "Prayer Campaign QR Code"
 msgstr "QR-Code für die Gebetskampagne"
 
-#: template-uupg-resources.php:122
+#: template-uupg-resources.php:123
 msgid "Printable Prayer Cards"
 msgstr "Gebetskarten zum Ausdrucken"
 
-#: template-uupg-resources.php:127
+#: template-uupg-resources.php:128
 msgid "Promo Slide"
 msgstr "Werbefolie"
 
-#: template-uupg-resources.php:132
+#: template-uupg-resources.php:133
 msgid "Social Share"
 msgstr "In sozialen Netzwerken teilen"
 
-#: template-uupg-resources.php:163
+#: template-uupg-resources.php:164
 msgid "General Resources"
 msgstr "Allgemeine Ressourcen"
+
+#~ msgid "Search names, locations, religions..."
+#~ msgstr "Namen, Orte, Religionen suchen..."
 
 #~ msgid "Enter your Email"
 #~ msgstr "Geben Sie Ihre E-Mail-Adresse ein"
