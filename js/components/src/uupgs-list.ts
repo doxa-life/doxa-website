@@ -489,6 +489,7 @@ export class UupgsList extends LitElement {
             threshold: !!this.activeFilters.exact ? 0 : 0.4,
             keys: [
                 'name',
+                'imb_alternate_name',
                 'country_code.label',
                 'rop1.label',
                 'religion.label',
@@ -532,7 +533,12 @@ export class UupgsList extends LitElement {
                             return highlight;
                         })}
                     `;
-                    if (key.includes('.')) {
+                    if (key.includes('imb_alternate_name')) {
+                        (newItem as Uupg).matches!.push({
+                            key: this.t.alternate_name,
+                            label: highlightedValue,
+                        });
+                    } else if (key.includes('.')) {
                         const [parentKey] = key.split('.');
                         const keyTranslations = {
                             religion: this.t.religion,
@@ -569,7 +575,7 @@ export class UupgsList extends LitElement {
 
     getUUPGs() {
         const prayBaseUrl = window.uupgsData?.prayBaseUrl || 'https://pray.doxa.life';
-        const uupgAPIUrl = prayBaseUrl + '/api/people-groups/list?lang=' + this.languageCode;
+        const uupgAPIUrl = prayBaseUrl + '/api/people-groups/list?fields=name,slug,wagf_region,wagf_block,country_code,rop1,religion,has_photo,image_url,adopted_by_churches,imb_alternate_name,engagement_status&lang=' + this.languageCode;
 
         this.loading = true
         return fetch(uupgAPIUrl)

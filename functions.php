@@ -1799,6 +1799,7 @@ function get_uupg_list_translations() {
         'see_all' => __('See All', 'doxa-website'),
         'country' => __('Country', 'doxa-website'),
         'religion' => __('Religion', 'doxa-website'),
+        'alternate_name' => __('Alternative Names', 'doxa-website'),
         'rop1' => __('People Group', 'doxa-website'),
         'wagf_region' => __('WAGF Region', 'doxa-website'),
         'wagf_block' => __('WAGF Block', 'doxa-website'),
