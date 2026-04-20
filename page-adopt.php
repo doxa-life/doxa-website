@@ -134,14 +134,8 @@ get_header( 'top' ); ?>
                         selectUrl="<?php echo esc_url( doxa_translation_url( 'adopt' ) ); ?>"
                         researchUrl="<?php echo esc_url( doxa_translation_url( 'research' ) ); ?>"
                         t="<?php echo esc_attr( json_encode( [
+                            ...get_uupg_list_translations(),
                             'select' => __('Adopt', 'doxa-website'),
-                            'full_profile' => __('Full Profile', 'doxa-website'),
-                            'prayer_coverage' => __('Intercessors', 'doxa-website'),
-                            'loading' => __('Loading results...', 'doxa-website'),
-                            'load_more' => __('Load More', 'doxa-website'),
-                            'total' => __('Total', 'doxa-website'),
-                            'search' => __('Search names, country/continent, religions...', 'doxa-website'),
-                            'see_all' => __('See All', 'doxa-website'),
                         ])); ?>"
                         perPage="6"
                         morePerPage="12"

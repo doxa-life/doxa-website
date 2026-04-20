@@ -1727,8 +1727,9 @@ function doxa_remove_langs_link( $url, $slug, $locale ) {
 
 function doxa_get_video_urls() {
     return [
-        'fr' => 'https://player.vimeo.com/video/1174779547?h=8c00c1c764&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
         'en' => 'https://player.vimeo.com/video/1143355099?h=39f8c1f131&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        'es' => 'https://player.vimeo.com/video/1183374525?h=003bb3e2c0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        'fr' => 'https://player.vimeo.com/video/1174779547?h=8c00c1c764&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     ];
 }
 
@@ -1754,13 +1755,13 @@ function doxa_has_video_translation( $lang_code = null ) {
 
 function doxa_resources_translations_manifest() {
     $available_languages = [
-        'doxa-playbook'          => ['en'],
+        'doxa-playbook'          => ['en', 'es'],
         'doxa-playbook-slides'   => ['en'],
         'introduction-2025'      => ['en'],
         'vision-and-values'      => ['en'],
         'definitions'            => ['en'],
         'doxa-endowment-policy'  => ['en'],
-        'initial-proposal'       => ['en', 'fr', 'es'],
+        'initial-proposal'       => ['en', 'es', 'fr'],
     ];
 
     return $available_languages;
@@ -1782,4 +1783,37 @@ function doxa_has_document_translation( $document_key ) {
 
     $in_array = in_array($lang_code, $langs, true);
     return $in_array;
+}
+
+function get_uupg_list_translations() {
+    return [
+        'select' => __('Select', 'doxa-website'),
+        'full_profile' => __('Full Profile', 'doxa-website'),
+        'prayer_coverage' => __('Intercessors', 'doxa-website'),
+        'adopted' => __('Adopted', 'doxa-website'),
+        'not_adopted' => __('Not Adopted', 'doxa-website'),
+        'loading' => __('Loading results...', 'doxa-website'),
+        'load_more' => __('Load More', 'doxa-website'),
+        'total' => __('Total', 'doxa-website'),
+        'search' => __('Search names, country/continent, religions...', 'doxa-website'),
+        'see_all' => __('See All', 'doxa-website'),
+        'country' => __('Country', 'doxa-website'),
+        'religion' => __('Religion', 'doxa-website'),
+        'rop1' => __('People Group', 'doxa-website'),
+        'wagf_region' => __('WAGF Region', 'doxa-website'),
+        'wagf_block' => __('WAGF Block', 'doxa-website'),
+        'show_filters' => __('Show Filters', 'doxa-website'),
+        'hide_filters' => __('Hide Filters', 'doxa-website'),
+        'clear_all' => __('Clear All', 'doxa-website'),
+        'adopted_filter' => __('Adopted', 'doxa-website'),
+        'engaged_filter' => __('Engaged', 'doxa-website'),
+        'exact_filter' => __('Exact', 'doxa-website'),
+        'type_to_search' => __('Type to search...', 'doxa-website'),
+        'no_options' => __('No options found', 'doxa-website'),
+        'filters' => [
+            'search' => __('Search', 'doxa-website'),
+            'sort' => __('Sort', 'doxa-website'),
+            'per_page' => __('Per Page', 'doxa-website'),
+        ],
+    ];
 }
