@@ -75,23 +75,35 @@ export class UupgsList extends LitElement {
                         <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <use href="/wp-content/themes/doxa-website/assets/icons/search.svg#search" />
                         </svg>
-                        <input
-                            type="search"
-                            placeholder="${this.initialSearchTerm ? this.initialSearchTerm : this.t.search}"
-                            @input=${this.debounce(this.onSearch, 500)}
-                        />
+                        <div class="repel">
+                            <input
+                                type="search"
+                                placeholder="${this.initialSearchTerm ? this.initialSearchTerm : this.t.search}"
+                                @input=${this.debounce(this.onSearch, 500)}
+                            />
+                            ${ this.useSelectCard ? html`<button
+                                class="mx-auto color-brand surface-primary filter-toggle input fit-content"
+                                type="button"
+                                ?data-active=${!!this.activeFilters.exact}
+                                @click=${this.toggleExact}
+                            >
+                                ${this.t.exact_filter || "Exact"}
+                            </button>` : nothing }
+                        </div>
                     </div>
-                    <button
-                        class="filters__toggle | button compact link"
-                        type="button"
-                        aria-expanded=${this.filtersExpanded}
-                        @click=${this.toggleFilters}
-                    >
-                        ${this.filtersExpanded ? this.t.hide_filters || 'Hide Filters' : this.t.show_filters || 'Show Filters'}
-                        <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                    ${!this.useSelectCard ? html`
+                        <button
+                            class="filters__toggle | button compact link"
+                            type="button"
+                            aria-expanded=${this.filtersExpanded}
+                            @click=${this.toggleFilters}
+                        >
+                            ${this.filtersExpanded ? this.t.hide_filters || 'Hide Filters' : this.t.show_filters || 'Show Filters'}
+                            <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        ` : nothing }
                     ${this.filtersExpanded ? html`
                         <div class="filters__panel">
                             <filter-dropdown
@@ -163,7 +175,7 @@ export class UupgsList extends LitElement {
                             </button>
                         </div>
                     ` : nothing}
-                    ${Object.keys(this.activeFilters).length > 0 ? html`
+                    ${!this.useSelectCard && Object.keys(this.activeFilters).length > 0 ? html`
                         <div class="filters__active">
                             ${Object.entries(this.activeFilters).map(([name, filter]) => html`
                                 <span class="filter-chip">
