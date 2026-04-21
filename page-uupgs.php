@@ -18,6 +18,7 @@ get_header( 'top' ); ?>
             <h1 class="text-center highlight" data-highlight-last><?php echo __('Find a UUPG', 'doxa-website'); ?></h1>
             <uupgs-list
                 languageCode="<?php echo doxa_get_language_code(); ?>"
+                locale="<?php echo get_locale(); ?>"
                 researchUrl="<?php echo esc_url( doxa_translation_url( 'research' ) ); ?>"
                 t="<?php echo esc_attr( json_encode( get_uupg_list_translations() )); ?>"
                 initialSearchTerm="<?php echo esc_attr( $search ); ?>"

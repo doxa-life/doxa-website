@@ -1709,7 +1709,8 @@ function doxa_language_relationships( $post_id ) {
 }
 
 function doxa_get_language_code() {
-    return function_exists( 'pll_current_language' ) ? pll_current_language() : substr( get_locale(), 0, 2 );
+    $language_code = function_exists( 'pll_current_language' ) ? pll_current_language() : substr( get_locale(), 0, 2 );
+    return $language_code;
 }
 
 add_filter( 'pll_the_language_link', 'doxa_remove_langs_link', 10, 3 );

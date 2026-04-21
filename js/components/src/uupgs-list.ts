@@ -17,6 +17,8 @@ export class UupgsList extends LitElement {
     initialSearchTerm: string = '';
     @property({ type: String })
     languageCode: string = '';
+    @property({ type: String })
+    locale: string = '';
 
     @property({ type: Number })
     perPage: number = 24;
@@ -61,11 +63,21 @@ export class UupgsList extends LitElement {
     @property({ type: Object, attribute: false })
     filterOptions: Record<string, FilterOption[]> = {};
 
+    intlFormat: Intl.NumberFormat;
+
     constructor() {
         super();
         this.uupgs = [];
         this.highlightedUUPGs = [];
-        this.researchUrl = '/research'
+        this.researchUrl = '/research';
+        this.intlFormat = new Intl.NumberFormat()
+    }
+
+    connectedCallback() {
+        super.connectedCallback()
+        const locale = this.locale.replace('_', '-')
+        console.log(locale)
+        this.intlFormat = new Intl.NumberFormat(locale);
     }
 
     render() {
@@ -251,6 +263,7 @@ export class UupgsList extends LitElement {
                                 ? window.uupgsData.icons_url + '/Check-GreenCircle.png'
                                 : window.uupgsData.icons_url + '/RedX-Circle.png';
                             const adoptedBadgeText = isAdopted ? this.t.adopted : this.t.not_adopted;
+                            const sortValue = this.sortKey ? uupg[this.sortKey as keyof Uupg] : 0;
 
                             return html`<div class="card | uupg__card">
                                 <img class="uupg__image" src="${uupg.image_url}" alt="${uupg.name}">
@@ -258,7 +271,7 @@ export class UupgsList extends LitElement {
                                     <h3 class="uupg__name line-height-tight">${uupg.name}</h3>
                                     <p class="uupg__country">${uupg.country_label ? uupg.country_label : uupg.country_code.label} (${uupg.rop1_label ? uupg.rop1_label : uupg.rop1.label})</p>
                                     ${this.sortKey ? html`
-                                        <p class="font-size-sm color-brand-lighter"><strong>${this.getLabel(this.sortKey)}</strong>: ${uupg[this.sortKey as keyof Uupg]}</p>
+                                        <p class="font-size-sm color-brand-lighter"><strong>${this.getLabel(this.sortKey)}</strong>: ${this.intlFormat.format(sortValue)}</p>
                                     ` : ''}
                                     ${uupg.matches ? html`
                                         ${uupg.matches.map(match => html`
