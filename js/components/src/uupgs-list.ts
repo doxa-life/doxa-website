@@ -46,7 +46,9 @@ export class UupgsList extends LitElement {
     @property({ type: String, attribute: false })
     searchTerm: string = '';
     @property({ type: String, attribute: false })
-    sort: string = '';
+    sortKey: string = '';
+    @property({ type: String, attribute: false })
+    sortDirection: string = '';
     @property({ type: Boolean, attribute: false })
     loading: boolean = true;
     @property({ type: Boolean, attribute: false })
@@ -81,28 +83,42 @@ export class UupgsList extends LitElement {
                                 placeholder="${this.initialSearchTerm ? this.initialSearchTerm : this.t.search}"
                                 @input=${this.debounce(this.onSearch, 500)}
                             />
-                            ${ this.useSelectCard ? html`<button
-                                class="mx-auto color-brand surface-primary filter-toggle input fit-content"
-                                type="button"
-                                ?data-active=${!!this.activeFilters.exact}
-                                @click=${this.toggleExact}
-                            >
-                                ${this.t.exact_filter || "Exact"}
-                            </button>` : nothing }
+                            ${ this.useSelectCard ? html`
+                                <button
+                                    class="mx-auto color-brand surface-primary filter-toggle input fit-content"
+                                    type="button"
+                                    ?data-active=${!!this.activeFilters.exact}
+                                    @click=${this.toggleExact}
+                                >
+                                    ${this.t.exact_filter || "Exact"}
+                                </button>
+                            ` : nothing }
                         </div>
                     </div>
                     ${!this.useSelectCard ? html`
-                        <button
-                            class="filters__toggle | button compact link"
-                            type="button"
-                            aria-expanded=${this.filtersExpanded}
-                            @click=${this.toggleFilters}
-                        >
-                            ${this.filtersExpanded ? this.t.hide_filters || 'Hide Filters' : this.t.show_filters || 'Show Filters'}
-                            <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                            <div class="ms-auto repel">
+                                <button
+                                    class="filters__toggle | button compact link"
+                                    type="button"
+                                    aria-expanded=${this.filtersExpanded}
+                                    @click=${this.toggleFilters}
+                                >
+                                    ${this.filtersExpanded ? this.t.hide_filters || 'Hide Filters' : this.t.show_filters || 'Show Filters'}
+                                    <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div class="input-group">
+                                    <label class="sr-only" for="sort">${this.t.sort_by || 'Sort by'}</label>
+                                    <select class="font-size-sm fit-content" id="sort" @change=${this.onSortChange}>
+                                        <option value="">${this.t.sort_by || 'Sort by'}</option>
+                                        <option value="population_asc">${this.t.population_asc || 'Smallest Population'}</option>
+                                        <option value="population_desc">${this.t.population_desc || 'Largest Population'}</option>
+                                        <option value="people_committed_asc">${this.t.people_praying_asc || 'Most People Praying'}</option>
+                                        <option value="people_committed_desc">${this.t.people_praying_desc || 'Least People Praying'}</option>
+                                    </select>
+                                </div>
+                            </div>
                         ` : nothing }
                     ${this.filtersExpanded ? html`
                         <div class="filters__panel">
@@ -241,6 +257,9 @@ export class UupgsList extends LitElement {
                                 <div class="uupg__header">
                                     <h3 class="uupg__name line-height-tight">${uupg.name}</h3>
                                     <p class="uupg__country">${uupg.country_label ? uupg.country_label : uupg.country_code.label} (${uupg.rop1_label ? uupg.rop1_label : uupg.rop1.label})</p>
+                                    ${this.sortKey ? html`
+                                        <p class="font-size-sm color-brand-lighter"><strong>${this.getLabel(this.sortKey)}</strong>: ${uupg[this.sortKey as keyof Uupg]}</p>
+                                    ` : ''}
                                     ${uupg.matches ? html`
                                         ${uupg.matches.map(match => html`
                                             <p class="font-size-sm color-brand-lighter"><strong>${match.key}</strong>: ${match.label}</p>
@@ -390,6 +409,14 @@ export class UupgsList extends LitElement {
         }
     }
 
+    onSortChange(e: CustomEvent) {
+        const sort = (e.target as HTMLSelectElement).value;
+        const sortSplit = sort.split('_')
+        this.sortKey = sortSplit.slice(0, sortSplit.length - 1).join('_');
+        this.sortDirection = sort.includes('_asc') ? 'asc' : 'desc';
+        this.filterUUPGs();
+    }
+
     applyDropdownFilters(uupgs: Uupg[]): Uupg[] {
         let filtered = uupgs;
         for (const [field, selection] of Object.entries(this.activeFilters)) {
@@ -489,6 +516,7 @@ export class UupgsList extends LitElement {
             this.total = this.filteredUUPGs.length;
             this.loading = false;
             this.updateFilterOptionCounts();
+            this.sortUupgs();
             return
         }
         this.dontShowListOnLoad = false;
@@ -552,13 +580,6 @@ export class UupgsList extends LitElement {
                         });
                     } else if (key.includes('.')) {
                         const [parentKey] = key.split('.');
-                        const keyTranslations = {
-                            religion: this.t.religion,
-                            country_code: this.t.country,
-                            rop1: this.t.rop1,
-                            wagf_region: this.t.wagf_region,
-                            wagf_block: this.t.wagf_block,
-                        };
                         if ('wagf_region' === parentKey && this.useSelectCard) {
                             newItem.wagf_region_label = highlightedValue;
                         } else if ('rop1' === parentKey && !this.useSelectCard) {
@@ -569,7 +590,7 @@ export class UupgsList extends LitElement {
                             // do nothing
                         } else {
                             (newItem as Uupg).matches!.push({
-                                key: keyTranslations[parentKey as keyof typeof keyTranslations],
+                                key: this.getLabel(parentKey),
                                 label: highlightedValue,
                             });
                         }
@@ -581,13 +602,30 @@ export class UupgsList extends LitElement {
 
             return newItem
         });
+        this.sortUupgs()
         this.total = this.filteredUUPGs.length;
         this.loading = false;
     }
 
+    sortUupgs() {
+        if (this.sortKey) {
+            // the sortKey might have an underscore in it, so take the last element after the last underscore
+            this.filteredUUPGs.sort((a, b) => {
+                const aValue = (a as unknown as Record<string, any>)[this.sortKey] ?? 0;
+                const bValue = (b as unknown as Record<string, any>)[this.sortKey] ?? 0;
+                if (this.sortDirection === 'asc') {
+                    return aValue - bValue;
+                } else {
+                    return bValue - aValue;
+                }
+            });
+            this.performUpdate();
+        }
+    }
+
     getUUPGs() {
         const prayBaseUrl = window.uupgsData?.prayBaseUrl || 'https://pray.doxa.life';
-        const uupgAPIUrl = prayBaseUrl + '/api/people-groups/list?fields=name,slug,wagf_region,wagf_block,country_code,rop1,religion,has_photo,image_url,adopted_by_churches,imb_alternate_name,engagement_status&lang=' + this.languageCode;
+        const uupgAPIUrl = prayBaseUrl + '/api/people-groups/list?fields=name,slug,wagf_region,wagf_block,country_code,population,people_committed,rop1,religion,has_photo,image_url,adopted_by_churches,imb_alternate_name,engagement_status&lang=' + this.languageCode;
 
         this.loading = true
         return fetch(uupgAPIUrl)
@@ -637,6 +675,19 @@ export class UupgsList extends LitElement {
             .finally(() => {
                 this.loading = false;
             });
+    }
+
+    getLabel(key: string): string {
+        const keyTranslations = {
+            population: this.t.population,
+            people_committed: this.t.people_praying,
+            religion: this.t.religion,
+            country_code: this.t.country,
+            rop1: this.t.rop1,
+            wagf_region: this.t.wagf_region,
+            wagf_block: this.t.wagf_block,
+        }
+        return keyTranslations[key as keyof typeof keyTranslations] || key;
     }
 
     protected createRenderRoot(): HTMLElement | DocumentFragment {
