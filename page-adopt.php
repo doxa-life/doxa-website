@@ -41,6 +41,42 @@ get_header( 'top' ); ?>
                     </div>
                 </div>
             </section>
+            <section class="stack stack--md container">
+                <div>
+                    <h1 class="color-brand-light highlight" data-highlight-index="1" data-highlight-last data-highlight-color="primary"><?php echo __( 'Adoption Progress', 'doxa-website' ); ?></h1>
+                </div>
+                <div class="doxa-map-slot rounded-md">
+                    <doxa-map
+                        id="adopt-map"
+                        profile-config="<?php echo esc_attr( wp_json_encode( [
+                            'profile'    => 'doxa-simple-map',
+                            'tk'         => defined( 'MAPBOX_PUBLIC_TOKEN' ) ? MAPBOX_PUBLIC_TOKEN : '',
+                            'instanceId' => 'adopt-map',
+                            'dataSource' => 'pray-tools',
+                            'tabs'       => [
+                                [
+                                    'id'            => 'adoption',
+                                    'label'         => 'Adoption',
+                                    'colorStrategy' => 'adoption',
+                                    'legend'        => 'adoption',
+                                    'popup'         => 'adoption',
+                                ],
+                            ],
+                        ] ) ); ?>"
+                    ></doxa-map>
+                    <div class="feedback-widget-slot feedback-widget-slot--adopt">
+                        <feedback-widget
+                            profile-config="<?php echo esc_attr( wp_json_encode( [
+                                'profile'    => 'chat-bubble',
+                                'instanceId' => 'fb-adopt-map',
+                                'projectId'  => 'dd1d9144-3da9-4a3b-87e8-7c17d9e94af0',
+                                'apiBase'    => 'https://support.gospelambition.org',
+                                'enabled'    => true,
+                            ] ) ); ?>"
+                        ></feedback-widget>
+                    </div>
+                </div>
+            </section>
             <section class="surface-brand-light">
                 <div class="container stack stack--3xl">
                     <h2><?php echo __('How Adoption Works', 'doxa-website'); ?></h2>

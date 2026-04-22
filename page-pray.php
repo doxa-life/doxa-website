@@ -42,6 +42,42 @@ get_header( 'top' ); ?>
                     </div>
                 </div>
             </section>
+            <section class="stack stack--md container">
+                <div>
+                    <h1 class="color-brand-light highlight" data-highlight-index="1" data-highlight-last data-highlight-color="primary"><?php echo __( 'Prayer Progress', 'doxa-website' ); ?></h1>
+                </div>
+                <div class="doxa-map-slot rounded-md">
+                    <doxa-map
+                        id="pray-map"
+                        profile-config="<?php echo esc_attr( wp_json_encode( [
+                            'profile'    => 'doxa-simple-map',
+                            'tk'         => defined( 'MAPBOX_PUBLIC_TOKEN' ) ? MAPBOX_PUBLIC_TOKEN : '',
+                            'instanceId' => 'pray-map',
+                            'dataSource' => 'pray-tools',
+                            'tabs'       => [
+                                [
+                                    'id'            => 'prayer',
+                                    'label'         => 'Prayer',
+                                    'colorStrategy' => 'prayer',
+                                    'legend'        => 'prayer',
+                                    'popup'         => 'prayer',
+                                ],
+                            ],
+                        ] ) ); ?>"
+                    ></doxa-map>
+                    <div class="feedback-widget-slot feedback-widget-slot--pray">
+                        <feedback-widget
+                            profile-config="<?php echo esc_attr( wp_json_encode( [
+                                'profile'    => 'chat-bubble',
+                                'instanceId' => 'fb-pray-map',
+                                'projectId'  => '809ee16b-46e2-4bcd-a93d-b7ea0879d93d',
+                                'apiBase'    => 'https://support.gospelambition.org',
+                                'enabled'    => true,
+                            ] ) ); ?>"
+                        ></feedback-widget>
+                    </div>
+                </div>
+            </section>
             <section class="surface-brand-light">
                 <div class="container stack stack--3xl">
                     <h2><?php echo __('Where do I start?', 'doxa-website'); ?></h2>

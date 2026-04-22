@@ -1,0 +1,54 @@
+/**
+ * map-app-slot.css
+ *
+ * Slot convention for embedding <doxa-map> in any host environment.
+ *
+ * USAGE (any HTML, PHP template, Nuxt, plain HTML):
+ *
+ *   <div class="doxa-map-slot rounded-md">
+ *     <doxa-map profile-config='{"profile":"...","tk":"..."}'></doxa-map>
+ *   </div>
+ *
+ * The wrapper div owns the size.
+ * <doxa-map> fills it absolutely.
+ * Shadow DOM (inside the bundle) handles everything else.
+ */
+
+/* ── Slot wrapper — owns the size ───────────────────────────────────────── */
+/* Desktop: taller map. Dropped aspect-ratio in favor of a fixed 780px
+   min-height (feedback 2026-04-20 — "slot needs to be ~50-100px taller"
+   AND min-height:620 didn't kick in because 16/9 at 1200px is 675px).
+   Using min-height:780 guarantees the map is visibly taller on any
+   desktop wider than ~1390px. */
+.doxa-map-slot {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 780px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .doxa-map-slot {
+        min-height: 0;
+        aspect-ratio: 1 / 2;
+    }
+}
+
+/* ── doxa-map host — fills the slot ─────────────────────────────────────── */
+doxa-map {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+doxa-map:fullscreen,
+doxa-map:-webkit-full-screen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+}

@@ -1,0 +1,45 @@
+/*
+ * feedback-widget-map.css — theme overrides for the <feedback-widget>
+ * when it's embedded INSIDE a .doxa-map-slot container.
+ *
+ * The widget's own slot.css defaults the wrapper to `position: fixed`
+ * (bottom-right of the viewport). When nested in a map, we want it
+ * anchored to the map card instead, so it rides with the map.
+ *
+ * Conventions:
+ *   .feedback-widget-slot                 — required base class (ships with widget)
+ *   .feedback-widget-slot--{page}         — per-page modifier (adopt / pray / home).
+ *                                            Add per-page overrides here if a map
+ *                                            needs different placement (e.g. bottom-left).
+ */
+
+/* Widget slot → anchored to the MAP card's bottom-right (not viewport).
+ *
+ * .doxa-map-slot is already position:relative (see map-app-slot.css), so
+ * the widget's wrapper — when inside that slot — is absolutely positioned
+ * within the map card. The max z-index keeps it above <doxa-map> and any
+ * Mapbox controls.
+ *
+ * NOTE: .doxa-map-slot has overflow:hidden. When the bubble is closed (the
+ * 52x52 circle), it fits comfortably at right:16 bottom:16. When the user
+ * opens the chat panel (360px wide), the panel expands upward from the
+ * bubble; if the map is tall enough (>=780px desktop) the panel fits. On
+ * very narrow mobile (aspect-ratio 1/2), the panel may get clipped at the
+ * top. If that becomes a problem, we can use :has() to unset overflow:
+ *    .doxa-map-slot:has(.feedback-widget-slot) { overflow: visible }
+ */
+.doxa-map-slot .feedback-widget-slot {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: auto;
+  top: auto;
+  z-index: 2147483647 !important;
+}
+
+/* Per-instance hooks — empty on purpose. Add page-specific placement here.
+   Example: move the home-page widget to the bottom-left:
+     .feedback-widget-slot--home { right: auto; left: 16px; } */
+.feedback-widget-slot--home  { /* inherits default; customise here if needed */ }
+.feedback-widget-slot--pray  { /* inherits default */ }
+.feedback-widget-slot--adopt { /* inherits default */ }

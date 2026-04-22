@@ -103,11 +103,10 @@ function doxa_map_scripts() {
         return;
     }
 
-    wp_enqueue_script( 'mapbox-gl', 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js', array(), '2.15.0', true );
-    wp_enqueue_style( 'mapbox-gl', 'https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css', array(), '2.15.0' );
-
-    wp_enqueue_style( 'prayer-map', get_template_directory_uri() . '/css/prayer-map.css', array( 'mapbox-gl' ), filemtime( get_template_directory() . '/css/prayer-map.css' ) );
-    wp_enqueue_script( 'prayer-map', get_template_directory_uri() . '/js/prayer-map.js', array( 'mapbox-gl' ), filemtime( get_template_directory() . '/js/prayer-map.js' ), true );
+    // Mapbox GL JS v3 is loaded by doxa_map_app_scripts() via the 'mapbox-gl-v3' handle.
+    // prayer-map.js depends on it so it loads in the correct order.
+    wp_enqueue_style( 'prayer-map', get_template_directory_uri() . '/css/prayer-map.css', array( 'mapbox-gl-v3' ), filemtime( get_template_directory() . '/css/prayer-map.css' ) );
+    wp_enqueue_script( 'prayer-map', get_template_directory_uri() . '/js/prayer-map.js', array( 'mapbox-gl-v3' ), filemtime( get_template_directory() . '/js/prayer-map.js' ), true );
 
     $pray_base_url = defined( 'DOXA_PRAYER_TOOLS_URL' ) ? DOXA_PRAYER_TOOLS_URL : 'https://pray.doxa.life';
 
@@ -133,6 +132,118 @@ function doxa_map_scripts() {
     ) ) . ';', 'before' );
 }
 add_action( 'wp_enqueue_scripts', 'doxa_map_scripts' );
+
+/**
+ * Enqueue the doxa-map Web Component (IIFE micro-frontend) on pages that use it.
+ *
+ * The IIFE registers the <doxa-map> custom element globally. It is loaded once
+ * per page regardless of how many <doxa-map> instances are on the page.
+ * Each instance is independently configured via the profile-config attribute.
+ *
+ * Pages: pray, adopt, front-page (home)
+ */
+function doxa_map_app_scripts() {
+    $is_map_page = is_front_page() || is_page( 'pray' ) || is_page( 'adopt' );
+    if ( ! $is_map_page ) {
+        return;
+    }
+
+    // Mapbox GL JS v3 — required by the doxa-map Web Component (uses window.mapboxgl)
+    wp_enqueue_script(
+        'mapbox-gl-v3',
+        'https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js',
+        array(),
+        '3.3.0',
+        true  // footer
+    );
+    wp_enqueue_style(
+        'mapbox-gl-v3',
+        'https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css',
+        array(),
+        '3.3.0'
+    );
+
+    // Mapbox Geocoder plugin — exposes window.MapboxGeocoder used by GeocoderComponent.vue
+    wp_enqueue_script(
+        'mapbox-geocoder',
+        'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js',
+        array( 'mapbox-gl-v3' ),
+        '5.0.0',
+        true
+    );
+    wp_enqueue_style(
+        'mapbox-geocoder',
+        'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css',
+        array(),
+        '5.0.0'
+    );
+
+    wp_enqueue_style(
+        'doxa-map-app',
+        get_template_directory_uri() . '/assets/map-app/map-app.css',
+        array(),
+        filemtime( get_template_directory() . '/assets/map-app/map-app.css' )
+    );
+
+    // Slot layout CSS — defines .doxa-map-slot wrapper + doxa-map fill convention.
+    // Kept separate from the Vite build output so it survives bundle rebuilds.
+    wp_enqueue_style(
+        'doxa-map-app-slot',
+        get_template_directory_uri() . '/assets/map-app/map-app-slot.css',
+        array(),
+        filemtime( get_template_directory() . '/assets/map-app/map-app-slot.css' )
+    );
+
+    wp_enqueue_script(
+        'doxa-map-app',
+        get_template_directory_uri() . '/assets/map-app/map-app.iife.js',
+        array( 'mapbox-gl-v3', 'mapbox-geocoder' ),   // IIFE must load AFTER mapboxgl + geocoder
+        filemtime( get_template_directory() . '/assets/map-app/map-app.iife.js' ),
+        true  // load in footer so DOM is ready
+    );
+}
+add_action( 'wp_enqueue_scripts', 'doxa_map_app_scripts' );
+
+/**
+ * Enqueue the <feedback-widget> IIFE bundle on every page that hosts a map.
+ * Same predicate as doxa_map_app_scripts() — home, pray, adopt.
+ *
+ * Two stylesheets ship: the widget's own slot.css (default fixed-viewport
+ * placement) AND the theme's feedback-widget-map.css override that re-anchors
+ * the widget inside .doxa-map-slot when embedded in a map card.
+ */
+function doxa_feedback_widget_scripts() {
+    $has_map = is_front_page() || is_page( 'pray' ) || is_page( 'adopt' );
+    if ( ! $has_map ) {
+        return;
+    }
+
+    wp_enqueue_style(
+        'feedback-widget-slot',
+        get_template_directory_uri() . '/assets/feedback-widget/feedback-widget-slot.css',
+        array(),
+        filemtime( get_template_directory() . '/assets/feedback-widget/feedback-widget-slot.css' )
+    );
+
+    // Theme override — re-anchors the widget inside .doxa-map-slot (bottom-right
+    // of the map) instead of fixed to the viewport. Loads AFTER slot.css so
+    // its rules win.
+    wp_enqueue_style(
+        'feedback-widget-map',
+        get_template_directory_uri() . '/assets/feedback-widget/feedback-widget-map.css',
+        array( 'feedback-widget-slot' ),
+        filemtime( get_template_directory() . '/assets/feedback-widget/feedback-widget-map.css' )
+    );
+
+    wp_enqueue_script(
+        'feedback-widget',
+        get_template_directory_uri() . '/assets/feedback-widget/feedback-widget.iife.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/feedback-widget/feedback-widget.iife.js' ),
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'doxa_feedback_widget_scripts' );
 
 /**
  * Register widget areas
