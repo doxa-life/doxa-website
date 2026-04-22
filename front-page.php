@@ -58,8 +58,8 @@ get_header( 'top' ); ?>
                             profile-config="<?php echo esc_attr( wp_json_encode( [
                                 'profile'    => 'chat-bubble',
                                 'instanceId' => 'fb-home-map',
-                                'projectId'  => '',
-                                'apiBase'    => defined( 'FEEDBACK_API_BASE' ) ? FEEDBACK_API_BASE : '',
+                                'projectId'  => '7bb8f5ba-eb45-4933-89de-bc93fcda09b2',
+                                'apiBase'    => 'https://support.gospelambition.org',
                                 'enabled'    => true,
                             ] ) ); ?>"
                         ></feedback-widget>
