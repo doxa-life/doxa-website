@@ -1,0 +1,32 @@
+/*
+ * feedback-widget-slot.css — host-page wrapper CSS.
+ *
+ * The <feedback-widget> itself is position:relative inside its Shadow DOM; the
+ * SLOT wrapper owns where on the page the widget appears. Default position is
+ * bottom-right floating, but any host can override by re-declaring the class
+ * or by inline-styling the wrapper element.
+ *
+ * Drop-in (floating chat bubble):
+ *   <div class="feedback-widget-slot">
+ *     <feedback-widget profile-config='...' />
+ *   </div>
+ *
+ * Move it to the bottom-left:
+ *   <div class="feedback-widget-slot" style="right: auto; left: 20px;">
+ *     <feedback-widget profile-config='...' />
+ *   </div>
+ */
+
+.feedback-widget-slot {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483000;
+}
+
+/* Variant: inline in document flow (for future inline-form profile). */
+.feedback-widget-slot.inline {
+  position: static;
+  width: 100%;
+  max-width: 480px;
+}

@@ -42,6 +42,9 @@ get_header( 'top' ); ?>
                 </div>
             </section>
             <section class="stack stack--md container">
+                <div>
+                    <h1 class="color-brand-light highlight" data-highlight-index="1" data-highlight-last data-highlight-color="primary"><?php echo __( 'Adoption Progress', 'doxa-website' ); ?></h1>
+                </div>
                 <div class="doxa-map-slot rounded-md">
                     <doxa-map
                         id="adopt-map"
@@ -61,6 +64,17 @@ get_header( 'top' ); ?>
                             ],
                         ] ) ); ?>"
                     ></doxa-map>
+                    <div class="feedback-widget-slot feedback-widget-slot--adopt">
+                        <feedback-widget
+                            profile-config="<?php echo esc_attr( wp_json_encode( [
+                                'profile'    => 'chat-bubble',
+                                'instanceId' => 'fb-adopt-map',
+                                'projectId'  => '',
+                                'apiBase'    => defined( 'FEEDBACK_API_BASE' ) ? FEEDBACK_API_BASE : '',
+                                'enabled'    => true,
+                            ] ) ); ?>"
+                        ></feedback-widget>
+                    </div>
                 </div>
             </section>
             <section class="surface-brand-light">

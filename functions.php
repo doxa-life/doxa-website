@@ -205,6 +205,47 @@ function doxa_map_app_scripts() {
 add_action( 'wp_enqueue_scripts', 'doxa_map_app_scripts' );
 
 /**
+ * Enqueue the <feedback-widget> IIFE bundle on every page that hosts a map.
+ * Same predicate as doxa_map_app_scripts() — home, pray, adopt.
+ *
+ * Two stylesheets ship: the widget's own slot.css (default fixed-viewport
+ * placement) AND the theme's feedback-widget-map.css override that re-anchors
+ * the widget inside .doxa-map-slot when embedded in a map card.
+ */
+function doxa_feedback_widget_scripts() {
+    $has_map = is_front_page() || is_page( 'pray' ) || is_page( 'adopt' );
+    if ( ! $has_map ) {
+        return;
+    }
+
+    wp_enqueue_style(
+        'feedback-widget-slot',
+        get_template_directory_uri() . '/assets/feedback-widget/feedback-widget-slot.css',
+        array(),
+        filemtime( get_template_directory() . '/assets/feedback-widget/feedback-widget-slot.css' )
+    );
+
+    // Theme override — re-anchors the widget inside .doxa-map-slot (bottom-right
+    // of the map) instead of fixed to the viewport. Loads AFTER slot.css so
+    // its rules win.
+    wp_enqueue_style(
+        'feedback-widget-map',
+        get_template_directory_uri() . '/assets/feedback-widget/feedback-widget-map.css',
+        array( 'feedback-widget-slot' ),
+        filemtime( get_template_directory() . '/assets/feedback-widget/feedback-widget-map.css' )
+    );
+
+    wp_enqueue_script(
+        'feedback-widget',
+        get_template_directory_uri() . '/assets/feedback-widget/feedback-widget.iife.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/feedback-widget/feedback-widget.iife.js' ),
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'doxa_feedback_widget_scripts' );
+
+/**
  * Register widget areas
  */
 function gospel_ambition_widgets_init() {

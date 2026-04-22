@@ -53,6 +53,17 @@ get_header( 'top' ); ?>
                             ],
                         ] ) ); ?>"
                     ></doxa-map>
+                    <div class="feedback-widget-slot feedback-widget-slot--home">
+                        <feedback-widget
+                            profile-config="<?php echo esc_attr( wp_json_encode( [
+                                'profile'    => 'chat-bubble',
+                                'instanceId' => 'fb-home-map',
+                                'projectId'  => '',
+                                'apiBase'    => defined( 'FEEDBACK_API_BASE' ) ? FEEDBACK_API_BASE : '',
+                                'enabled'    => true,
+                            ] ) ); ?>"
+                        ></feedback-widget>
+                    </div>
                 </div>
             </section>
 

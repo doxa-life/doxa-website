@@ -15,16 +15,23 @@
  */
 
 /* ── Slot wrapper — owns the size ───────────────────────────────────────── */
+/* Desktop: taller map. Dropped aspect-ratio in favor of a fixed 780px
+   min-height (feedback 2026-04-20 — "slot needs to be ~50-100px taller"
+   AND min-height:620 didn't kick in because 16/9 at 1200px is 675px).
+   Using min-height:780 guarantees the map is visibly taller on any
+   desktop wider than ~1390px. */
 .doxa-map-slot {
     display: block;
     position: relative;
     width: 100%;
+    min-height: 780px;
     aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
 @media (max-width: 768px) {
     .doxa-map-slot {
+        min-height: 0;
         aspect-ratio: 1 / 2;
     }
 }
